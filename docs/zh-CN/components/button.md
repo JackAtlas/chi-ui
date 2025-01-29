@@ -9,7 +9,23 @@ description: 基础通用组件，用于标记一组操作命令，由用户点�
 
 基础通用组件，用于标记一组操作命令，由用户点击触发，响应用户并完成响应的业务逻辑。
 
-<preview path="../demo/Button/Basic-Button.vue" title="基础用法" description="Button 组件的基础用法"></preview>
+### 按钮类型
+
+通过设置 `type` 属性的值为 `primary`、`info`、`success`、`warning` 和 `error` 来创建不同颜色的按钮，不设置时为默认样式。
+
+<preview path="../demo/Button/Basic-Button.vue" title="按钮类型" description="通过设置 `type` 属性的值为 `primary`、`info`、`success`、`warning` 和 `error` 来创建不同颜色的按钮，不设置时为默认样式。"></preview>
+
+### 禁用状态
+
+添加 `disabled` 属性即可让按钮处于禁用状态。
+
+<preview path="../demo/Button/Disabled-Button.vue" title="禁用状态" description="添加 `disabled` 属性即可让按钮处于禁用状态。"></preview>
+
+### 简约风格
+
+简约风格的按钮使用浅色系色调。
+
+<preview path="../demo/Button/Simple-Button.vue" title="简约风格" description="简约风格的按钮使用浅色系色调。"></preview>
 
 ## API
 
