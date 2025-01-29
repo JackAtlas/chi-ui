@@ -1,0 +1,127 @@
+.chi-button {
+  --chi-button-bg-color: var(--chi-fill-color-blank);
+  --chi-button-border-color: var(--chi-border-color);
+  --chi-button-text-color: var(--chi-text-color-regular);
+
+  --chi-button-bg-color-disabled: var(--chi-fill-color-light);
+  --chi-button-border-color-disabled: var(--chi-border-color-light);
+  --chi-button-text-color-disabled: var(--chi-disabled-text-color);
+
+  --chi-button-bg-color-active: var(--chi-button-bg-color);
+  --chi-button-border-color-active: var(--chi-color-primary);
+  --chi-button-text-color-active: var(--chi-color-primary);
+
+  --chi-button-bg-color-hover: var(--chi-button-bg-color);
+  --chi-button-border-color-hover: var(--chi-color-primary);
+  --chi-button-text-color-hover: var(--chi-color-primary);
+
+  --chi-button-bg-color-focus: var(--chi-button-bg-color);
+  --chi-button-border-color-focus: var(--chi-color-primary);
+  --chi-button-text-color-focus: var(--chi-color-primary);
+
+  --chi-button-outline-color: var(--chi-color-primary);
+
+  --chi-button-font-weight: var(--chi-font-weight-primary);
+
+  --chi-button-height: 32px;
+  --chi-button-v-padding: 0;
+  --chi-button-h-padding: 14px;
+  --chi-button-series-span: 8px;
+}
+
+.chi-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  height: var(--chi-button-height);
+  padding: var(--chi-button-v-padding) var(--chi-button-h-padding);
+  font-size: var(--chi-font-size-base);
+  font-weight: var(--chi-button-font-weight);
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: var(--chi-button-bg-color);
+  border: var(--chi-border);
+  border-color: var(--chi-button-border-color);
+  border-radius: var(--chi-border-radius-base);
+  color: var(--chi-button-text-color);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.1s;
+
+  &:not(.chi-button--block) + &:not(.chi-button--block) {
+    margin-inline-start: var(--chi-button-series-span);
+  }
+
+  &:active {
+    background-color: var(--chi-button-bg-color-active);
+    border-color: var(--chi-button-border-color-active);
+    color: var(--chi-button-text-color-active);
+    outline: 0;
+  }
+
+  &:focus {
+    background-color: var(--chi-button-bg-color-focus);
+    border-color: var(--chi-button-border-color-focus);
+    color: var(--chi-button-text-color-focus);
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: var(--chi-button-bg-color-hover);
+    border-color: var(--chi-button-border-color-hover);
+    color: var(--chi-button-text-color-hover);
+  }
+}
+
+@each $val in primary, success, warning, info, error {
+  .chi-button--$(val) {
+    --chi-button-bg-color: var(--chi-color-$(val));
+    --chi-button-border-color: var(--chi-color-$(val));
+    --chi-button-text-color: var(--chi-color-white);
+
+    --chi-button-bg-color-disabled: var(--chi-fill-color-blank);
+    --chi-button-border-color-disabled: var(--chi-border-color-light);
+    --chi-button-text-color-disabled: var(--chi-disabled-text-color);
+
+    --chi-button-bg-color-active: var(--chi-color-$(val)-dark-1);
+    --chi-button-border-color-active: var(--chi-color-$(val)-dark-1);
+    --chi-button-text-color-active: var(--chi-color-white);
+
+    --chi-button-bg-color-focus: var(--chi-color-$(val)-light-2);
+    --chi-button-border-color-focus: var(--chi-color-$(val)-light-2);
+    --chi-button-text-color-focus: var(--chi-color-white);
+
+    --chi-button-bg-color-hover: var(--chi-color-$(val)-light-2);
+    --chi-button-border-color-hover: var(--chi-color-$(val)-light-2);
+    --chi-button-text-color-hover: var(--chi-color-white);
+
+    &.chi-button--simple {
+      --chi-button-bg-color: var(--chi-color-$(val)-opacity-8);
+      --chi-button-border-color: var(--chi-color-$(val));
+      --chi-button-text-color: var(--chi-color-$(val));
+
+      --chi-button-bg-color-active: var(--chi-color-$(val)-opacity-3);
+      --chi-button-border-color-active: var(--chi-color-$(val)-opacity-3);
+      --chi-button-text-color-active: var(--chi-color-white);
+
+      --chi-button-bg-color-focus: var(--chi-color-$(val)-opacity-3);
+      --chi-button-border-color-focus: var(--chi-color-$(val)-opacity-3);
+      --chi-button-text-color-focus: var(--chi-color-white);
+
+      --chi-button-bg-color-hover: var(--chi-color-$(val)-opacity-7);
+      --chi-button-border-color-hover: var(--chi-color-$(val)-opacity-4);
+      --chi-button-text-color-hover: var(--chi-color-$(val));
+    }
+  }
+}
+
+.chi-button--disabled,
+.chi-button--disabled:active,
+.chi-button--disabled:hover {
+  background-color: var(--chi-button-bg-color-disabled);
+  border-color: var(--chi-button-border-color-disabled);
+  color: var(--chi-button-text-color-disabled);
+  cursor: not-allowed;
+}

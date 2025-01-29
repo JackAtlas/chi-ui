@@ -1,2 +1,83 @@
 :root {
+  /**
+   * color
+   * ----------------------------------------------------------------------------------------------------
+   */
+  --chi-color-brand: #7b5aa3;
+  --chi-color-secondary-1: #6c60ab;
+  --chi-color-secondary-2: #c7d1ea;
+  --chi-color-secondary-3: #815dab;
+  --chi-color-secondary-4: #efc729;
+  --chi-color-secondary-5: #c7d1ea;
+  --chi-color-secondary-6: #8187c5;
+
+  --chi-color-primary: var(--chi-color-brand);
+  --chi-color-info: #3bc9db;
+  --chi-color-success: #20c997;
+  --chi-color-warning: #fab005;
+  --chi-color-error: #f03e3e;
+
+  --chi-color-white: #fff;
+  --chi-color-black: #000;
+
+  --chi-bg-color: var(--chi-color-white);
+  --chi-bg-color-page: #f2f3f5;
+  --chi-bg-color-overlay: var(--chi-color-white);
+
+  --chi-border-color: #dcdfe6;
+  --chi-border-color-light: e4e7ed;
+  --chi-border-color-lighter: #ebeef5;
+  --chi-border-color-extra-light: #f2f6fc;
+  --chi-border-color-dark: #d4d7de;
+  --chi-border-color-darker: #cdd0d6;
+
+  --chi-fill-color: #f0f2f5;
+  --chi-fill-color-light: #f5f7fa;
+  --chi-fill-color-lighter: #fafafa;
+  --chi-fill-color-extra-light: #fafcff;
+  --chi-fill-color-dark: #ebedf0;
+  --chi-fill-color-darker: #e6e8eb;
+  --chi-fill-color-blank: var(--chi-color-white);
+
+  /**
+   * border
+   * ----------------------------------------------------------------------------------------------------
+   */
+  --chi-border-width: 1px;
+  --chi-border-style-solid: solid;
+  --chi-border-style-dashed: dashed;
+  --chi-border-color-hover: var(--chi-text-color-disabled);
+  --chi-border: var(--chi-border-width) var(--chi-border-style-solid) var(--chi-border-color);
+  --chi-border-radius-base: 4px;
+  --chi-border-radius-small: 2px;
+  --chi-border-radius-round: 20px;
+  --chi-border-radius-circle: 100%;
+
+  /**
+   * font
+   * ----------------------------------------------------------------------------------------------------
+   */
+  --chi-font-size-extra-large: 20px;
+  --chi-font-size-large: 18px;
+  --chi-font-size-medium: 16px;
+  --chi-font-size-base: 14px;
+  --chi-font-size-small: 13px;
+  --chi-font-size-extra-small: 12px;
+  --chi-font-family-serif: Times, 'Times New Roman', Georgia, serif; /** 衬线字体 **/
+  --chi-font-family-sans-serif: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif; /** 无衬线字体 **/
+  --chi-font-family-monospace: 'Lucida Console', Courier, monospace; /** 等宽字体 **/
+  --chi-font-family-cursive: cursive; /** 草书字体 **/
+  --chi-font-family-fantasy: fantasy; /** 艺术效果字体 **/
+  --chi-font-family-system-ui: system-ui; /** 用户界面字体 **/
+  --chi-font-family-emoji: emoji; /** 表情字体 **/
+  --chi-font-weight-primary: 400;
+
+  /**
+   * disabled
+   * ----------------------------------------------------------------------------------------------------
+   */
+  --chi-disabled-bg-color: var(--chi-fill-color-light);
+  --chi-disabled-text-color: #adb5bd;
+  --chi-disabled-border-color: var(--chi-border-color-light);
 }
