@@ -22,10 +22,10 @@ export default defineConfig({
     sidebar: [
       {
         text: '组件',
-        items: [{ text: 'Button', link: 'zh-CN/components/button' }],
+        items: [{ text: 'Button | 按钮', link: 'zh-CN/components/button' }],
       },
     ],
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/JackAtlas/chi-ui' }],
   },
 })
