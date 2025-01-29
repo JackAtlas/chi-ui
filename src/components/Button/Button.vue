@@ -2,7 +2,14 @@
   <button
     ref="_ref"
     class="chi-button"
-    :class="{ [`chi-button--${size}`]: size, 'is-loading': loading }"
+    role="button"
+    :class="{
+      [`chi-button--disabled`]: disabled,
+      [`chi-button--simple`]: simple,
+      [`chi-button--${size}`]: size,
+      [`chi-button--${type}`]: type,
+      'is-loading': loading,
+    }"
     :disabled="disabled || loading"
     :type="attrType"
   >

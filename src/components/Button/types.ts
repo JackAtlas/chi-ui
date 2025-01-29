@@ -7,6 +7,7 @@ export interface ButtonProps {
   block?: boolean
   disabled?: boolean
   loading?: boolean
+  simple?: boolean
   size?: ButtonSize
   type?: ButtonType
 }
