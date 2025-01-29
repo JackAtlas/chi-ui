@@ -4,10 +4,11 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { ElementPlusContainer } from '@vitepress-demo-preview/component'
 
-import { install } from '../../../index'
-
 import '@vitepress-demo-preview/component/dist/style.css'
 import './style.css'
+
+import { install } from '../../../index'
+import '../../../src/styles/index.css'
 
 export default {
   extends: DefaultTheme,
@@ -16,7 +17,7 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app }) {
     app.component('demo-preview', ElementPlusContainer).use(install)
   },
 } satisfies Theme
