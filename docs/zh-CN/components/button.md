@@ -42,4 +42,19 @@ type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 | 名称      | 类型             | 说明                                   | 默认值     |
 | --------- | ---------------- | -------------------------------------- | ---------- |
 | attr-type | `ButtonAttrType` | 设置原生 `<button>` 元素的 `type` 属性 | `'button'` |
-| block     | boolean          | 是否为块级元素                         | `false`    |
+| block     | `boolean`        | 是否为块级元素                         | `false`    |
+| disabled  | `boolean`        | 设置是否为禁用状态                     | `false`    |
+| simple    | `boolean`        | 开启后，按钮将变为浅色系的简约风格     | `false`    |
+| type      | `ButtonType`     | 设置按钮类型                           | `default`  |
+
+### 事件
+
+| 名称  | 说明                                   | 参数                  |
+| ----- | -------------------------------------- | --------------------- |
+| click | 左键点击按钮时触发，返回点击的事件对象 | `(event: MouseEvent)` |
+
+### 插槽
+
+| 名称    | 说明           | 参数 |
+| ------- | -------------- | ---- |
+| default | 按钮的内容插槽 |      |
