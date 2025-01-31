@@ -4,8 +4,11 @@
     class="chi-button"
     role="button"
     :class="{
+      [`chi-button--block`]: block,
       [`chi-button--disabled`]: disabled,
+      [`chi-button--transparent`]: transparent,
       [`chi-button--simple`]: simple,
+      [`chi-button--text`]: text,
       [`chi-button--${size}`]: size,
       [`chi-button--${type}`]: type,
       'is-loading': loading,

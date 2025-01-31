@@ -9,6 +9,8 @@ export interface ButtonProps {
   loading?: boolean
   simple?: boolean
   size?: ButtonSize
+  text?: boolean
+  transparent?: boolean
   type?: ButtonType
 }
 
