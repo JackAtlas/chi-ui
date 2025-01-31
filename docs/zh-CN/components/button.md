@@ -7,7 +7,7 @@ description: 基础通用组件，用于标记一组操作命令，由用户点�
 
 ## 代码示例
 
-基础通用组件，用于标记一组操作命令，由用户点击触发，响应用户并完成响应的业务逻辑。
+基础通用组件，用于标记一组操作命令，由用户点击触发，响应用户并完成相应的业务逻辑。
 
 ### 按钮类型
 
@@ -23,9 +23,21 @@ description: 基础通用组件，用于标记一组操作命令，由用户点�
 
 ### 简约风格
 
-简约风格的按钮使用浅色系色调。
+添加 `simple` 属性，使按钮变为简约风格，使用浅色系色调。
 
-<preview path="../demo/Button/Simple-Button.vue" title="简约风格" description="简约风格的按钮使用浅色系色调。"></preview>
+<preview path="../demo/Button/Simple-Button.vue" title="简约风格" description="添加 `simple` 属性，使按钮变为简约风格，使用浅色系色调。"></preview>
+
+### 透明按钮
+
+添加 `transparent` 属性将按钮底色变为透明，常用在有色背景上。
+
+<preview path="../demo/Button/Transparent-Button.vue" title="透明按钮" description="添加 `transparent` 属性将按钮底色变为透明，常用在有色背景上。"></preview>
+
+### 文字按钮
+
+添加 `text` 属性可以让按钮看起来和普通文字无异。
+
+<preview path="../demo/Button/Text-Button.vue" title="文字按钮" description="添加 `text` 属性可以让按钮看起来和普通文字无异。"></preview>
 
 ## API
 
@@ -39,13 +51,15 @@ type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 
 ### 属性
 
-| 名称      | 类型             | 说明                                   | 默认值     |
-| --------- | ---------------- | -------------------------------------- | ---------- |
-| attr-type | `ButtonAttrType` | 设置原生 `<button>` 元素的 `type` 属性 | `'button'` |
-| block     | `boolean`        | 是否为块级元素                         | `false`    |
-| disabled  | `boolean`        | 设置是否为禁用状态                     | `false`    |
-| simple    | `boolean`        | 开启后，按钮将变为浅色系的简约风格     | `false`    |
-| type      | `ButtonType`     | 设置按钮类型                           | `default`  |
+| 名称        | 类型             | 说明                                   | 默认值     |
+| ----------- | ---------------- | -------------------------------------- | ---------- |
+| attr-type   | `ButtonAttrType` | 设置原生 `<button>` 元素的 `type` 属性 | `'button'` |
+| block       | `boolean`        | 是否为块级元素，设置后宽度变为 `100%`  | `false`    |
+| disabled    | `boolean`        | 设置是否为禁用状态                     | `false`    |
+| simple      | `boolean`        | 开启后，按钮将变为浅色系的简约风格     | `false`    |
+| text        | `boolean`        | 设置是否为文本按钮                     | `false`    |
+| transparent | `boolean`        | 设置是否为透明按钮                     | `false`    |
+| type        | `ButtonType`     | 设置按钮类型                           | `default`  |
 
 ### 事件
 
