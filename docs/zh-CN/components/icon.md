@@ -34,3 +34,7 @@ Chi UI 使用 Lucide 图标库提供的内部图标。
 设置 `effect` 属性为 `spin-in` 或 `spin-out` 可以让图标旋转。
 
 <preview path="../demo/Icon/Icon-Spin.vue" title="旋转效果" description="设置 `effect` 属性为 `spin-in` 或 `spin-out` 可以让图标旋转。"></preview>
+
+### 自定义图标
+
+<preview path="../demo/Icon/Custom-Icon.vue" title="自定义图标" description=""></preview>

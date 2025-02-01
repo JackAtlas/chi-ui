@@ -4,7 +4,7 @@ export interface IconProps {
   defaultClass?: string
   color?: string
   effect?: EffectType
-  name: string
+  name?: string
   scale?: number
   size?: string
   strokeWidth?: number

@@ -1,12 +1,14 @@
 <template>
   <i class="chi-icon" :class="effectClass" :style="style">
     <g>
-      <component
-        :color="color"
-        :is="icon"
-        :stroke-width="strokeWidth"
-        :default-class="defaultClass"
-      />
+      <slot>
+        <component
+          :color="color"
+          :is="icon"
+          :stroke-width="strokeWidth"
+          :default-class="defaultClass"
+        />
+      </slot>
     </g>
   </i>
 </template>
