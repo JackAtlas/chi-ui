@@ -38,3 +38,21 @@ Chi UI 使用 Lucide 图标库提供的内部图标。
 ### 自定义图标
 
 <preview path="../demo/Icon/Custom-Icon.vue" title="自定义图标" description=""></preview>
+
+## API
+
+### 预设类型
+
+```ts
+type EffectType = 'spin-in' | 'spin-out'
+```
+
+### Icon 属性
+
+| 名称   | 类型               | 说明               | 默认值 |
+| ------ | ------------------ | ------------------ | ------ |
+| color  | `string`           | 设置图标的颜色     | `null` |
+| effect | `EffectType`       | 设置效果动画名称   | `null` |
+| name   | `string`           | 图标的名称         | `''`   |
+| scale  | `number \| string` | 设置图标的缩放比例 | `1`    |
+| size   | `number \| string` | 指定图标的大小     | `null` |

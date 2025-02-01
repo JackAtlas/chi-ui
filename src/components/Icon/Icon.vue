@@ -2,12 +2,7 @@
   <i class="chi-icon" :class="effectClass" :style="style">
     <g>
       <slot>
-        <component
-          :color="color"
-          :is="icon"
-          :stroke-width="strokeWidth"
-          :default-class="defaultClass"
-        />
+        <component :color="color" :is="icon" :stroke-width="strokeWidth" />
       </slot>
     </g>
   </i>
