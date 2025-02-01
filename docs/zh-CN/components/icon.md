@@ -28,3 +28,9 @@ Chi UI 使用 Lucide 图标库提供的内部图标。
 也可以通过 `size` 属性设置一个合法的 CSS 值指定图标的大小。
 
 <preview path="../demo/Icon/Icon-Size.vue" title="调整尺寸" description="通过 `scale` 属性来进行缩放。也可以通过 `size` 属性设置一个合法的 CSS 值指定图标的大小。"></preview>
+
+### 旋转效果
+
+设置 `effect` 属性为 `spin-in` 或 `spin-out` 可以让图标旋转。
+
+<preview path="../demo/Icon/Icon-Spin.vue" title="旋转效果" description="设置 `effect` 属性为 `spin-in` 或 `spin-out` 可以让图标旋转。"></preview>

@@ -1,5 +1,5 @@
 <template>
-  <i class="chi-icon" :style="style">
+  <i class="chi-icon" :class="effectClass" :style="style">
     <g>
       <component
         :color="color"
@@ -22,6 +22,13 @@ defineOptions({
 const props = defineProps<IconProps>()
 
 const icon = computed(() => icons[toPascalCase(props.name)])
+
+const effectClass = computed(() => {
+  if (props.effect === 'spin-in') return 'chi-icon--spin-in'
+  if (props.effect === 'spin-out') return 'chi-icon--spin-out'
+  return null
+})
+
 const style = computed(() => {
   if (props.scale) {
     return {

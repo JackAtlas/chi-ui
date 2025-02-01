@@ -5,8 +5,40 @@
   justify-content: center;
 }
 
+.chi-icon--spin-in > g {
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  animation: 1s linear 0s infinite normal none running chi-spin-in;
+}
+
+.chi-icon--spin-out > g {
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  animation: 1s linear 0s infinite normal none running chi-spin-out;
+}
+
 .chi-icon svg {
   width: 1em;
   height: 1em;
   line-height: 1;
+}
+
+@keyframes chi-spin-in {
+  0% {
+    transform: translateZ(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateZ(0px) rotate(360deg);
+  }
+}
+
+@keyframes chi-spin-out {
+  0% {
+    transform: translateZ(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateZ(0px) rotate(-360deg);
+  }
 }
