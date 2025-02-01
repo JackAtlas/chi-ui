@@ -1,7 +1,8 @@
 import type { App } from 'vue'
 import { Button } from './Button'
+import { Icon } from './Icon'
 
-const components = [Button]
+const components = [Button, Icon]
 
 function createInstall(components: any[] = []) {
   return function install(app: App) {

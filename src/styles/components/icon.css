@@ -1,0 +1,12 @@
+.chi-icon {
+  overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chi-icon svg {
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+}
