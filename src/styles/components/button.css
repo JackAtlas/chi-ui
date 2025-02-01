@@ -124,6 +124,10 @@
   }
 }
 
+.chi-button--circle {
+  border-radius: var(--chi-button-height);
+}
+
 @each $val in primary, success, warning, info, error {
   .chi-button--$(val) {
     --chi-button-bg-color: var(--chi-color-$(val));

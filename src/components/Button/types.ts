@@ -5,6 +5,7 @@ export type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' 
 export interface ButtonProps {
   attrType?: ButtonAttrType
   block?: boolean
+  circle?: boolean
   dashed?: boolean
   disabled?: boolean
   loading?: boolean

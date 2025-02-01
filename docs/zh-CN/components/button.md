@@ -67,6 +67,7 @@ type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 | ----------- | ---------------------------------------------------------------------- | -------------------------------------- | ---------- |
 | attr-type   | `ButtonAttrType`                                                       | 设置原生 `<button>` 元素的 `type` 属性 | `'button'` |
 | block       | `boolean`                                                              | 是否为块级元素，设置后宽度变为 `100%`  | `false`    |
+| circle      | `boolean`                                                              | 设置是否为圆形按钮                     | `false`    |
 | disabled    | `boolean`                                                              | 设置是否为禁用状态                     | `false`    |
 | simple      | `boolean`                                                              | 开启后，按钮将变为浅色系的简约风格     | `false`    |
 | size        | `'small'         \| 'medium'                               \| 'large'` | 按钮的大小                             | `'medium'` |
