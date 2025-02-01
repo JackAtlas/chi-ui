@@ -113,6 +113,17 @@
   --chi-button-border-color-disabled: var(--chi-content-color-disabled);
 }
 
+.chi-button--dashed {
+  border-style: dashed;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+  }
+}
+
 @each $val in primary, success, warning, info, error {
   .chi-button--$(val) {
     --chi-button-bg-color: var(--chi-color-$(val));
@@ -175,7 +186,8 @@
       --chi-button-text-color-disabled: var(--chi-content-color-disabled);
     }
 
-    &.chi-button--text {
+    &.chi-button--text,
+    &.chi-button--dashed {
       --chi-button-text-color: var(--chi-color-$(val));
 
       --chi-button-text-color-hover: var(--chi-color-$(val)-light-2);

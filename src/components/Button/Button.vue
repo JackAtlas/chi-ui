@@ -5,6 +5,7 @@
     role="button"
     :class="{
       [`chi-button--block`]: block,
+      [`chi-button--dashed`]: dashed,
       [`chi-button--disabled`]: disabled,
       [`chi-button--transparent`]: transparent,
       [`chi-button--simple`]: simple,

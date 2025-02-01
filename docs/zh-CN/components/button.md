@@ -39,6 +39,12 @@ description: 基础通用组件，用于标记一组操作命令，由用户点�
 
 <preview path="../demo/Button/Text-Button.vue" title="文字按钮" description="添加 `text` 属性可以让按钮看起来和普通文字无异。"></preview>
 
+### 虚线按钮
+
+添加 `dashed` 属性可以将按钮变成虚线边框按钮。
+
+<preview path="../demo/Button/Dashed-Button.vue" title="虚线按钮" description="添加 `dashed` 属性可以将按钮变成虚线边框按钮。"></preview>
+
 ### 按钮大小
 
 内置三种大小，通过 `size` 设置。
