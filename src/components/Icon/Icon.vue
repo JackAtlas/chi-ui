@@ -1,10 +1,9 @@
 <template>
-  <i class="chi-icon" :style="{ [`font-size: ${scale}em`]: scale }">
+  <i class="chi-icon" :style="style">
     <g>
       <component
         :color="color"
         :is="icon"
-        :size="size"
         :stroke-width="strokeWidth"
         :default-class="defaultClass"
       />
@@ -23,4 +22,17 @@ defineOptions({
 const props = defineProps<IconProps>()
 
 const icon = computed(() => icons[toPascalCase(props.name)])
+const style = computed(() => {
+  if (props.scale) {
+    return {
+      fontSize: `${props.scale}em`,
+    }
+  } else if (props.size) {
+    return {
+      fontSize: props.size,
+    }
+  } else {
+    return {}
+  }
+})
 </script>
