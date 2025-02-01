@@ -83,6 +83,16 @@
   width: 100%;
 }
 
+.chi-button--small {
+  --chi-button-height: 24px;
+  --chi-button-h-padding: 10px;
+}
+
+.chi-button--large {
+  --chi-button-height: 40px;
+  --chi-button-h-padding: 20px;
+}
+
 .chi-button--transparent {
   --chi-button-bg-color: transparent;
   --chi-button-border-color: rgba(255, 255, 255, 0.6);
