@@ -8,7 +8,7 @@ export interface ButtonProps {
   circle?: boolean
   dashed?: boolean
   disabled?: boolean
-  iconAfter?: boolean
+  iconAfter?: string
   iconBefore?: string
   loading?: boolean
   simple?: boolean
