@@ -3,6 +3,8 @@
     class="chi-linker"
     :class="{ [`chi-linker--${type}`]: type, [`chi-linker--disabled`]: disabled }"
   >
+    <slot name="icon" />
+    <chi-icon class="chi-linker__icon" :name="icon" v-if="icon && !$slots.icon"></chi-icon>
     <slot />
   </a>
 </template>

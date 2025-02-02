@@ -63,3 +63,7 @@ a.chi-linker--disabled {
 .chi-linker + .chi-linker {
   margin-inline-start: var(--chi-linker-series-span);
 }
+
+.chi-linker__icon {
+  margin-inline-end: 3px;
+}
