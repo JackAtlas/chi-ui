@@ -104,3 +104,37 @@
   --chi-transition-opacity: opacity var(--chi-transition-base);
   --chi-transition-transform: transform var(--chi-transition-base);
 }
+
+:root.dark {
+  color-scheme: dark;
+
+  --chi-content-color-primary: rgba(255, 255, 255, 0.94);
+  --chi-content-color-base: rgba(255, 255, 255, 0.88);
+  --chi-content-color-secondary: rgba(255, 255, 255, 0.7);
+  --chi-content-color-disabled: rgba(255, 255, 255, 0.4);
+  --chi-content-color-placeholder: rgba(255, 255, 255, 0.3);
+  --chi-content-color-humble: rgba(255, 255, 255, 0.5);
+  --chi-content-color-reverse: rgba(255, 255, 255, 0.1);
+
+  --chi-bg-color-base: #181a1b;
+  --chi-bg-color-reverse: #fff;
+
+  --chi-border-color-base: rgba(255, 255, 255, 0.25);
+  --chi-border-color-light-1: rgba(255, 255, 255, 0.2);
+  --chi-border-color-light-2: rgba(255, 255, 255, 0.15);
+
+  --chi-fill-color-base: rgba(255, 255, 255, 0.06);
+  --chi-fill-color-secondary: rgba(255, 255, 255, 0.46);
+  --chi-fill-color-third: rgba(255, 255, 255, 0.36);
+  --chi-fill-color-disabled: rgba(255, 255, 255, 0.28);
+  --chi-fill-color-hover: rgba(255, 255, 255, 0.16);
+  --chi-fill-color-humble: rgba(255, 255, 255, 0.12);
+  --chi-fill-color-background: rgba(255, 255, 255, 0.06);
+  --chi-fill-color-reverse: #fff;
+
+  --chi-shadow-color-base: rgba(0, 0, 0, 0.7);
+  --chi-shadow-color-light-1: rgba(0, 0, 0, 0.6);
+  --chi-shadow-color-light-2: rgba(0, 0, 0, 0.5);
+  --chi-shadow-color-dark-1: rgba(0, 0, 0, 0.8);
+  --chi-shadow-color-dark-2: rgba(0, 0, 0, 0.9);
+}
