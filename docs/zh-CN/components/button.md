@@ -75,20 +75,20 @@ type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 
 ### 属性
 
-| 名称        | 类型                                                                   | 说明                                   | 默认值     |
-| ----------- | ---------------------------------------------------------------------- | -------------------------------------- | ---------- |
-| attr-type   | `ButtonAttrType`                                                       | 设置原生 `<button>` 元素的 `type` 属性 | `'button'` |
-| block       | `boolean`                                                              | 是否为块级元素，设置后宽度变为 `100%`  | `false`    |
-| circle      | `boolean`                                                              | 设置是否为圆形按钮                     | `false`    |
-| disabled    | `boolean`                                                              | 设置是否为禁用状态                     | `false`    |
-| icon-after  | `string`                                                               | 按钮后置图标的名称                     | `''`       |
-| icon-before | `string`                                                               | 按钮前置图标的名称                     | `''`       |
-| loading     | `boolean`                                                              | 设置是否为加载状态                     | `false`    |
-| simple      | `boolean`                                                              | 开启后，按钮将变为浅色系的简约风格     | `false`    |
-| size        | `'small'         \| 'medium'                               \| 'large'` | 按钮的大小                             | `'medium'` |
-| text        | `boolean`                                                              | 设置是否为文本按钮                     | `false`    |
-| transparent | `boolean`                                                              | 设置是否为透明按钮                     | `false`    |
-| type        | `ButtonType`                                                           | 设置按钮类型                           | `default`  |
+| 名称        | 类型             | 说明                                   | 默认值     |
+| ----------- | ---------------- | -------------------------------------- | ---------- |
+| attr-type   | `ButtonAttrType` | 设置原生 `<button>` 元素的 `type` 属性 | `'button'` |
+| block       | `boolean`        | 是否为块级元素，设置后宽度变为 `100%`  | `false`    |
+| circle      | `boolean`        | 设置是否为圆形按钮                     | `false`    |
+| disabled    | `boolean`        | 设置是否为禁用状态                     | `false`    |
+| icon-after  | `string`         | 按钮后置图标的名称                     | `''`       |
+| icon-before | `string`         | 按钮前置图标的名称                     | `''`       |
+| loading     | `boolean`        | 设置是否为加载状态                     | `false`    |
+| simple      | `boolean`        | 开启后，按钮将变为浅色系的简约风格     | `false`    |
+| size        | `ButtonSize`     | 按钮的大小                             | `'medium'` |
+| text        | `boolean`        | 设置是否为文本按钮                     | `false`    |
+| transparent | `boolean`        | 设置是否为透明按钮                     | `false`    |
+| type        | `ButtonType`     | 设置按钮类型                           | `default`  |
 
 ### 事件
 
