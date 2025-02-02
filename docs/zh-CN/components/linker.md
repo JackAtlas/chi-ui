@@ -25,6 +25,12 @@ description: 链接组件
 
 <preview path="../demo/Linker/Linker-Icon.vue" title="添加图标" description="使用 `icon` 属性或者同名插槽为链接添加前置图标。"></preview>
 
+### 下划线
+
+添加 `underline` 属性在鼠标移入链接时显示下划线。
+
+<preview path="../demo/Linker/Underline-Linker.vue" title="下划线" description="添加 `underline` 属性在鼠标移入链接时显示下划线。"></preview>
+
 ## API
 
 ### 预设类型
@@ -35,13 +41,14 @@ type LinkerType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 
 ### Linker 属性
 
-| 名称     | 类型                       | 说明                          | 默认值      |
-| -------- | -------------------------- | ----------------------------- | ----------- |
-| disabled | `boolean`                  | 设置是否为禁用状态            | `false`     |
-| icon     | `string`                   | 链接的前置图标名称            | `''`        |
-| target   | `HTMLAnchorElement.target` | 同 `<a>` 标签的 `target` 属性 | `''`        |
-| to       | `HTMLAnchorElement.href`   | 链接的目标地址                | `''`        |
-| type     | `LinkerType`               | 链接的类型                    | `'default'` |
+| 名称      | 类型                       | 说明                          | 默认值      |
+| --------- | -------------------------- | ----------------------------- | ----------- |
+| disabled  | `boolean`                  | 设置是否为禁用状态            | `false`     |
+| icon      | `string`                   | 链接的前置图标名称            | `''`        |
+| target    | `HTMLAnchorElement.target` | 同 `<a>` 标签的 `target` 属性 | `''`        |
+| to        | `HTMLAnchorElement.href`   | 链接的目标地址                | `''`        |
+| type      | `LinkerType`               | 链接的类型                    | `'default'` |
+| underline | `boolean`                  | 设置鼠标移入时是否显示下划线  | `false`     |
 
 ### Linker 事件
 
