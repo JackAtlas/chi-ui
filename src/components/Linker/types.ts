@@ -6,4 +6,5 @@ export interface LinkerProps {
   target?: HTMLAnchorElement['target']
   to?: HTMLHyperlinkElementUtils['href']
   type?: LinkerType
+  underline?: boolean
 }
