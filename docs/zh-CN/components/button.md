@@ -81,6 +81,9 @@ type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 | block       | `boolean`                                                              | 是否为块级元素，设置后宽度变为 `100%`  | `false`    |
 | circle      | `boolean`                                                              | 设置是否为圆形按钮                     | `false`    |
 | disabled    | `boolean`                                                              | 设置是否为禁用状态                     | `false`    |
+| icon-after  | `string`                                                               | 按钮后置图标的名称                     | `''`       |
+| icon-before | `string`                                                               | 按钮前置图标的名称                     | `''`       |
+| loading     | `boolean`                                                              | 设置是否为加载状态                     | `false`    |
 | simple      | `boolean`                                                              | 开启后，按钮将变为浅色系的简约风格     | `false`    |
 | size        | `'small'         \| 'medium'                               \| 'large'` | 按钮的大小                             | `'medium'` |
 | text        | `boolean`                                                              | 设置是否为文本按钮                     | `false`    |
@@ -95,6 +98,9 @@ type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 
 ### 插槽
 
-| 名称    | 说明           | 参数 |
-| ------- | -------------- | ---- |
-| default | 按钮的内容插槽 |      |
+| 名称        | 说明             | 参数 |
+| ----------- | ---------------- | ---- |
+| default     | 按钮的内容插槽   |      |
+| icon-after  | 按钮后置图标插槽 |      |
+| icon-before | 按钮前置图标插槽 |      |
+| loader      | 加载图标插槽     |      |
