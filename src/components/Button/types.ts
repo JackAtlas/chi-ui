@@ -8,6 +8,8 @@ export interface ButtonProps {
   circle?: boolean
   dashed?: boolean
   disabled?: boolean
+  iconAfter?: boolean
+  iconBefore?: string
   loading?: boolean
   simple?: boolean
   size?: ButtonSize

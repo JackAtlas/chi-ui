@@ -51,6 +51,12 @@ description: 基础通用组件，用于标记一组操作命令，由用户点�
 
 <preview path="../demo/Button/Button-Size.vue" title="按钮大小" description="内置三种大小，通过 `size` 设置。"></preview>
 
+### 添加图标
+
+通过 `icon-before` 及 `icon-after` 属性指定图标。
+
+<preview path="../demo/Button/Icon-Button.vue" title="添加图标" description="通过 `icon-before` 及 `icon-after` 属性指定图标。"></preview>
+
 ## API
 
 ### 预设类型

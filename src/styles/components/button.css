@@ -27,6 +27,7 @@
   --chi-button-h-padding: 14px;
   --chi-button-font-size: var(--chi-font-size-base);
   --chi-button-series-span: 8px;
+  --chi-button-icon-span: 6px;
 }
 
 .chi-button {
@@ -218,4 +219,15 @@
 .chi-button--text:active {
   background-color: transparent;
   border-color: transparent;
+}
+
+.chi-button__icon {
+  display: flex;
+  align-items: center;
+}
+
+.chi-button__icon + .chi-button__icon,
+.chi-button__icon + .chi-button__text,
+.chi-button__text + .chi-button__icon {
+  margin-inline-start: var(--chi-button-icon-span);
 }

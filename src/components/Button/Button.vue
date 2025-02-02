@@ -18,10 +18,23 @@
     :disabled="disabled || loading"
     :type="attrType"
   >
-    <slot name="loading" />
-    <slot name="icon-before" />
-    <slot />
-    <slot name="icon-after" />
+    <slot name="icon-before">
+      <chi-icon
+        class="chi-button__icon chi-button__icon-before"
+        :name="iconBefore"
+        v-if="iconBefore"
+      ></chi-icon>
+    </slot>
+    <span class="chi-button__text" v-if="$slots.default">
+      <slot />
+    </span>
+    <slot name="icon-after">
+      <chi-icon
+        class="chi-button__icon chi-button__icon-after"
+        :name="iconAfter"
+        v-if="iconAfter"
+      ></chi-icon>
+    </slot>
   </button>
 </template>
 
