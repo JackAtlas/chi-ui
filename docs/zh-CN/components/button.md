@@ -57,6 +57,12 @@ description: 基础通用组件，用于标记一组操作命令，由用户点�
 
 <preview path="../demo/Button/Icon-Button.vue" title="添加图标" description="通过 `icon-before` 及 `icon-after` 属性指定图标。"></preview>
 
+### 加载状态
+
+添加 `loading` 属性可以让按钮处于加载状态。
+
+<preview path="../demo/Button/Loading-Button.vue" title="加载状态" description="添加 `loading` 属性可以让按钮处于加载状态。"></preview>
+
 ## API
 
 ### 预设类型

@@ -18,6 +18,13 @@
     :disabled="disabled || loading"
     :type="attrType"
   >
+    <slot name="loader" v-if="loading && $slots.loader" />
+    <chi-icon
+      class="chi-button__icon chi-button__icon-loading"
+      effect="spin-in"
+      name="loader"
+      v-if="loading && !$slots.loader"
+    ></chi-icon>
     <slot name="icon-before">
       <chi-icon
         class="chi-button__icon chi-button__icon-before"
