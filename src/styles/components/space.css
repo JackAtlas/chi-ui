@@ -1,0 +1,26 @@
+.chi-space {
+  --chi-space-v-gap: 8px;
+  --chi-space-h-gap: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--chi-space-v-gap) var(--chi-space-h-gap);
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+  color: var(--chi-content-color-base);
+}
+
+.chi-space--vertical {
+  flex-direction: column;
+}
+
+.chi-space--no-wrap {
+  flex-wrap: nowrap;
+}
+
+.chi-space__item {
+  display: flex;
+  max-width: 100%;
+}

@@ -4,7 +4,9 @@ import { Button } from './Button'
 import { Icon } from './Icon'
 import { Linker } from './Linker'
 
-const components = [Button, Icon, Linker]
+import { Space } from './Space'
+
+const components = [Button, Icon, Linker, Space]
 
 function createInstall(components: any[] = []) {
   return function install(app: App) {
