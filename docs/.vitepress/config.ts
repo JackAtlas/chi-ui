@@ -25,6 +25,7 @@ export default defineConfig({
         items: [
           { text: 'Button | 按钮', link: 'zh-CN/components/button' },
           { text: 'Icon | 图标', link: 'zh-CN/components/icon' },
+          { text: 'Linker | 链接', link: 'zh-CN/components/linker' },
         ],
       },
     ],
