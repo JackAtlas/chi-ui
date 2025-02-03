@@ -30,7 +30,10 @@ export default defineConfig({
       },
       {
         text: '布局',
-        items: [{ text: 'Space | 空间', link: 'zh-CN/components/space' }],
+        items: [
+          { text: 'Divider | 分割线', link: 'zh-CN/components/divider' },
+          { text: 'Space | 空间', link: 'zh-CN/components/space' },
+        ],
       },
     ],
 
