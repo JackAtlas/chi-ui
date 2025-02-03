@@ -6,11 +6,21 @@ export type SpaceJustify =
   | 'space-around'
   | 'space-between'
   | 'space-evenly'
-export type SpaceSize = 'small' | 'default' | 'large' | 'number' | [number, number]
+export type SpaceSize = 'small' | 'default' | 'large' | number | [number, number]
 
 export interface SpaceProps {
   align?: SpaceAlign
+  inline?: boolean
   justify?: SpaceJustify
+  noWrap?: boolean
   size?: SpaceSize
   vertical?: boolean
+}
+
+export interface ClassType {
+  'chi-space--inline'?: boolean
+  'chi-space--large'?: boolean
+  'chi-space--no-wrap'?: boolean
+  'chi-space--small'?: boolean
+  'chi-space--vertical'?: boolean
 }

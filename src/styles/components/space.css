@@ -20,6 +20,20 @@
   flex-wrap: nowrap;
 }
 
+.chi-space--inline {
+  display: inline-flex;
+}
+
+.chi-space--small {
+  --chi-space-v-gap: 4px;
+  --chi-space-h-gap: 8px;
+}
+
+.chi-space--large {
+  --chi-space-v-gap: 12px;
+  --chi-space-h-gap: 16px;
+}
+
 .chi-space__item {
   display: flex;
   max-width: 100%;
