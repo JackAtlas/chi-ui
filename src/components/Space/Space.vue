@@ -50,7 +50,6 @@ const style = computed(() => {
 
   if (size && typeof size !== 'string') {
     const normalizedSize = Array.isArray(size) ? size : [size, size]
-    console.log(normalizedSize)
     style['--chi-space-v-gap'] = `${normalizedSize[0]}px`
     style['--chi-space-h-gap'] = `${normalizedSize[1]}px`
   }
