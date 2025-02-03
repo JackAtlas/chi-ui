@@ -1,0 +1,55 @@
+.chi-divider {
+  --chi-divider-border-color: var(--chi-border-color-light-2);
+  --chi-divider-border: var(--chi-border-shape) var(--chi-divider-border-color);
+  --chi-divider-v-margin: 24px;
+  --chi-divider-v-margin-text: 14px;
+  --chi-divider-h-margin: 8px;
+  --chi-divider-text-color: var(--chi-content-color-base);
+  --chi-divider-text-v-padding: 0;
+  --chi-divider-text-h-padding: 14px;
+  --chi-divider-text-size-primary: var(--chi-font-size-primary);
+
+  display: flex;
+  padding: 0;
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+  border-top: var(--chi-divider-border);
+  color: var(--chi-content-color-base);
+}
+
+.chi-divider--horizontal {
+  width: 100%;
+  margin: var(--chi-divider-v-margin) 0;
+  clear: both;
+}
+
+.chi-divider--with-text {
+  margin: var(--chi-divider-v-margin-text) 0;
+  text-align: center;
+  white-space: nowrap;
+  border-top: 0;
+
+  &::after,
+  &::before {
+    content: '';
+    position: relative;
+    top: 50%;
+    width: 50%;
+    border-top: var(--chi-divider-border);
+    transform: translateY(50%);
+  }
+}
+
+.chi-divider--dashed {
+  --chi-border-style: dashed;
+}
+
+.chi-divider__text {
+  display: inline-block;
+  padding: var(--chi-divider-text-v-padding) var(--chi-divider-text-h-padding);
+  text-align: center;
+  white-space: nowrap;
+  color: var(--chi-divider-text-color);
+}
