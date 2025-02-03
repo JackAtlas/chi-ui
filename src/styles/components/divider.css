@@ -58,8 +58,20 @@
   width: 5%;
 }
 
-.chi-divider--dashed {
-  --chi-border-style: dashed;
+.chi-divider--dashed,
+.chi-divider--dashed::before,
+.chi-divider--dashed::after {
+  border-top-style: dashed;
+}
+
+.chi-divider--vertical {
+  display: inline-block;
+  position: relative;
+  height: 14px;
+  margin: 0 var(--chi-divider-h-margin);
+  vertical-align: middle;
+  border-inline-start: var(--chi-divider-border);
+  border-top: 0;
 }
 
 .chi-divider__text {
