@@ -21,13 +21,16 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: '组件',
+        text: '基础',
         items: [
           { text: 'Button | 按钮', link: 'zh-CN/components/button' },
           { text: 'Icon | 图标', link: 'zh-CN/components/icon' },
           { text: 'Linker | 链接', link: 'zh-CN/components/linker' },
-          { text: 'Space | 空间', link: 'zh-CN/components/space' },
         ],
+      },
+      {
+        text: '布局',
+        items: [{ text: 'Space | 空间', link: 'zh-CN/components/space' }],
       },
     ],
 
