@@ -42,6 +42,22 @@
   }
 }
 
+.chi-divider--with-text-left::before {
+  width: 5%;
+}
+
+.chi-divider--with-text-left::after {
+  width: 95%;
+}
+
+.chi-divider--with-text-right::before {
+  width: 95%;
+}
+
+.chi-divider--with-text-right::after {
+  width: 5%;
+}
+
 .chi-divider--dashed {
   --chi-border-style: dashed;
 }
