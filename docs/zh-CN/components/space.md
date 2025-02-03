@@ -25,6 +25,12 @@ description: 快速为一系列元素提供统一的间距
 
 <preview path="../demo/Space/Space-Size.vue" title="不同大小" description="内置了三种大小，通过 `size` 设置，也可以传入数字或者数组自定义。"></preview>
 
+### 各种布局
+
+通过 `justify` 可以设置主轴的对齐方式，还可以通过 `align` 设置交叉轴的对齐方式。
+
+<preview path="../demo/Space/Space-Justify.vue" title="各种布局" description="通过 `justify` 可以设置主轴的对齐方式，还可以通过 `align` 设置交叉轴的对齐方式。"></preview>
+
 ## API
 
 ### 预设类型
