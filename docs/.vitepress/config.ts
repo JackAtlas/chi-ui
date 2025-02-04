@@ -32,6 +32,7 @@ export default defineConfig({
         text: '布局',
         items: [
           { text: 'Divider | 分割线', link: 'zh-CN/components/divider' },
+          { text: 'Grid | 栅格布局', link: 'zh-CN/components/grid' },
           { text: 'Space | 空间', link: 'zh-CN/components/space' },
         ],
       },
