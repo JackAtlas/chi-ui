@@ -81,3 +81,8 @@
   white-space: nowrap;
   color: var(--chi-divider-text-color);
 }
+
+.chi-divider--primary .chi-divider__text {
+  font-size: var(--chi-divider-text-size-primary);
+  font-weight: 500;
+}

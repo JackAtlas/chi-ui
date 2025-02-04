@@ -18,7 +18,7 @@ const props = defineProps<DividerProps>()
 const slots = defineSlots()
 
 const className = computed(() => {
-  const { dashed, textPosition, vertical } = props
+  const { dashed, primary, textPosition, vertical } = props
   const className: ClassType = {
     'chi-divider': true,
     'chi-divider--dashed': dashed,
@@ -29,6 +29,7 @@ const className = computed(() => {
     className['chi-divider--horizontal'] = true
     if (slots['default']) {
       className['chi-divider--with-text'] = true
+      if (primary) className['chi-divider--primary'] = true
       if (textPosition === 'left') className['chi-divider--with-text-left'] = true
       if (textPosition === 'right') className['chi-divider--with-text-right'] = true
     }
