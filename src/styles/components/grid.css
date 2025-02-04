@@ -1,0 +1,9 @@
+.chi-grid {
+  display: grid;
+  position: relative;
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+  color: var(--chi-content-color-base);
+}
