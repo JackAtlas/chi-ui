@@ -1,11 +1,12 @@
 <template>
-  <div class="chi-cell" :style="style">
+  <div :class="className" :style="style">
     <slot />
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, inject } from 'vue'
+import type { CellFlex } from '../Grid/types'
 import type { CellProps } from './types'
 
 defineOptions({
@@ -14,7 +15,41 @@ defineOptions({
 
 const columns = inject('columns')
 
-const props = defineProps<CellProps>()
+const props = withDefaults(defineProps<CellProps>(), {
+  useFlex: null,
+})
+
+const cellFlex: CellFlex = inject('cell-flex')
+
+const className = computed(() => {
+  const { useFlex } = props
+  const className: Record<string, boolean> = {
+    'chi-cell': true,
+  }
+  if (useFlex !== false) {
+    if (useFlex !== null) {
+      className['chi-cell--flex'] = true
+      if (typeof useFlex === 'object') {
+        if (useFlex.align) className[`chi-cell--${useFlex.align}`] = true
+        if (useFlex.justify) className[`chi-cell--${useFlex.justify}`] = true
+      } else if (useFlex === true) {
+        className['chi-cell--top'] = true
+        className['chi-cell--start'] = true
+      }
+    } else if (cellFlex !== false) {
+      className['chi-cell--flex'] = true
+      if (typeof cellFlex === 'object') {
+        if (cellFlex.align) className[`chi-cell--${cellFlex.align}`] = true
+        if (cellFlex.justify) className[`chi-cell--${cellFlex.justify}`] = true
+      } else if (cellFlex === true) {
+        className[`chi-cell--top`] = true
+        className[`chi-cell--start`] = true
+      }
+    }
+  }
+
+  return className
+})
 
 const style = computed(() => {
   const { bottom, height, left, right, top, width } = props

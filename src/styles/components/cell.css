@@ -1,0 +1,39 @@
+.chi-cell--flex {
+  display: flex;
+}
+
+.chi-cell--top {
+  align-items: start;
+}
+
+.chi-cell--middle {
+  align-items: center;
+}
+
+.chi-cell--bottom {
+  align-items: end;
+}
+
+.chi-cell--start {
+  justify-content: start;
+}
+
+.chi-cell--center {
+  justify-content: center;
+}
+
+.chi-cell--end {
+  justify-content: end;
+}
+
+.chi-cell--space-around {
+  justify-content: space-around;
+}
+
+.chi-cell--space-between {
+  justify-content: space-between;
+}
+
+.chi-cell--space-evenly {
+  justify-content: space-evenly;
+}

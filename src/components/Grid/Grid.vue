@@ -13,6 +13,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<GridProps>(), {
+  cellFlex: false,
   columns: 24,
 })
 
@@ -96,4 +97,5 @@ const style = computed(() => {
 })
 
 provide('columns', props.columns)
+provide('cell-flex', props.cellFlex)
 </script>
