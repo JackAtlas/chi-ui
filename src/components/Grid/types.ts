@@ -3,4 +3,5 @@ export interface GridProps {
   autoRows?: number | string | (number | string)[]
   columns?: number | string | (number | string)[]
   gap?: number | [number, number]
+  rows?: number | string | (number | string)[]
 }

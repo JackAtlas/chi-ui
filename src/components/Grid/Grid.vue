@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<GridProps>(), {
 })
 
 const style = computed(() => {
-  const { autoColumns, autoRows, columns, gap } = props
+  const { autoColumns, autoRows, columns, gap, rows } = props
   const style: Record<string, string> = {}
 
   if (typeof autoColumns === 'string') {
@@ -53,7 +53,7 @@ const style = computed(() => {
   }
 
   if (typeof columns === 'string') {
-    style['grid-template'] = columns
+    style['grid-template-columns'] = columns
   } else if (typeof columns === 'number') {
     style['grid-template-columns'] = `repeat(${columns}, 1fr)`
   } else if (Array.isArray(columns)) {
@@ -66,6 +66,22 @@ const style = computed(() => {
       }
     })
     style['grid-template-columns'] = gtcStr.trimStart()
+  }
+
+  if (typeof rows === 'string') {
+    style['grid-template-rows'] = rows
+  } else if (typeof rows === 'number') {
+    style['grid-template-rows'] = `repeat(${rows}, 1fr)`
+  } else if (Array.isArray(rows)) {
+    let gtrStr = ''
+    rows.forEach((i) => {
+      if (typeof i === 'string') {
+        gtrStr = `${gtrStr} ${i}`
+      } else if (typeof i === 'number') {
+        gtrStr = `${gtrStr} ${i}fr`
+      }
+    })
+    style['grid-template-rows'] = gtrStr.trimStart()
   }
 
   if (gap) {
