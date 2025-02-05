@@ -17,8 +17,24 @@ const props = withDefaults(defineProps<GridProps>(), {
 })
 
 const style = computed(() => {
-  const { autoRows, columns, gap } = props
+  const { autoColumns, autoRows, columns, gap } = props
   const style: Record<string, string> = {}
+
+  if (typeof autoColumns === 'string') {
+    style['grid-auto-columns'] = autoColumns
+  } else if (typeof autoColumns === 'number') {
+    style['grid-auto-columns'] = `${autoColumns}fr`
+  } else if (Array.isArray(autoColumns)) {
+    let acStr = ''
+    autoColumns.forEach((i) => {
+      if (typeof i === 'string') {
+        acStr = `${acStr} ${i}`
+      } else if (typeof i === 'number') {
+        acStr = `${acStr} ${i}fr`
+      }
+    })
+    style['grid-auto-columns'] = acStr.trimStart()
+  }
 
   if (typeof autoRows === 'string') {
     style['grid-auto-rows'] = autoRows
