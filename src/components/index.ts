@@ -9,7 +9,11 @@ import { Divider } from './Divider'
 import { Grid } from './Grid'
 import { Space } from './Space'
 
-const components = [Button, Icon, Linker, Cell, Divider, Grid, Space]
+import { Input } from './Input'
+
+import { Mask } from './Mask'
+
+const components = [Button, Icon, Linker, Cell, Divider, Grid, Space, Input, Mask]
 
 function createInstall(components: any[] = []) {
   return function install(app: App) {

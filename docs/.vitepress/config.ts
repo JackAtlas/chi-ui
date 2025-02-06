@@ -36,6 +36,10 @@ export default defineConfig({
           { text: 'Space | 空间', link: 'zh-CN/components/space' },
         ],
       },
+      {
+        text: '表单',
+        items: [{ text: 'Input | 输入框', link: 'zh-CN/components/input' }],
+      },
     ],
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/JackAtlas/chi-ui' }],
