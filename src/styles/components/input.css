@@ -1,0 +1,78 @@
+.chi-input-wrapper,
+.chi-input-wrapper *,
+.chi-input-wrapper *::before,
+.chi-input-wrapper *::after {
+  box-sizing: border-box;
+}
+
+.chi-input,
+.chi-input *,
+.chi-input *::before,
+.chi-input *::after {
+  box-sizing: border-box;
+}
+
+.chi-input-wrapper {
+  --chi-input-bg-color: var(--chi-fill-color-base);
+  --chi-input-border-color: var(--chi-border-color-base);
+
+  --chi-input-border-color-hover: var(--chi-color-primary-light-1);
+
+  --chi-input-border-color-focus: var(--chi-input-border-color-hover);
+
+  --chi-input-bg-color-disabled: var(--chi-fill-color-humble);
+
+  --chi-input-control-text-color: var(--chi-content-color-base);
+
+  --chi-input-height: 32px;
+  --chi-input-v-padding: 4px;
+  --chi-input-h-padding: 8px;
+  --chi-input-padding: var(--chi-input-v-padding) var(--chi-input-h-padding);
+  --chi-input-line-height: var(--chi-line-height-base);
+  --chi-input-radius: var(--chi-radius-base);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  background-color: var(--chi-input-bg-color);
+  border-radius: var(--chi-input-radius);
+  color: var(--chi-content-color-base);
+}
+
+.chi-input {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 1 0 0;
+  width: auto;
+  min-width: 0;
+  height: var(--chi-input-height);
+  padding: var(--chi-input-padding);
+  background-color: transparent;
+  border: var(--chi-border-shape) var(--chi-input-border-color);
+  border-radius: 0;
+  cursor: text;
+  outline: 0;
+  transition: var(--chi-transition-background), var(--chi-transition-border),
+    var(--chi-transition-shadow);
+}
+
+.chi-input__control {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  font-size: inherit;
+  line-height: var(--chi-input-line-height);
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--chi-input-radius);
+  color: var(--chi-input-control-text-color);
+  outline: 0;
+  transition: var(--chi-transition-color);
+}
