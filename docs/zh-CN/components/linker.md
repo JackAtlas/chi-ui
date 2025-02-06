@@ -1,9 +1,9 @@
 ---
-title: Linker
+title: Linker 链接
 description: 链接组件
 ---
 
-# Linker
+# Linker 链接
 
 ## 代码示例
 

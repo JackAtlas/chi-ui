@@ -1,5 +1,5 @@
 ---
-title: Divider
+title: Divider 分割线
 description: 间隔内容的分割线，用于对不同章节的文本段落进行分割或者对行内元素进行分割。
 ---
 

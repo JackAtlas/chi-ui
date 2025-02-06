@@ -1,9 +1,9 @@
 ---
-title: Icon
+title: Icon 图标
 description: Chi UI 使用 Lucide 图标库提供的内部图标。
 ---
 
-# Icon
+# Icon 图标
 
 Chi UI 使用 Lucide 图标库提供的内部图标。
 

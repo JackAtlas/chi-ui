@@ -1,9 +1,9 @@
 ---
-title: Space
+title: Space 间距
 description: 快速为一系列元素提供统一的间距
 ---
 
-# Space
+# Space 间距
 
 ## 代码示例
 

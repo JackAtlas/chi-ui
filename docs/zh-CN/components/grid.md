@@ -1,5 +1,5 @@
 ---
-title: Grid
+title: Grid 栅格布局
 description: 二维栅格布局组件，基于行和列来定义区域块，用于快捷地创建稳健的纵横交错布局。
 ---
 
