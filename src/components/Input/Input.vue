@@ -5,8 +5,9 @@
       <slot name="before-action" />
     </div>
     <div :class="className">
-      <div class="chi-input__prefix-wrapper" v-if="$slots.prefix">
+      <div class="chi-input__prefix-wrapper" v-if="$slots.prefix || prefix">
         <slot name="prefix" />
+        <Icon class="chi-input__icon" :name="prefix" v-if="prefix && !$slots.prefix" />
       </div>
       <input
         class="chi-input__control"
@@ -16,10 +17,22 @@
         :spellcheck="spellcheck"
         :type="type"
         v-model="innerValue"
+        @blur="handleBlur"
+        @change="handleChange"
+        @focus="handleFocus"
         @input="handleInput"
       />
-      <div class="chi-input__suffix-wrapper" v-if="$slots.suffix">
+      <div class="chi-input__suffix-wrapper" v-if="$slots.suffix || clearable || suffix">
         <slot name="suffix" />
+        <div class="chi-input__icon chi-input__icon--placeholder" v-if="clearable"></div>
+        <Button
+          circle
+          class="chi-input__icon chi-input__clear"
+          icon-before="circle-x"
+          v-if="showClear"
+          @click="clear"
+        ></Button>
+        <Icon class="chi-input__icon" :name="suffix" v-if="suffix && !$slots.suffix" />
       </div>
     </div>
     <div class="chi-input__after" v-if="after && !$slots.afterAction">{{ after }}</div>
@@ -32,6 +45,9 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import type { InputEmits, InputProps, ValueType } from './types.ts'
+import Button from '../Button/Button.vue'
+import Icon from '../Icon/Icon.vue'
+
 defineOptions({
   name: 'chi-input',
 })
@@ -46,6 +62,7 @@ const props = withDefaults(defineProps<InputProps>(), {
 const emits = defineEmits<InputEmits>()
 
 const innerValue = ref(props.value)
+const isFocus = ref(false)
 
 const slots = defineSlots()
 
@@ -73,8 +90,23 @@ const className = computed(() => {
 
   return className
 })
+
+const handleChange = () => {
+  if (!props.sync) emits('update:value', innerValue.value)
+}
 const handleInput = () => {
-  emits('update:value', innerValue.value)
+  if (props.sync) emits('update:value', innerValue.value)
+}
+
+const handleFocus = () => {
+  isFocus.value = true
+}
+const handleBlur = () => {
+  isFocus.value = false
+}
+const clear = () => {
+  innerValue.value = ''
+  emits('update:value', '')
 }
 
 watch(
@@ -83,4 +115,8 @@ watch(
     innerValue.value = newValue
   },
 )
+
+const showClear = computed(() => {
+  return props.clearable && !props.disabled && !!innerValue.value && isFocus.value
+})
 </script>
