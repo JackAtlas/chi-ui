@@ -48,4 +48,24 @@ describe('Input.vue', () => {
     await wrapper.setProps({ value: 'prop update' })
     expect(input.element.value).toBe('prop update')
   })
+
+  it.only('clearable', async () => {
+    const wrapper = mount(Input, {
+      props: {
+        clearable: true,
+        type: 'text',
+        value: 'test',
+      },
+      global: {
+        stubs: ['Icon'],
+      },
+    })
+
+    expect(wrapper.find('.chi-input__clear').exists()).toBeFalsy()
+    const input = wrapper.get('input')
+    await input.trigger('focus')
+    expect(wrapper.find('.chi-input__clear').exists()).toBeTruthy()
+    await wrapper.get('.chi-input__clear').trigger('click')
+    expect(input.element.value).toBe('')
+  })
 })
