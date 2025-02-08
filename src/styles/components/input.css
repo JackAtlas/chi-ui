@@ -23,6 +23,13 @@
   --chi-input-bg-color-disabled: var(--chi-fill-color-humble);
 
   --chi-input-control-text-color: var(--chi-content-color-base);
+  --chi-input-control-text-color-disabled: var(--chi-content-color-disabled);
+
+  --chi-input-placeholder-color: var(--chi-content-color-placeholder);
+
+  --chi-input-icon-color: var(--chi-content-color-secondary);
+  --chi-input-icon-color-hover: var(--chi-color-primary);
+  --chi-input-icon-color-disabled: var(--chi-input-control-text-color-disabled);
 
   --chi-input-height: 32px;
   --chi-input-v-padding: 4px;
@@ -55,11 +62,34 @@
   padding: var(--chi-input-padding);
   background-color: transparent;
   border: var(--chi-border-shape) var(--chi-input-border-color);
-  border-radius: 0;
+  border-radius: var(--chi-input-radius);
   cursor: text;
   outline: 0;
   transition: var(--chi-transition-background), var(--chi-transition-border),
     var(--chi-transition-shadow);
+}
+
+.chi-input--small {
+  --chi-input-height: 24px;
+  --chi-input-v-padding: 1px;
+}
+
+.chi-input--large {
+  --chi-input-height: 40px;
+  --chi-input-v-padding: 7px;
+}
+
+.chi-input--disabled {
+  background-color: var(--chi-input-bg-color-disabled);
+  cursor: not-allowed;
+}
+
+.chi-input--disabled,
+.chi-input--disabled:hover,
+.chi-input--disabled:focus,
+.chi-input--disabled:focus-within {
+  border-color: var(--chi-border-color-base);
+  box-shadow: none;
 }
 
 .chi-input__control {
@@ -75,4 +105,71 @@
   color: var(--chi-input-control-text-color);
   outline: 0;
   transition: var(--chi-transition-color);
+
+  &::placeholder {
+    color: var(--chi-input-placeholder-color);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.chi-input--disabled .chi-input__control {
+  pointer-events: none;
+  color: var(--chi-input-control-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.chi-input__prefix-wrapper,
+.chi-input__suffix-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.chi-input__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--chi-input-icon-color);
+  user-select: none;
+}
+
+.chi-input__prefix {
+  margin-inline-end: 4px;
+}
+
+.chi-input__suffix {
+  margin-inline-start: 4px;
+  transition: var(--chi-transition-opacity);
+}
+
+.chi-input__icon--placeholder {
+  min-width: 14px;
+  min-height: 1px;
+  margin-inline-start: 4px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.chi-input__clear {
+  appearance: none;
+  padding: 0;
+  background: transparent;
+  border-color: initial;
+  border-image: initial;
+  border-style: initial;
+  border-width: 0;
+  outline: 0;
+}
+
+.chi-input__clear,
+.chi-input__loading {
+  position: absolute;
+  inset-inline-start: 0;
+  min-width: 14px;
+  margin-inline-start: 4px;
+  cursor: pointer;
 }

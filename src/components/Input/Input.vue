@@ -1,5 +1,5 @@
 <template>
-  <div class="chi-input-wrapper">
+  <div class="chi-input-wrapper" ref="wrapperNode">
     <div class="chi-input__before" v-if="before && !$slots.beforeAction">{{ before }}</div>
     <div class="chi-input__before chi-input__before-action" v-if="$slots.beforeAction">
       <slot name="before-action" />
@@ -7,7 +7,9 @@
     <div :class="className">
       <div class="chi-input__prefix-wrapper" v-if="$slots.prefix || prefix">
         <slot name="prefix" />
-        <Icon class="chi-input__icon" :name="prefix" v-if="prefix && !$slots.prefix" />
+        <div class="chi-input__icon chi-input__prefix">
+          <Icon :name="prefix" v-if="prefix && !$slots.prefix" />
+        </div>
       </div>
       <input
         class="chi-input__control"
@@ -17,9 +19,7 @@
         :spellcheck="spellcheck"
         :type="type"
         v-model="innerValue"
-        @blur="handleBlur"
         @change="handleChange"
-        @focus="handleFocus"
         @input="handleInput"
       />
       <div class="chi-input__suffix-wrapper" v-if="$slots.suffix || clearable || suffix">
@@ -32,7 +32,9 @@
           v-if="showClear"
           @click="clear"
         ></Button>
-        <Icon class="chi-input__icon" :name="suffix" v-if="suffix && !$slots.suffix" />
+        <div class="chi-input__icon chi-input__suffix">
+          <Icon class="chi-input__icon" :name="suffix" v-if="suffix && !$slots.suffix" />
+        </div>
       </div>
     </div>
     <div class="chi-input__after" v-if="after && !$slots.afterAction">{{ after }}</div>
@@ -43,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import type { InputEmits, InputProps, ValueType } from './types.ts'
 import Button from '../Button/Button.vue'
 import Icon from '../Icon/Icon.vue'
@@ -61,8 +63,9 @@ const props = withDefaults(defineProps<InputProps>(), {
 
 const emits = defineEmits<InputEmits>()
 
+const wrapperNode = ref<HTMLElement>()
 const innerValue = ref(props.value)
-const isFocus = ref(false)
+const isCursorInside = ref(false)
 
 const slots = defineSlots()
 
@@ -92,18 +95,12 @@ const className = computed(() => {
 })
 
 const handleChange = () => {
-  if (!props.sync) emits('update:value', innerValue.value)
+  emits('update:value', innerValue.value)
 }
 const handleInput = () => {
   if (props.sync) emits('update:value', innerValue.value)
 }
 
-const handleFocus = () => {
-  isFocus.value = true
-}
-const handleBlur = () => {
-  isFocus.value = false
-}
 const clear = () => {
   innerValue.value = ''
   emits('update:value', '')
@@ -117,6 +114,22 @@ watch(
 )
 
 const showClear = computed(() => {
-  return props.clearable && !props.disabled && !!innerValue.value && isFocus.value
+  return props.clearable && !props.disabled && !!innerValue.value && isCursorInside.value
+})
+
+const mouseoverHandler = () => {
+  isCursorInside.value = true
+}
+const mouseoutHandler = () => {
+  isCursorInside.value = false
+}
+
+onMounted(() => {
+  wrapperNode.value?.addEventListener('mouseover', mouseoverHandler)
+  wrapperNode.value?.addEventListener('mouseleave', mouseoutHandler)
+})
+onUnmounted(() => {
+  wrapperNode.value?.removeEventListener('mouseover', mouseoverHandler)
+  wrapperNode.value?.removeEventListener('mouseleave', mouseoutHandler)
 })
 </script>
