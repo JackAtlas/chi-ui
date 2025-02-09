@@ -1,0 +1,20 @@
+<template>
+  <chi-space vertical>
+    <chi-input before="https://" placeholder="chi-ui">
+      <template #after>.com</template>
+    </chi-input>
+    <chi-input placeholder="chi-ui">
+      <template #after-action>
+        <chi-button icon-before="search" type="primary">搜索</chi-button>
+      </template>
+    </chi-input>
+    <chi-input placeholder="chi-ui">
+      <template #before-action>
+        <chi-button>Before</chi-button>
+      </template>
+      <template #after-action>
+        <chi-button>After</chi-button>
+      </template>
+    </chi-input>
+  </chi-space>
+</template>

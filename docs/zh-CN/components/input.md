@@ -44,3 +44,11 @@ description: 通过键入内容输入数据，是最基础的表单域的包装�
 默认情况下双向绑定是基于 `change` 事件，添加了 `sync` 属性后将变为基于 `input` 事件。
 
 <preview path="../demo/Input/Input-Sync.vue" title="同步输入" description="默认情况下双向绑定是基于 `change` 事件，添加了 `sync` 属性后将变为基于 `input` 事件。"></preview>
+
+### 前后置插槽
+
+使用 `before` 和 `after` 属性或插槽可以将一些内容与输入框组合。
+
+如果你想要一个按钮、选择器或是其他控件，应该使用 `before-action` 和 `after-action` 插槽。
+
+<preview path="../demo/Input/Input-Action.vue" title="前后置插槽" description="使用 `before` 和 `after` 插槽可以将一些内容与输入框组合。如果你想要一个按钮、选择器或是其他控件，应该使用 `before-action` 和 `after-action` 插槽。"></preview>
