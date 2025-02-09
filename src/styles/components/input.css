@@ -31,11 +31,15 @@
   --chi-input-icon-color-hover: var(--chi-color-primary);
   --chi-input-icon-color-disabled: var(--chi-input-control-text-color-disabled);
 
+  --chi-input-before-bg-color: var(--chi-fill-color-background);
+  --chi-input-after-bg-color: var(--chi-fill-color-background);
+
   --chi-input-height: 32px;
   --chi-input-v-padding: 4px;
   --chi-input-h-padding: 8px;
   --chi-input-padding: var(--chi-input-v-padding) var(--chi-input-h-padding);
   --chi-input-line-height: var(--chi-line-height-base);
+  --chi-input-border: var(--chi-border-shape) var(--chi-input-border-color);
   --chi-input-radius: var(--chi-radius-base);
 
   position: relative;
@@ -46,6 +50,7 @@
   font-family: var(--chi-font-family-base);
   font-size: var(--chi-font-size-base);
   font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
   background-color: var(--chi-input-bg-color);
   border-radius: var(--chi-input-radius);
   color: var(--chi-content-color-base);
@@ -55,18 +60,46 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  flex: 1 0 0;
-  width: auto;
-  min-width: 0;
+  width: 100%;
   height: var(--chi-input-height);
   padding: var(--chi-input-padding);
-  background-color: transparent;
+  background-color: var(--chi-input-bg-color);
   border: var(--chi-border-shape) var(--chi-input-border-color);
   border-radius: var(--chi-input-radius);
   cursor: text;
   outline: 0;
   transition: var(--chi-transition-background), var(--chi-transition-border),
     var(--chi-transition-shadow);
+}
+
+.chi-input--before,
+.chi-input--after,
+.chi-input--before-action,
+.chi-input--after-action {
+  flex: 1 0 0;
+  width: auto;
+  min-width: 0;
+  background-color: transparent;
+}
+
+.chi-input--before,
+.chi-input--before-action {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+.chi-input--after,
+.chi-input--after-action {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.chi-input--before-action {
+  border-inline-start-color: transparent;
+}
+
+.chi-input--after-action {
+  border-inline-end-color: transparent;
 }
 
 .chi-input--small {
@@ -172,4 +205,69 @@
   min-width: 14px;
   margin-inline-start: 4px;
   cursor: pointer;
+}
+
+.chi-input__before,
+.chi-input__after {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--chi-input-height);
+  padding: 0 var(--chi-input-h-padding);
+  border: var(--chi-input-border);
+}
+
+.chi-input__before {
+  background-color: var(--chi-input-before-bg-color);
+  border-start-start-radius: var(--chi-input-radius);
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+  border-end-start-radius: var(--chi-input-radius);
+  border-inline-end: 0;
+}
+
+.chi-input__after {
+  background-color: var(--chi-input-after-bg-color);
+  border-start-start-radius: 0;
+  border-start-end-radius: var(--chi-input-radius);
+  border-end-end-radius: var(--chi-input-radius);
+  border-end-start-radius: 0;
+  border-inline-start: 0;
+}
+
+.chi-input__before-action,
+.chi-input__after-action {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: var(--chi-input-height);
+}
+
+.chi-input__before-action {
+  margin-inline-end: -1px;
+  background-color: transparent;
+}
+
+.chi-input__after-action {
+  margin-inline-start: -1px;
+  background-color: transparent;
+}
+
+.chi-input__before-action > .chi-button {
+  width: calc(100% + 2 * var(--chi-input-h-padding));
+  height: 100%;
+  border-start-start-radius: var(--chi-input-radius);
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+  border-end-start-radius: var(--chi-input-radius);
+}
+
+.chi-input__after-action > .chi-button {
+  width: calc(100% + 2 * var(--chi-input-h-padding));
+  height: 100%;
+  border-start-start-radius: 0;
+  border-start-end-radius: var(--chi-input-radius);
+  border-end-end-radius: var(--chi-input-radius);
+  border-end-start-radius: 0;
 }

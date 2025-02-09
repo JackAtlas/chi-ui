@@ -1,8 +1,11 @@
 <template>
   <div class="chi-input-wrapper" ref="wrapperNode">
-    <div class="chi-input__before" v-if="before && !$slots.beforeAction">{{ before }}</div>
-    <div class="chi-input__before chi-input__before-action" v-if="$slots.beforeAction">
+    <div class="chi-input__before-action" v-if="$slots['before-action']">
       <slot name="before-action" />
+    </div>
+    <div class="chi-input__before" v-if="before && !$slots.before">{{ before }}</div>
+    <div class="chi-input__before" v-if="$slots.before">
+      <slot name="before" />
     </div>
     <div :class="className">
       <div class="chi-input__prefix-wrapper" v-if="$slots.prefix || prefix">
@@ -37,8 +40,11 @@
         </div>
       </div>
     </div>
-    <div class="chi-input__after" v-if="after && !$slots.afterAction">{{ after }}</div>
-    <div class="chi-input__after chi-input__after-action" v-if="$slots.afterAction">
+    <div class="chi-input__after" v-if="after && !$slots.after">{{ after }}</div>
+    <div class="chi-input__after" v-if="$slots.after">
+      <slot name="after" />
+    </div>
+    <div class="chi-input__after-action" v-if="$slots['after-action']">
       <slot name="after-action" />
     </div>
   </div>
@@ -80,7 +86,7 @@ const autocompleteAttr = computed(() => {
 })
 
 const className = computed(() => {
-  const { disabled, size, type } = props
+  const { after, before, disabled, size, type } = props
   const { prepend } = slots
   const className: Record<string, boolean> = {
     'chi-input': true,
@@ -90,6 +96,10 @@ const className = computed(() => {
 
   if (size) className[`chi-input--${size}`] = true
   if (prepend) className['is-prepend'] = true
+  if (before || slots.before) className['chi-input--before'] = true
+  if (after || slots.after) className['chi-input--after'] = true
+  if (slots['before-action']) className['chi-input--before-action'] = true
+  if (slots['after-action']) className['chi-input--after-action'] = true
 
   return className
 })
