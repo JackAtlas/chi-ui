@@ -49,7 +49,7 @@ Cell 组件在纵横方向上分别有三个属性：`top`、`bottom`、`height`
 
 通过在 Cell 组件设置 `use-flex` 属性为 `true`，或传入 `{justify, align}` 对象来为单独 Cell 组件开启弹性布局。
 
-将 Cell 组件的 `use-flex` 属性显示地设置为 `false`，则可以禁用其弹性布局。
+将 Cell 组件的 `use-flex` 属性显式地设置为 `false`，则可以禁用其弹性布局。
 
 <preview path="../demo/Grid/Cell-Flex.vue" title="子元素弹性布局"></preview>
 
