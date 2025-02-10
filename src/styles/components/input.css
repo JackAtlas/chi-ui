@@ -19,6 +19,7 @@
   --chi-input-border-color-hover: var(--chi-color-primary-light-1);
 
   --chi-input-border-color-focus: var(--chi-input-border-color-hover);
+  --chi-input-shadow-color-focus: var(--chi-color-primary-opacity-6);
 
   --chi-input-bg-color-disabled: var(--chi-fill-color-humble);
 
@@ -70,6 +71,19 @@
   outline: 0;
   transition: var(--chi-transition-background), var(--chi-transition-border),
     var(--chi-transition-shadow);
+}
+
+.chi-input:hover {
+  z-index: 2;
+  border-color: var(--chi-input-border-color-hover);
+}
+
+.chi-input:focus,
+.chi-input:focus-within,
+.chi-input--focused {
+  z-index: 2;
+  border-color: var(--chi-input-border-color-focus);
+  box-shadow: var(--chi-shadow-focus) var(--chi-input-shadow-color-focus);
 }
 
 .chi-input--before,
@@ -168,6 +182,10 @@
   height: 100%;
   color: var(--chi-input-icon-color);
   user-select: none;
+}
+
+.chi-input__password {
+  cursor: pointer;
 }
 
 .chi-input__prefix {

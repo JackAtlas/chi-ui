@@ -20,9 +20,19 @@
         :disabled="disabled"
         :placeholder="placeholder"
         :spellcheck="spellcheck"
-        :type="type"
+        :type="inputType"
         v-model="innerValue"
+        @blur="
+          () => {
+            isFocused = false
+          }
+        "
         @change="handleChange"
+        @focus="
+          () => {
+            isFocused = true
+          }
+        "
         @input="handleInput"
       />
       <div class="chi-input__suffix-wrapper" v-if="$slots.suffix || clearable || suffix">
@@ -38,6 +48,17 @@
         <div class="chi-input__icon chi-input__suffix">
           <Icon class="chi-input__icon" :name="suffix" v-if="suffix && !$slots.suffix" />
         </div>
+      </div>
+      <div
+        class="chi-input__icon chi-input__password"
+        v-if="$props.type === 'password' && !$slots.password"
+        @click="togglePlain"
+      >
+        <Icon name="eye-off" v-if="plain"></Icon>
+        <Icon name="eye" v-else></Icon>
+      </div>
+      <div class="chi-input__icon chi-input__password" v-if="$slots.password" @click="togglePlain">
+        <slot name="password" :plain="plain" />
       </div>
     </div>
     <div class="chi-input__after" v-if="after && !$slots.after">{{ after }}</div>
@@ -72,6 +93,8 @@ const emits = defineEmits<InputEmits>()
 const wrapperNode = ref<HTMLElement>()
 const innerValue = ref(props.value)
 const isCursorInside = ref(false)
+const isFocused = ref(false)
+const plain = ref(false)
 
 const slots = defineSlots()
 
@@ -85,12 +108,25 @@ const autocompleteAttr = computed(() => {
   return autocomplete
 })
 
+const inputType = computed(() => {
+  if (props.type !== 'password') {
+    return props.type
+  } else {
+    if (plain.value) {
+      return 'text'
+    } else {
+      return 'password'
+    }
+  }
+})
+
 const className = computed(() => {
   const { after, before, disabled, size, type } = props
   const { prepend } = slots
   const className: Record<string, boolean> = {
     'chi-input': true,
     'chi-input--disabled': disabled,
+    'chi-input--focused': isFocused.value,
   }
   className[`chi-input--${type}`] = true
 
@@ -127,6 +163,9 @@ const showClear = computed(() => {
   return props.clearable && !props.disabled && !!innerValue.value && isCursorInside.value
 })
 
+const togglePlain = () => {
+  plain.value = !plain.value
+}
 const mouseoverHandler = () => {
   isCursorInside.value = true
 }
