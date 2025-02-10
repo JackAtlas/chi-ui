@@ -6,6 +6,8 @@ export interface InputProps {
   before?: string
   clearable?: boolean
   disabled?: boolean
+  loading?: boolean
+  loadingLock?: boolean
   prefix?: string
   placeholder?: string
   showPassword?: boolean

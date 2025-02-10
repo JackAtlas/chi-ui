@@ -139,6 +139,10 @@
   box-shadow: none;
 }
 
+.chi-input--readonly {
+  cursor: default;
+}
+
 .chi-input__control {
   flex: 1 0 0;
   min-width: 0;
@@ -160,6 +164,10 @@
   &:disabled {
     cursor: not-allowed;
   }
+}
+
+.chi-input--readonly .chi-input__control {
+  cursor: default;
 }
 
 .chi-input--disabled .chi-input__control {
@@ -214,6 +222,7 @@
   border-style: initial;
   border-width: 0;
   outline: 0;
+  cursor: pointer;
 }
 
 .chi-input__clear,
@@ -222,7 +231,6 @@
   inset-inline-start: 0;
   min-width: 14px;
   margin-inline-start: 4px;
-  cursor: pointer;
 }
 
 .chi-input__before,

@@ -7,7 +7,7 @@
     <div class="chi-input__before" v-if="$slots.before">
       <slot name="before" />
     </div>
-    <div :class="className">
+    <div :class="className" ref="inputNode">
       <div class="chi-input__prefix-wrapper" v-if="$slots.prefix || prefix">
         <slot name="prefix" />
         <div class="chi-input__icon chi-input__prefix">
@@ -16,6 +16,7 @@
       </div>
       <input
         class="chi-input__control"
+        ref="inputControlNode"
         :autocomplete="autocompleteAttr"
         :disabled="disabled"
         :placeholder="placeholder"
@@ -28,16 +29,12 @@
           }
         "
         @change="handleChange"
-        @focus="
-          () => {
-            isFocused = true
-          }
-        "
+        @focus="handleFocus"
         @input="handleInput"
       />
-      <div class="chi-input__suffix-wrapper" v-if="$slots.suffix || clearable || suffix">
+      <div class="chi-input__suffix-wrapper" v-if="$slots.suffix || clearable || suffix || loading">
         <slot name="suffix" />
-        <div class="chi-input__icon chi-input__icon--placeholder" v-if="clearable"></div>
+        <div class="chi-input__icon chi-input__icon--placeholder" v-if="clearable || loading"></div>
         <Button
           circle
           class="chi-input__icon chi-input__clear"
@@ -45,8 +42,11 @@
           v-if="showClear"
           @click="clear"
         ></Button>
+        <div class="chi-input__icon chi-input__loading" v-if="loading">
+          <Icon effect="spin-in" name="loader-circle" />
+        </div>
         <div class="chi-input__icon chi-input__suffix">
-          <Icon class="chi-input__icon" :name="suffix" v-if="suffix && !$slots.suffix" />
+          <Icon :name="suffix" v-if="suffix && !$slots.suffix" />
         </div>
       </div>
       <div
@@ -76,6 +76,7 @@ import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import type { InputEmits, InputProps, ValueType } from './types.ts'
 import Button from '../Button/Button.vue'
 import Icon from '../Icon/Icon.vue'
+import useClickOutside from '../../hooks/useClickOutside.ts'
 
 defineOptions({
   name: 'chi-input',
@@ -91,6 +92,8 @@ const props = withDefaults(defineProps<InputProps>(), {
 const emits = defineEmits<InputEmits>()
 
 const wrapperNode = ref<HTMLElement>()
+const inputNode = ref<HTMLElement>()
+const inputControlNode = ref<HTMLElement>()
 const innerValue = ref(props.value)
 const isCursorInside = ref(false)
 const isFocused = ref(false)
@@ -121,12 +124,13 @@ const inputType = computed(() => {
 })
 
 const className = computed(() => {
-  const { after, before, disabled, size, type } = props
+  const { after, before, disabled, loading, loadingLock, size, type } = props
   const { prepend } = slots
   const className: Record<string, boolean> = {
     'chi-input': true,
     'chi-input--disabled': disabled,
     'chi-input--focused': isFocused.value,
+    'chi-input--readonly': loading && loadingLock,
   }
   className[`chi-input--${type}`] = true
 
@@ -145,6 +149,13 @@ const handleChange = () => {
 }
 const handleInput = () => {
   if (props.sync) emits('update:value', innerValue.value)
+}
+const handleFocus = () => {
+  isFocused.value = true
+  const { loading, loadingLock } = props
+  if (loading && loadingLock) {
+    inputControlNode.value?.blur()
+  }
 }
 
 const clear = () => {
@@ -172,13 +183,30 @@ const mouseoverHandler = () => {
 const mouseoutHandler = () => {
   isCursorInside.value = false
 }
+const mousedownHandler = () => {
+  isFocused.value = true
+}
+const mouseupHandler = () => {
+  isFocused.value = true
+  if (!props.loadingLock) {
+    inputControlNode.value?.focus()
+  }
+}
+
+useClickOutside(inputNode, () => {
+  isFocused.value = false
+})
 
 onMounted(() => {
   wrapperNode.value?.addEventListener('mouseover', mouseoverHandler)
   wrapperNode.value?.addEventListener('mouseleave', mouseoutHandler)
+  inputNode.value?.addEventListener('mousedown', mousedownHandler)
+  inputNode.value?.addEventListener('mouseup', mouseupHandler)
 })
 onUnmounted(() => {
   wrapperNode.value?.removeEventListener('mouseover', mouseoverHandler)
   wrapperNode.value?.removeEventListener('mouseleave', mouseoutHandler)
+  inputNode.value?.removeEventListener('mousedown', mousedownHandler)
+  inputNode.value?.removeEventListener('mouseup', mouseupHandler)
 })
 </script>
