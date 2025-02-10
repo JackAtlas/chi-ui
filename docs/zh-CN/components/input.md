@@ -52,3 +52,13 @@ description: 通过键入内容输入数据，是最基础的表单域的包装�
 如果你想要一个按钮、选择器或是其他控件，应该使用 `before-action` 和 `after-action` 插槽。
 
 <preview path="../demo/Input/Input-Action.vue" title="前后置插槽" description="使用 `before` 和 `after` 插槽可以将一些内容与输入框组合。如果你想要一个按钮、选择器或是其他控件，应该使用 `before-action` 和 `after-action` 插槽。"></preview>
+
+### 密码
+
+将 `type` 属性设置为 `'password'` 可以开启密码输入。
+
+在密码输入模式下添加 `plain-password` 属性可以打开切换密码明文的后缀按钮。
+
+还可以通过 `password` 插槽自定义后缀按钮的图标。
+
+<preview path="../demo/Input/Password-Input.vue" title="密码" description="将 `type` 属性设置为 `'password'` 可以开启密码输入。在密码输入模式下添加 `plain-password` 属性可以打开切换密码明文的后缀按钮。还可以通过 `password` 插槽自定义后缀按钮的图标。"></preview>
