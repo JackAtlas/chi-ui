@@ -84,6 +84,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<InputProps>(), {
   autocomplete: false,
+  placeholder: '请输入',
   spellcheck: false,
   type: 'text',
   value: '',
