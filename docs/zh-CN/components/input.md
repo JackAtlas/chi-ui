@@ -70,3 +70,9 @@ description: 通过键入内容输入数据，是最基础的表单域的包装�
 如果你希望在加载中为只读，需要添加 `loading-lock` 属性。
 
 <preview path="../demo/Input/Input-Loading.vue" title="加载状态" description="通过 `loading` 属性可以控制输入框的加载状态。如果你希望在加载中为只读，需要添加 `loading-lock` 属性。"></preview>
+
+### 不同状态
+
+通过 `state` 属性可以设置不同状态。
+
+<preview path="../demo/Input/Input-State.vue" title="不同状态" description="通过 `state` 属性可以设置不同状态。"></preview>
