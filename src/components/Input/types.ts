@@ -22,4 +22,12 @@ export interface InputProps {
 
 export interface InputEmits {
   (e: 'update:value', value: ValueType): void
+
+  (e: 'change', value: ValueType): void
+  (e: 'input', value: ValueType): void
+
+  (e: 'blur', value: FocusEvent): void
+  (e: 'focus', value: FocusEvent): void
+
+  (e: 'clear'): void
 }

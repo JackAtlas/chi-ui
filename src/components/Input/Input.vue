@@ -23,11 +23,7 @@
         :spellcheck="spellcheck"
         :type="inputType"
         v-model="innerValue"
-        @blur="
-          () => {
-            isFocused = false
-          }
-        "
+        @blur="handleBlur"
         @change="handleChange"
         @focus="handleFocus"
         @input="handleInput"
@@ -148,21 +144,34 @@ const className = computed(() => {
 
 const handleChange = () => {
   emits('update:value', innerValue.value)
+  emits('change', innerValue.value)
 }
 const handleInput = () => {
-  if (props.sync) emits('update:value', innerValue.value)
+  if (props.sync) {
+    emits('update:value', innerValue.value)
+    emits('input', innerValue.value)
+  }
 }
-const handleFocus = () => {
+const handleFocus = (e: FocusEvent) => {
   isFocused.value = true
   const { loading, loadingLock } = props
   if (loading && loadingLock) {
     inputControlNode.value?.blur()
+  } else {
+    emits('focus', e)
   }
+}
+const handleBlur = (e: FocusEvent) => {
+  isFocused.value = false
+  emits('blur', e)
 }
 
 const clear = () => {
   innerValue.value = ''
   emits('update:value', '')
+  emits('clear')
+  emits('input', '')
+  emits('change', '')
 }
 
 watch(
