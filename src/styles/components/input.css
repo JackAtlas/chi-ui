@@ -86,6 +86,15 @@
   box-shadow: var(--chi-shadow-focus) var(--chi-input-shadow-color-focus);
 }
 
+@each $val in (success, warning, error) {
+  .chi-input.chi-input--$(val) {
+    --chi-input-border-color: var(--chi-color-$(val)-light-1);
+    --chi-input-border-color-hover: var(--chi-color-$(val)-light-1);
+    --chi-input-border-color-focus: var(--chi-input-border-color-hover);
+    --chi-input-shadow-color-focus: var(--chi-color-$(val)-opacity-6);
+  }
+}
+
 .chi-input--before,
 .chi-input--after,
 .chi-input--before-action,

@@ -125,7 +125,7 @@ const inputType = computed(() => {
 })
 
 const className = computed(() => {
-  const { after, before, disabled, loading, loadingLock, size, type } = props
+  const { after, before, disabled, loading, loadingLock, size, state, type } = props
   const { prepend } = slots
   const className: Record<string, boolean> = {
     'chi-input': true,
@@ -136,6 +136,7 @@ const className = computed(() => {
   className[`chi-input--${type}`] = true
 
   if (size) className[`chi-input--${size}`] = true
+  if (state) className[`chi-input--${state}`] = true
   if (prepend) className['is-prepend'] = true
   if (before || slots.before) className['chi-input--before'] = true
   if (after || slots.after) className['chi-input--after'] = true

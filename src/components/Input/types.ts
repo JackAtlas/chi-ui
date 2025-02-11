@@ -13,6 +13,7 @@ export interface InputProps {
   showPassword?: boolean
   size?: 'small' | 'medium' | 'large'
   spellcheck?: boolean
+  state?: 'success' | 'warning' | 'error'
   suffix?: string
   sync?: boolean
   type?: 'text' | 'password' | 'date' | 'datetime' | 'time'
