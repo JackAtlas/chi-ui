@@ -41,6 +41,10 @@ export default defineConfig({
         items: [{ text: 'Input | 输入框', link: 'zh-CN/components/input' }],
       },
       {
+        text: '数据',
+        items: [{ text: 'Badge | 徽标', link: 'zh-CN/components/badge' }],
+      },
+      {
         text: '其他',
         items: [{ text: 'Masker | 遮罩', link: 'zh-CN/components/masker' }],
       },
