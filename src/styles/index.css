@@ -1,5 +1,7 @@
 @import url('./vars.css');
 
+@import url('./animation.css');
+
 @import url('./components/button.css');
 @import url('./components/icon.css');
 @import url('./components/linker.css');
@@ -10,3 +12,5 @@
 @import url('./components/space.css');
 
 @import url('./components/input.css');
+
+@import url('./components/masker.css');

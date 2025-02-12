@@ -1,0 +1,46 @@
+.chi-masker,
+.chi-masker *,
+.chi-masker::before,
+.chi-masker::after {
+  box-sizing: border-box;
+}
+
+.chi-masker {
+  --chi-masker-z-index: var(--chi-z-index-masker);
+  --chi-masker-bg-color: var(--chi-color-black);
+  --chi-masker-opacity: 45%;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--chi-masker-z-index);
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+  color: var(--chi-content-color-base);
+}
+
+.chi-masker__mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: var(--chi-masker-bg-color);
+  transform: translateZ(0);
+}
+
+.chi-masker__mask-inner {
+  width: 100%;
+  height: 100%;
+  background-color: currentcolor;
+  opacity: var(--chi-masker-opacity);
+}
+
+.chi-masker__content {
+  width: 0;
+  height: 0;
+}
