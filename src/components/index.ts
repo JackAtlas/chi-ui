@@ -11,9 +11,11 @@ import { Space } from './Space'
 
 import { Input } from './Input'
 
+import { Badge } from './Badge'
+
 import { Masker } from './Masker'
 
-const components = [Button, Icon, Linker, Cell, Divider, Grid, Space, Input, Masker]
+const components = [Button, Icon, Linker, Cell, Divider, Grid, Space, Input, Badge, Masker]
 
 function createInstall(components: any[] = []) {
   return function install(app: App) {

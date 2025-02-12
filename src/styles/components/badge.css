@@ -1,0 +1,79 @@
+.chi-badge,
+.chi-badge *,
+.chi-badge *::before,
+.chi-badge *::after {
+  box-sizing: border-box;
+}
+
+.chi-badge {
+  --chi-badge-bg-color: var(--chi-color-error);
+  --chi-badge-border-color: var(--chi-color-error-opacity-8);
+  --chi-badge-text-color: var(--chi-color-white);
+
+  --chi-badge-height: 16px;
+  --chi-badge-v-padding: 0;
+  --chi-badge-h-padding: 6px;
+  --chi-badge-family: Helvetica, Microsoft Yahei, SimSun, sans-serif;
+  --chi-badge-font-size: var(--chi-font-size-secondary);
+  --chi-badge-line-height: var(--chi-line-height-secondary);
+
+  --chi-badge-dot-size: 7px;
+
+  position: relative;
+  display: inline-flex;
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+}
+
+.chi-badge--not-wrapper {
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.chi-badge__content {
+  position: relative;
+  top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--chi-badge-height);
+  padding: var(--chi-badge-v-padding) var(--chi-badge-h-padding);
+  font-family: var(--chi-badge-family);
+  font-size: var(--chi-badge-font-size);
+  line-height: var(--chi-badge-line-height);
+  background-color: var(--chi-badge-bg-color);
+  border-radius: calc(var(--chi-badge-height) * 0.5);
+  box-shadow: var(--chi-shadow-border) var(--chi-badge-border-color);
+  color: var(--chi-badge-text-color);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+.chi-badge--is-dot .chi-badge__content {
+  width: var(--chi-badge-dot-size);
+  height: var(--chi-badge-dot-size);
+  padding: 0;
+  border-radius: 50%;
+}
+
+.chi-badge__content--fixed {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+}
+
+@each $val in (primary, info, success, warning) {
+  .chi-badge__content--$(val) {
+    --chi-badge-bg-color: var(--chi-color-$(val));
+    --chi-badge-border-color: var(--chi-color-$(val)-opacity-8);
+  }
+}
+
+.chi-badge__content--disabled {
+  --chi-badge-bg-color: var(--chi-content-color-disabled);
+  --chi-badge-border-color: var(--chi-border-color-light-2);
+}
