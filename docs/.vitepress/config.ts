@@ -40,6 +40,10 @@ export default defineConfig({
         text: '表单',
         items: [{ text: 'Input | 输入框', link: 'zh-CN/components/input' }],
       },
+      {
+        text: '其他',
+        items: [{ text: 'Masker | 遮罩', link: 'zh-CN/components/masker' }],
+      },
     ],
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/JackAtlas/chi-ui' }],
