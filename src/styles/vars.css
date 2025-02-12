@@ -103,6 +103,8 @@
   --chi-transition-shadow: box-shadow var(--chi-transition-base);
   --chi-transition-opacity: opacity var(--chi-transition-base);
   --chi-transition-transform: transform var(--chi-transition-base);
+
+  --chi-z-index-masker: 1500;
 }
 
 :root.dark {
