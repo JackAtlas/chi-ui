@@ -1,0 +1,67 @@
+.chi-title {
+  --chi-title-font-size-level-1: 36px;
+  --chi-title-font-size-level-2: 30px;
+  --chi-title-font-size-level-3: 24px;
+  --chi-title-font-size-level-4: 20px;
+  --chi-title-font-size-level-5: var(--chi-font-size-primary);
+  --chi-title-font-size-level-6: var(--chi-font-size-base);
+  --chi-title-font-weight: 600;
+  --chi-title-font-weight-thin: 300;
+  --chi-title-color: var(--chi-content-color-primary);
+  --chi-title-marker-width: 4px;
+  --chi-title-marker-color: var(--chi-content-color-placeholder);
+  --chi-title-marker-offset: 16px;
+
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-weight: var(--chi-title-font-weight);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+  color: var(--chi-content-color-base);
+  color: var(--chi-title-color);
+  transition: var(--chi-transition-color);
+}
+
+.chi-title--top {
+  margin-top: 0;
+}
+
+.chi-title--thin {
+  font-weight: var(--chi-title-font-weight-thin);
+}
+
+@each $val in (primary, info, success, warning, error) {
+  .chi-title--$(val) {
+    --chi-title-color: var(--chi-color-$(val));
+  }
+
+  .chi-title--marker-$(val) {
+    --chi-title-marker-color: var(--chi-color-$(val));
+  }
+}
+
+h1.chi-title {
+  font-size: var(--chi-title-font-size-level-1);
+}
+
+h2.chi-title {
+  font-size: var(--chi-title-font-size-level-2);
+}
+
+h3.chi-title {
+  font-size: var(--chi-title-font-size-level-3);
+}
+
+h4.chi-title {
+  font-size: var(--chi-title-font-size-level-4);
+}
+
+h5.chi-title {
+  font-size: var(--chi-title-font-size-level-5);
+}
+
+h6.chi-title {
+  font-size: var(--chi-title-font-size-level-6);
+}
