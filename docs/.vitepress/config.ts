@@ -26,6 +26,7 @@ export default defineConfig({
           { text: 'Button | 按钮', link: 'zh-CN/components/button' },
           { text: 'Icon | 图标', link: 'zh-CN/components/icon' },
           { text: 'Linker | 链接', link: 'zh-CN/components/linker' },
+          { text: 'Typography | 排版', link: 'zh-CN/components/typography' },
         ],
       },
       {
