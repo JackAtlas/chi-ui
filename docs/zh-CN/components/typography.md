@@ -7,9 +7,17 @@ description: Chi UI 提供了一些带有基本格式的文本组件。
 
 Chi UI 提供了一些带有基本格式的文本组件。
 
-示例样式受 vitepress 影响与实际有所出入，计划将重写 vitepress 主题以更好地展示案例。
+::: warning 注意
+示例样式受 vitepress 样式影响与实际有所出入，计划将重写 vitepress 主题以更好地展示案例。
+:::
 
 ## 代码示例
+
+### 基础用法
+
+Chi UI 内置了一些与标签同名的组件，用以快速应用组件库的样式。
+
+<preview path="../demo/Typography/Basic-Typography.vue" title="基础用法" description="Chi UI 内置了一些与标签同名的组件，用以快速应用组件库的样式。"></preview>
 
 ### 标题组件
 
