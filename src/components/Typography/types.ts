@@ -12,3 +12,7 @@ export interface HTitleProps {
 export interface TitleProps extends HTitleProps {
   level?: TitleLevel
 }
+
+export interface ListProps {
+  listStyle?: string
+}

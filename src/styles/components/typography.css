@@ -65,3 +65,90 @@ h5.chi-title {
 h6.chi-title {
   font-size: var(--chi-title-font-size-level-6);
 }
+
+.chi-ol,
+.chi-ol *,
+.chi-ol *::before,
+.chi-ol *::after,
+.chi-ul,
+.chi-ul *,
+.chi-ul *::before,
+.chi-ul *::after {
+  box-sizing: border-box;
+}
+
+.chi-ol,
+.chi-ul {
+  padding: 0;
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+  color: var(--chi-content-color-base);
+}
+
+.chi-ol > li,
+.chi-ul > li {
+  margin-inline-start: 20px;
+  padding-inline-start: 4px;
+}
+
+.chi-text,
+.chi-text *,
+.chi-text *::before,
+.chi-text *::after {
+  box-sizing: border-box;
+}
+
+.chi-text {
+  --chi-text-font-family-mono: var(--chi-font-family-mono);
+  --chi-text-font-weight-strong: 600;
+  --chi-text-font-weight-thin: 300;
+  --chi-text-color: var(--chi-content-color-base);
+  --chi-text-color-disabled: var(--chi-content-color-disabled);
+  --chi-text-color-marked: var(--chi-content-color-base);
+  --chi-text-color-reversed: var(--chi-bg-color-base);
+  --chi-text-mark-color: var(--chi-fill-color-hover);
+  --chi-text-code-bg-color: var(--chi-fill-color-humble);
+  --chi-text-code-radius: var(--chi-radius-small);
+  --chi-text-keyboard-bg-color: var(--chi-fill-color-background);
+  --chi-text-keyboard-border-color: var(--chi-border-color-light-1);
+  --chi-text-keyboard-radius: var(--chi-radius-base);
+
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+  color: var(--chi-content-color-base);
+  color: var(--chi-text-color);
+  transition: var(--chi-transition-color), var(--chi-transition-background);
+}
+
+.chi-text--strong {
+  font-weight: var(--chi-text-font-weight-strong);
+}
+
+.chi-blockquote,
+.chi-blockquote *,
+.chi-blockquote *::before,
+.chi-blockquote *::after {
+  box-sizing: border-box;
+}
+
+.chi-blockquote {
+  --chi-blockquote-color: var(--chi-content-color-base);
+  --chi-blockquote-padding-inline-start: 10px;
+  --chi-blockquote-marker-width: 4px;
+  --chi-blockquote-marker-color: var(--chi-border-color-base);
+
+  margin: 1em 0;
+  padding-inline-start: var(--chi-blockquote-padding-inline-start);
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  line-height: var(--chi-line-height-base);
+  border-inline-start: var(--chi-blockquote-marker-width) solid var(--chi-blockquote-marker-color);
+  color: var(--chi-content-color-base);
+  color: var(--chi-blockquote-color);
+  transition: var(--chi-transition-color);
+}
