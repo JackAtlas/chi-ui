@@ -172,6 +172,10 @@ h6.chi-title {
   font-weight: var(--chi-text-font-weight-strong);
 }
 
+.chi-text--thin {
+  font-weight: var(--chi-text-font-weight-thin);
+}
+
 .chi-text--underline {
   text-decoration: underline;
 }
