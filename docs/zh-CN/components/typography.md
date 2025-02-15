@@ -32,3 +32,11 @@ Chi UI 内置了一些与标签同名的组件，用以快速应用组件库的�
 快速创建不同级别的标题，如果你想要更快，可以使用 H1、H2、H3、H4、H5、H6 快捷组件。
 
 <preview path="../demo/Typography/Typography-Title.vue" title="标题组件" description="快速创建不同级别的标题，如果你想要更快，可以使用 H1、H2、H3、H4、H5、H6 快捷组件。"></preview>
+
+### 标题标记
+
+添加 `marker` 属性可以为标题快速添加一个标记，虽然它可能没什么实质性作用。
+
+默认情况下标记的类型会跟随标题的类型，如果这不满足需求可以用 `marker-type` 属性指定标记的类型或自定义一个颜色。
+
+<preview path="../demo/Typography/Title-Marker.vue" title="标题标记" description="添加 `marker` 属性可以为标题快速添加一个标记，虽然它可能没什么实质性作用。默认情况下标记的类型会跟随标题的类型，如果这不满足需求可以用 `marker-type` 属性指定标记的类型或自定义一个颜色。"></preview>
