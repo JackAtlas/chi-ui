@@ -42,6 +42,28 @@
   }
 }
 
+.chi-title--marker {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    inset-inline-start: calc(var(--chi-title-marker-offset) * -1);
+    width: var(--chi-title-marker-width);
+    background-color: var(--chi-title-marker-color);
+    transition: var(--chi-transition-background);
+  }
+  &.chi-title--aligned {
+    padding-inline-start: var(--chi-title-marker-offset);
+
+    &::before {
+      inset-inline-start: 0;
+    }
+  }
+}
+
 h1.chi-title {
   font-size: var(--chi-title-font-size-level-1);
 }

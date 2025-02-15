@@ -1,5 +1,5 @@
 <template>
-  <component :class="classname" :is="tagName">
+  <component :class="classname" :is="tagName" :style="style">
     <slot />
   </component>
 </template>
@@ -33,18 +33,37 @@ const tagName = computed(() => {
   }
 })
 
+const isMarkerTyped = (type: string): boolean => {
+  return ['default', 'primary', 'info', 'success', 'warning', 'error'].includes(type)
+}
+
 const classname = computed(() => {
-  const { thin, top, type } = props
+  const { aligned, marker, markerType, thin, top, type } = props
   const classname: Record<string, boolean> = {
     'chi-title': true,
+    'chi-title--aligned': aligned,
+    'chi-title--marker': marker,
+    'chi-title--thin': thin,
+    'chi-title--top': top,
   }
-  if (top) classname['chi-title--top'] = true
-  if (thin) classname['chi-title--thin'] = true
   if (type) {
     classname[`chi-title--${type}`] = true
+  }
+  if (markerType && isMarkerTyped(markerType)) {
+    classname[`chi-title--marker-${markerType}`] = true
+  } else if (type) {
     classname[`chi-title--marker-${type}`] = true
   }
 
   return classname
+})
+
+const style = computed(() => {
+  const style: Record<string, string> = {}
+
+  if (props.markerType && !isMarkerTyped(props.markerType)) {
+    style['--chi-title-marker-color'] = props.markerType
+  }
+  return style
 })
 </script>

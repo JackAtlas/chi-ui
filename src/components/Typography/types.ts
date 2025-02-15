@@ -2,6 +2,7 @@ export type TitleLevel = 1 | 2 | 3 | 4 | 5 | 6
 export type TypographyType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'error'
 
 export interface HTitleProps {
+  aligned?: boolean
   marker?: boolean
   markerType?: string
   thin?: boolean
