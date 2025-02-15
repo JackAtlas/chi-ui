@@ -36,3 +36,7 @@ export interface TextProps {
   type?: TypographyType | 'disabled'
   underline?: boolean
 }
+
+export interface BlockquoteProps {
+  type: TypographyType
+}
