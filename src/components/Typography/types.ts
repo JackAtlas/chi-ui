@@ -14,7 +14,11 @@ export interface TitleProps extends HTitleProps {
   level?: TitleLevel
 }
 
-export interface ListProps {
+export interface OrderedListProps {
+  type: '1' | 'A' | 'a' | 'I' | 'i'
+}
+
+export interface UnorderedListProps {
   listStyle?: string
 }
 
