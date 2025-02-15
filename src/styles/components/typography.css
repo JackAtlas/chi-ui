@@ -225,3 +225,9 @@ h6.chi-title {
   color: var(--chi-blockquote-color);
   transition: var(--chi-transition-color);
 }
+
+@each $val in (primary, info, success, warning, error) {
+  .chi-blockquote--$(val) {
+    --chi-blockquote-marker-color: var(--chi-color-$(val));
+  }
+}
