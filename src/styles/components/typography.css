@@ -124,8 +124,55 @@ h6.chi-title {
   transition: var(--chi-transition-color), var(--chi-transition-background);
 }
 
+.chi-text--code {
+  padding: 3px 5px 2px;
+  font-family: var(--chi-text-font-family-mono);
+  background-color: var(--chi-text-code-bg-color);
+  border-radius: var(--chi-text-code-radius);
+}
+
+.chi-text--italic {
+  font-style: italic;
+}
+
+.chi-text--keyboard {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 5px;
+  font-family: var(--chi-text-font-family-mono);
+  line-height: 1;
+  background-color: var(--chi-text-keyboard-bg-color);
+  border: var(--chi-border-shape) var(--chi-text-keyboard-border-color);
+  border-radius: var(--chi-text-keyboard-radius);
+}
+
 .chi-text--strong {
   font-weight: var(--chi-text-font-weight-strong);
+}
+
+.chi-text--underline {
+  text-decoration: underline;
+}
+
+@each $val in (primary, info, success, warning, error) {
+  .chi-text--$(val) {
+    --chi-text-color: var(--chi-color-$(val));
+    --chi-text-mark-color: var(--chi-color-$(val)-opacity-1);
+  }
+}
+
+.chi-text--disabled {
+  color: var(--chi-text-color-disabled);
+}
+
+.chi-text--mark {
+  padding: 0 1px;
+  background-color: var(--chi-text-mark-color);
+  color: var(--chi-text-color-marked);
+}
+
+.chi-text--reversed {
+  color: var(--chi-text-color-reversed);
 }
 
 .chi-blockquote,

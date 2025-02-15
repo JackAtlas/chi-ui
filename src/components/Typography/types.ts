@@ -16,3 +16,15 @@ export interface TitleProps extends HTitleProps {
 export interface ListProps {
   listStyle?: string
 }
+
+export interface TextProps {
+  code?: boolean
+  delete?: boolean
+  italic?: boolean
+  keyboard?: boolean
+  mark?: boolean
+  reversed?: boolean
+  strong?: boolean
+  type?: TypographyType | 'disabled'
+  underline?: boolean
+}

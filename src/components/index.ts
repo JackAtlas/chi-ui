@@ -3,7 +3,7 @@ import type { App } from 'vue'
 import { Button } from './Button'
 import { Icon } from './Icon'
 import { Linker } from './Linker'
-import { Title, H1, H2, H3, H4, H5, H6, Ol, Ul, P, Strong, Blockquote } from './Typography'
+import { Title, H1, H2, H3, H4, H5, H6, Ol, Ul, P, Strong, Blockquote, Text } from './Typography'
 
 import { Cell } from './Cell'
 import { Divider } from './Divider'
@@ -33,6 +33,7 @@ const components = [
   P,
   Strong,
   Blockquote,
+  Text,
 
   // 布局
   Cell,
