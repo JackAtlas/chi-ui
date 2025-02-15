@@ -1,10 +1,11 @@
 <template>
-  <p class="chi-text">
+  <Text tag="p" v-bind="$props">
     <slot />
-  </p>
+  </Text>
 </template>
 
 <script setup lang="ts">
+import Text from './Text.vue'
 defineOptions({
   name: 'chi-p',
 })
