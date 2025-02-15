@@ -1,5 +1,13 @@
-# Vue 3 + TypeScript + Vite
+<h1 align="center">Chi UI</h1>
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<p align="center">Highly Customizebility, full TypeScript</p>
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+**English** | [中文](./README.zh-CN.md)
+
+Chi UI provides a bunch of out-of-box components.
+
+This library is written using **composition API**, and the components are designed and written in a traditional Vue way possible, with full of **Typescript** support.
+
+Almost all **default property values** of each component can be easily customized through injected configurations, making it easy to achieve customization.
+
+Meanwile, the componet code pays great attention to reducing the threhold of **source code reading**, and the code layout is as close as possible to the habits of daily business code, avoiding fancy and showy code.
