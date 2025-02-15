@@ -38,5 +38,5 @@ export interface TextProps {
 }
 
 export interface BlockquoteProps {
-  type: TypographyType
+  type?: TypographyType
 }
