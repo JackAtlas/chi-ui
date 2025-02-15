@@ -14,7 +14,9 @@ defineOptions({
 const props = defineProps<TextProps>()
 
 const tagname = computed(() => {
-  if (props.code) {
+  if (props.tag) {
+    return props.tag
+  } else if (props.code) {
     return 'code'
   } else if (props.delete) {
     return 'del'
@@ -26,16 +28,18 @@ const tagname = computed(() => {
 })
 
 const classname = computed(() => {
-  const { code, italic, keyboard, mark, reversed, strong, type, underline } = props
+  const { code, disabled, italic, keyboard, mark, reversed, strong, thin, type, underline } = props
   const classname: Record<string, boolean> = {
     'chi-text': true,
     'chi-text--code': code,
     'chi-text--delete': props.delete,
+    'chi-text--disabled': disabled,
     'chi-text--italic': italic,
     'chi-text--keyboard': keyboard,
     'chi-text--mark': mark,
     'chi-text--reversed': reversed,
-    'chi-text--strong': strong,
+    'chi-text--strong': strong && !thin,
+    'chi-text--thin': thin && !strong,
     'chi-text--underline': underline,
   }
   if (type) classname[`chi-text--${type}`] = true
