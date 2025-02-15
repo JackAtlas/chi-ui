@@ -1,15 +1,15 @@
 <template>
-  <ol class="chi-ol" :style="{ listStyleType: listStyle }">
+  <ol class="chi-ol" :type="type">
     <slot />
   </ol>
 </template>
 
 <script setup lang="ts">
-import type { ListProps } from './types.ts'
+import type { OrderedListProps } from './types.ts'
 defineOptions({
   name: 'chi-ol',
 })
-withDefaults(defineProps<ListProps>(), {
-  listStyle: 'decimal',
+withDefaults(defineProps<OrderedListProps>(), {
+  type: '1',
 })
 </script>
