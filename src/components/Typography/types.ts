@@ -21,11 +21,14 @@ export interface ListProps {
 export interface TextProps {
   code?: boolean
   delete?: boolean
+  disabled?: boolean
   italic?: boolean
   keyboard?: boolean
   mark?: boolean
   reversed?: boolean
   strong?: boolean
+  tag?: string
+  thin?: boolean
   type?: TypographyType | 'disabled'
   underline?: boolean
 }
