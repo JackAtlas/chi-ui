@@ -9,7 +9,7 @@ const types = ['default', 'primary', 'info', 'success', 'warning', 'error']
     </chi-text>
   </div>
   <div>
-    <chi-text type="disabled">Disabled</chi-text>
+    <chi-text disabled>Disabled</chi-text>
   </div>
   <div v-for="textType in types" :key="textType">
     <chi-text mark :type="textType">
