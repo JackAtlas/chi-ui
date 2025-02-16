@@ -1,9 +1,23 @@
 <template>
   <div class="chi-space" :class="className" :style="style">
-    <template v-if="$slots.default">
-      <div class="chi-space__item" role="none" v-for="c in $slots.default({})" :key="c.name">
-        <component :is="c" />
-      </div>
+    <template v-if="typeof $slots.default === 'function' && $slots.default()">
+      <template v-for="defaultContent in $slots.default()" :key="defaultContent.name">
+        <template v-if="Array.isArray(defaultContent.children)">
+          <div
+            class="chi-space__item"
+            role="none"
+            v-for="c in defaultContent.children"
+            :key="c.name"
+          >
+            <component :is="c" />
+          </div>
+        </template>
+        <template v-else>
+          <div class="chi-space__item" role="none">
+            <component :is="defaultContent" />
+          </div>
+        </template>
+      </template>
     </template>
   </div>
 </template>
