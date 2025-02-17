@@ -5,3 +5,9 @@ export function toPascalCase(str: string): string {
     )
     .replace(/^([a-z])/, (match: string) => match.toUpperCase())
 }
+
+let globalCount = 0
+
+export function getGlobalCount() {
+  return globalCount++
+}
