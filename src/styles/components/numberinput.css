@@ -1,0 +1,113 @@
+.chi-number-input,
+.chi-number-input *,
+.chi-number-input *::before,
+.chi-number-input *::after {
+  box-sizing: border-box;
+}
+
+.chi-number-input {
+  --chi-input-bg-color: var(--chi-fill-color-base);
+  --chi-input-bg-color-disabled: var(--chi-fill-color-humble);
+  --chi-input-border-color: var(--chi-border-color-base);
+
+  --chi-input-control-color: var(--chi-content-color-base);
+  --chi-input-control-color-disabled: var(--chi-content-color-disabled);
+
+  --chi-input-icon-color: var(--chi-content-color-secondary);
+
+  --chi-input-height: 32px;
+  --chi-input-v-padding: 4px;
+  --chi-input-h-padding: 8px;
+  --chi-input-line-height: var(--chi-line-height-base);
+  --chi-input-border: var(--chi-border-shape) var(--chi-input-border-color);
+  --chi-input-radius: var(--chi-radius-base);
+
+  --chi-number-input-control-color-out: var(--chi-color-error);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: var(--chi-input-height);
+  padding: var(--chi-input-v-padding) var(--chi-input-h-padding);
+  padding-inline-end: calc(var(--chi-input-h-padding) + 20px);
+  font-family: var(--chi-font-family-base);
+  font-size: var(--chi-font-size-base);
+  font-variant-numeric: tabular-nums;
+  background-color: var(--chi-input-bg-color);
+  border: var(--chi-border-shape) var(--chi-input-border-color);
+  border-radius: var(--chi-input-radius);
+  color: var(--chi-content-color-base);
+  cursor: text;
+  outline: 0;
+  transition: var(--chi-transition-background), var(--chi-transition-border),
+    var(--chi-transition-shadow);
+}
+
+.chi-number-input--disabled {
+  background-color: var(--chi-input-bg-color-disabled);
+  cursor: not-allowed;
+}
+
+.chi-number-input--disabled,
+.chi-number-input--disabled:hover,
+.chi-number-input--disabled:focus,
+.chi-number-input--disabled:focus-within {
+  border-color: var(--chi-border-color-base);
+  box-shadow: none;
+}
+
+.chi-number-input__control {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  font-size: inherit;
+  line-height: var(--chi-input-line-height);
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--chi-input-radius);
+  color: var(--chi-input-control-color);
+  outline: 0;
+  transition: var(--chi-transition-color);
+}
+
+.chi-number-input__plus,
+.chi-number-input__minus {
+  position: absolute;
+  inset-inline-end: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 50%;
+  border: var(--chi-input-border);
+  border-width: 0;
+  border-inline-start-width: var(--chi-border-width);
+  color: var(--chi-input-icon-color);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--chi-transition-color);
+}
+
+.chi-number-input__plus {
+  top: 0;
+}
+
+.chi-number-input__minus {
+  bottom: 0;
+  border-top-width: 1px;
+}
+
+.chi-number-input--disabled .chi-number-input__plus,
+.chi-number-input--disabled .chi-number-input__minus,
+.chi-number-input--disabled .chi-number-input__icon,
+.chi-number-input--disabled .chi-number-input__control {
+  color: var(--chi-input-control-color-disabled);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.chi-number-input__control:disabled {
+  cursor: not-allowed;
+}
