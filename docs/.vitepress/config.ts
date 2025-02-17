@@ -39,7 +39,10 @@ export default defineConfig({
       },
       {
         text: '表单',
-        items: [{ text: 'Input | 输入框', link: 'zh-CN/components/input' }],
+        items: [
+          { text: 'Input | 输入框', link: 'zh-CN/components/input' },
+          { text: 'NumberInput | 数字输入框', link: 'zh-CN/components/numberinput' },
+        ],
       },
       {
         text: '数据',
