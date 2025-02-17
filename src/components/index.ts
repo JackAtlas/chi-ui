@@ -11,6 +11,7 @@ import { Grid } from './Grid'
 import { Space } from './Space'
 
 import { Input } from './Input'
+import { NumberInput } from './NumberInput'
 
 import { Badge } from './Badge'
 
@@ -43,6 +44,7 @@ const components = [
 
   // 表单
   Input,
+  NumberInput,
 
   // 数据
   Badge,
