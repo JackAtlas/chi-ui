@@ -11,3 +11,9 @@ let globalCount = 0
 export function getGlobalCount() {
   return globalCount++
 }
+
+export function isNull(value: unknown): value is null | undefined {
+  return value === undefined || value === null
+}
+
+export * from './number'
