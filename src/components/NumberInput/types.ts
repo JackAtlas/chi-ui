@@ -3,6 +3,7 @@ export type NumberInputEmptyType = 'NaN' | 'undefined' | 'null'
 
 export interface NumberInputProps {
   disabled?: boolean
+  controlType?: NumberInputControlType
   emptyType?: NumberInputEmptyType
   formatter?: (number: number) => number
   max?: number
@@ -10,6 +11,7 @@ export interface NumberInputProps {
   placeholder?: string
   precision?: number
   size?: 'small' | 'medium' | 'large'
+  step?: number
   sync?: boolean
   value?: number | null
 }

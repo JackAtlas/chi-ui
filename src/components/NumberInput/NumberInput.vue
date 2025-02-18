@@ -10,12 +10,27 @@
       @change="handleChange"
       @input="handleInput"
     />
-    <div class="chi-number-input__plus" aria-label="增加" :aria-controls="controlId">
-      <Icon name="chevron-up" />
-    </div>
-    <div class="chi-number-input__minus" aria-label="减少" :aria-controls="controlId">
-      <Icon name="chevron-down" />
-    </div>
+    <template v-if="props.controlType !== 'none'">
+      <div
+        class="chi-number-input__plus"
+        aria-label="增加"
+        role="button"
+        :aria-controls="controlId"
+        @pointerdown.prevent="handleHold('plus', $event)"
+        @mousedown.prevent
+      >
+        <Icon name="chevron-up" />
+      </div>
+      <div
+        class="chi-number-input__minus"
+        aria-label="减少"
+        :aria-controls="controlId"
+        @pointerdown.prevent="handleHold('minus', $event)"
+        @mousedown.prevent
+      >
+        <Icon name="chevron-down" />
+      </div>
+    </template>
   </div>
 </template>
 
@@ -38,6 +53,7 @@ const props = withDefaults(defineProps<NumberInputProps>(), {
   min: -Infinity,
   placeholder: '请输入数字',
   precision: -1,
+  step: 1,
   value: null,
 })
 const emits = defineEmits<NumberInputEmits>()
@@ -48,7 +64,24 @@ const currentValue = ref<string | number>(
 )
 const inputting = ref(false)
 
+const idIndex = `${getGlobalCount()}`
+const controlId = `chi-number-input-${idIndex}__control`
+
 let lastValue: number
+
+const plusDisabled = computed(() => {
+  return (
+    props.disabled ||
+    (!isNullOrNaN(currentValue.value) && toNumber(currentValue.value) >= props.max)
+  )
+})
+
+const minusDisabled = computed(() => {
+  return (
+    props.disabled ||
+    (!isNullOrNaN(currentValue.value) && toNumber(currentValue.value) <= props.min)
+  )
+})
 
 const inputClassname = computed(() => {
   const { disabled, size } = props
@@ -60,9 +93,6 @@ const inputClassname = computed(() => {
 
   return classname
 })
-
-const idIndex = `${getGlobalCount()}`
-const controlId = `chi-number-input-${idIndex}__control`
 
 const preciseNumber = computed(() => {
   return !inputting.value &&
@@ -135,6 +165,43 @@ function parseValue() {
 function handleInput(event: Event) {
   // TODO: debounce and throttle
   handleChange(event)
+}
+
+function handleHold(type: 'plus' | 'minus', event: PointerEvent) {
+  const disabled = type === 'plus' ? plusDisabled : minusDisabled
+  const change = type === 'plus' ? plusNumber : minusNumber
+
+  if (event.button !== 0 || disabled.value) return
+
+  change()
+}
+
+function plusNumber() {
+  changeStep('plus')
+}
+
+function minusNumber() {
+  changeStep('minus')
+}
+
+function changeStep(type: 'plus' | 'minus') {
+  if (props.disabled) return
+
+  let value = currentValue.value || 0
+
+  const stringValue = value.toString().trim()
+
+  if (stringValue.endsWith('.')) {
+    value = toNumber(stringValue.slice(0, -1))
+  }
+
+  if (type === 'plus') {
+    value = toNumber(value) + props.step
+  } else {
+    value = toNumber(value) - props.step
+  }
+
+  setValue(value, !props.sync ? 'change' : 'input')
 }
 
 function handleChange(event: Event) {
