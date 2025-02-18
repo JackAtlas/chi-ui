@@ -57,6 +57,16 @@
   box-shadow: none;
 }
 
+.chi-number-input--small {
+  --chi-input-height: 24px;
+  --chi-input-v-padding: 1px;
+}
+
+.chi-number-input--large {
+  --chi-input-height: 40px;
+  --chi-input-v-padding: 7px;
+}
+
 .chi-number-input__control {
   flex: 1 0 0;
   min-width: 0;

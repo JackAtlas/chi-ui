@@ -31,11 +31,12 @@ const props = withDefaults(defineProps<NumberInputProps>(), {
 })
 
 const inputClassname = computed(() => {
-  const { disabled } = props
+  const { disabled, size } = props
   const classname: Record<string, boolean> = {
     'chi-number-input': true,
     'chi-number-input--disabled': disabled,
   }
+  if (size) classname[`chi-number-input--${size}`] = true
 
   return classname
 })
