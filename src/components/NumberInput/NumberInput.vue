@@ -1,5 +1,5 @@
 <template>
-  <div :class="inputClassname">
+  <div ref="wrapper" role="group" :class="inputClassname" @click="control?.focus()">
     <input
       class="chi-number-input__control"
       ref="control"
@@ -7,7 +7,9 @@
       :disabled="disabled"
       :id="controlId"
       :placeholder="placeholder"
+      @blur="handleBlur"
       @change="handleChange"
+      @focus="handleFocus"
       @input="handleInput"
     />
     <template v-if="props.controlType !== 'none'">
@@ -36,6 +38,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import { useHover } from '../../hooks'
 import { boundRange, getGlobalCount, isNull, isValidNumber, toFixed, toNumber } from '../../utils'
 import type { NumberInputEmits, NumberInputProps } from './types'
 import Icon from '../Icon/Icon.vue'
@@ -58,7 +61,11 @@ const props = withDefaults(defineProps<NumberInputProps>(), {
 })
 const emits = defineEmits<NumberInputEmits>()
 
+const focused = ref(false)
+
 const control = ref<HTMLInputElement>()
+const { wrapper, isHover } = useHover()
+
 const currentValue = ref<string | number>(
   isEmpty(props.value) ? getEmptyValue() : toNumber(props.value),
 )
@@ -88,6 +95,7 @@ const inputClassname = computed(() => {
   const classname: Record<string, boolean> = {
     'chi-number-input': true,
     'chi-number-input--disabled': disabled,
+    'chi-number-input--focused': inputting.value,
   }
   if (size) classname[`chi-number-input--${size}`] = true
 
@@ -128,8 +136,10 @@ onMounted(() => {
 })
 
 defineExpose({
-  input: control,
   blur: () => control.value?.blur(),
+  focused,
+  input: control,
+  isHover,
 })
 
 function setInputValue(value?: number | string | null) {
@@ -167,6 +177,28 @@ function handleInput(event: Event) {
   handleChange(event)
 }
 
+function focus(options?: { preventScroll?: boolean; focusVisible?: boolean }) {
+  control?.value?.focus(options)
+}
+
+function handleFocus(event: FocusEvent) {
+  focused.value = true
+  inputting.value = true
+  emits('focus', event)
+}
+
+function handleBlur(event: FocusEvent) {
+  focused.value = false
+
+  setTimeout(() => {
+    if (!focused.value) {
+      inputting.value = false
+      emits('blur', event)
+      emitChangeEvent('change')
+    }
+  }, 120)
+}
+
 function handleHold(type: 'plus' | 'minus', event: PointerEvent) {
   const disabled = type === 'plus' ? plusDisabled : minusDisabled
   const change = type === 'plus' ? plusNumber : minusNumber
@@ -177,10 +209,12 @@ function handleHold(type: 'plus' | 'minus', event: PointerEvent) {
 }
 
 function plusNumber() {
+  if (!focused.value) focus()
   changeStep('plus')
 }
 
 function minusNumber() {
+  if (!focused.value) focus()
   changeStep('minus')
 }
 

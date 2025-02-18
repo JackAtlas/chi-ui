@@ -18,4 +18,6 @@ export interface NumberInputProps {
 
 export interface NumberInputEmits {
   (e: 'update:value', value: number | null): void
+  (e: 'blur', event: FocusEvent): void
+  (e: 'focus', event: FocusEvent): void
 }
