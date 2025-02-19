@@ -50,7 +50,10 @@ export default defineConfig({
       },
       {
         text: '其他',
-        items: [{ text: 'Masker | 遮罩', link: 'zh-CN/components/masker' }],
+        items: [
+          { text: 'Masker | 遮罩', link: 'zh-CN/components/masker' },
+          { text: 'IconCloud | 图标云', link: 'zh-CN/components/iconcloud' },
+        ],
       },
     ],
 
