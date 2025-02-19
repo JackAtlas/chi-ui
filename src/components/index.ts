@@ -16,6 +16,7 @@ import { NumberInput } from './NumberInput'
 import { Badge } from './Badge'
 
 import { Masker } from './Masker'
+import { IconCloud } from './IconCloud'
 
 const components = [
   // 基础
@@ -51,6 +52,7 @@ const components = [
 
   // 其他
   Masker,
+  IconCloud,
 ]
 
 function createInstall(components: any[] = []) {
