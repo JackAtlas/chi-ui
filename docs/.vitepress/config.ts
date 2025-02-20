@@ -46,7 +46,10 @@ export default defineConfig({
       },
       {
         text: '数据',
-        items: [{ text: 'Badge | 徽标', link: 'zh-CN/components/badge' }],
+        items: [
+          { text: 'Badge | 徽标', link: 'zh-CN/components/badge' },
+          { text: 'Tooltip | 提示', link: 'zh-CN/components/tooltip' },
+        ],
       },
       {
         text: '其他',
