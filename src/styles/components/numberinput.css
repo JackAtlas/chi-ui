@@ -109,6 +109,10 @@
   transition: var(--chi-transition-color);
 }
 
+.chi-number-input--out-of-range .chi-number-input__control {
+  color: var(--chi-number-input-control-color-out);
+}
+
 .chi-number-input__plus,
 .chi-number-input__minus {
   position: absolute;
@@ -134,6 +138,14 @@
 .chi-number-input__minus {
   bottom: 0;
   border-top-width: 1px;
+}
+
+.chi-number-input__plus--disabled,
+.chi-number-input__plus--disabled:hover,
+.chi-number-input__minus--disabled,
+.chi-number-input__minus--disabled:hover {
+  color: var(--chi-input-control-color-disabled);
+  cursor: not-allowed;
 }
 
 .chi-number-input__plus:hover,

@@ -29,6 +29,7 @@
         aria-label="增加"
         role="button"
         :aria-controls="controlId"
+        :class="{ ['chi-number-input__plus--disabled']: plusDisabled }"
         @pointerdown.prevent="handleHold('plus', $event)"
         @mousedown.prevent
       >
@@ -38,6 +39,7 @@
         class="chi-number-input__minus"
         aria-label="减少"
         :aria-controls="controlId"
+        :class="{ ['chi-number-input__minus--disabled']: minusDisabled }"
         @pointerdown.prevent="handleHold('minus', $event)"
         @mousedown.prevent
       >
@@ -85,6 +87,13 @@ const inputting = ref(false)
 const idIndex = `${getGlobalCount()}`
 const controlId = `chi-number-input-${idIndex}__control`
 
+const outOfRange = computed(() => {
+  return (
+    !isNullOrNaN(currentValue.value) &&
+    (toNumber(currentValue.value) > props.max || toNumber(currentValue.value) < props.min)
+  )
+})
+
 let lastValue: number
 
 const plusDisabled = computed(() => {
@@ -107,6 +116,7 @@ const inputClassname = computed(() => {
     'chi-number-input': true,
     'chi-number-input--disabled': disabled,
     'chi-number-input--focused': inputting.value,
+    'chi-number-input--out-of-range': outOfRange.value,
   }
   if (size) classname[`chi-number-input--${size}`] = true
   if (state) classname[`chi-number-input--${state}`] = true
@@ -148,6 +158,12 @@ watch(
   { immediate: true },
 )
 
+watch(inputting, (value) => {
+  if (!value) {
+    setInputValue(inputting.value ? currentValue.value : formattedValue.value)
+  }
+})
+
 onMounted(() => {
   setInputValue(inputting.value ? currentValue.value : formattedValue.value)
 })
@@ -170,14 +186,8 @@ function boundValueRange(value: number) {
 }
 
 function parseValue() {
-  let value = props.value
-  value = inputting.value
-    ? isEmpty(props.value)
-      ? getEmptyValue()
-      : toNumber(props.value)
-    : isValidNumber(value, true)
-      ? toNumber(value)
-      : getEmptyValue()
+  let value = props.value!
+  value = inputting.value ? value : isValidNumber(value, true) ? toNumber(value) : getEmptyValue()
 
   if (props.precision >= 0 && !isNullOrNaN(value)) {
     value = toFixed(boundValueRange(value), props.precision)
@@ -256,6 +266,7 @@ function changeStep(type: 'plus' | 'minus') {
 }
 
 function handleChange(event: Event) {
+  console.log(event.type)
   const type = event.type as InputEventType
   const stringValue = (event.target as HTMLInputElement).value
 
