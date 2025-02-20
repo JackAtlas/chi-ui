@@ -27,6 +27,12 @@ description: 通常用在需要以更友好的交互进行数字的输入的场�
 
 <preview path="../demo/NumberInput/Number-Input-Size.vue" title="改变尺寸" description="设置 `size` 属性的值可以改变输入框的尺寸，目前一共提供了三种尺寸供选择。"></preview>
 
+### 可清空
+
+添加 `clearable` 属性可以使控件值可清空。
+
+<preview path="../demo/NumberInput/Number-Input-Clearable.vue" title="可清空" description="添加 `clearable` 属性可以使控件值可清空。"></preview>
+
 ### 不同状态
 
 通过 `state` 可以设置不同的状态。
