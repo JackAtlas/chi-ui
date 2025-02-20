@@ -26,3 +26,9 @@ description: 通常用在需要以更友好的交互进行数字的输入的场�
 设置 `size` 属性的值可以改变输入框的尺寸，目前一共提供了三种尺寸供选择。
 
 <preview path="../demo/NumberInput/Number-Input-Size.vue" title="改变尺寸" description="设置 `size` 属性的值可以改变输入框的尺寸，目前一共提供了三种尺寸供选择。"></preview>
+
+### 不同状态
+
+通过 `state` 可以设置不同的状态。
+
+<preview path="../demo/NumberInput/Number-Input-State.vue" title="不同状态" description="通过 `state` 可以设置不同的状态。"></preview>
