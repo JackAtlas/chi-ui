@@ -33,6 +33,12 @@ description: 通常用在需要以更友好的交互进行数字的输入的场�
 
 <preview path="../demo/NumberInput/Number-Input-Clearable.vue" title="可清空" description="添加 `clearable` 属性可以使控件值可清空。"></preview>
 
+### 数值范围
+
+通过 `min` 和 `max` 属性可以分别设置数值的最小和最大值。
+
+<preview path="../demo/NumberInput/Number-Input-Range.vue" title="数值范围" description="通过 `min` 和 `max` 属性可以分别设置数值的最小和最大值。"></preview>
+
 ### 不同状态
 
 通过 `state` 可以设置不同的状态。
