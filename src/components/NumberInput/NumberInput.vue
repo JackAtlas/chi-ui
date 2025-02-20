@@ -91,13 +91,14 @@ const minusDisabled = computed(() => {
 })
 
 const inputClassname = computed(() => {
-  const { disabled, size } = props
+  const { disabled, size, state } = props
   const classname: Record<string, boolean> = {
     'chi-number-input': true,
     'chi-number-input--disabled': disabled,
     'chi-number-input--focused': inputting.value,
   }
   if (size) classname[`chi-number-input--${size}`] = true
+  if (state) classname[`chi-number-input--${state}`] = true
 
   return classname
 })

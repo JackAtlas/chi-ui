@@ -11,6 +11,7 @@ export interface NumberInputProps {
   placeholder?: string
   precision?: number
   size?: 'small' | 'medium' | 'large'
+  state?: 'default' | 'success' | 'warning' | 'error'
   step?: number
   sync?: boolean
   value?: number | null

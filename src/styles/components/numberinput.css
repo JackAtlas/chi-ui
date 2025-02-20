@@ -19,6 +19,7 @@
   --chi-input-control-color-disabled: var(--chi-content-color-disabled);
 
   --chi-input-icon-color: var(--chi-content-color-secondary);
+  --chi-input-icon-color-hover: var(--chi-color-primary);
 
   --chi-input-height: 32px;
   --chi-input-v-padding: 4px;
@@ -59,6 +60,15 @@
   z-index: 2;
   box-shadow: var(--chi-shadow-focus) var(--chi-input-shadow-color-focus);
   border-color: var(--chi-input-border-color-focus);
+}
+
+@each $val in (success, warning, error) {
+  .chi-number-input.chi-number-input--$(val) {
+    --chi-input-border-color: var(--chi-color-$(val)-light-1);
+    --chi-input-border-color-hover: var(--chi-color-$(val)-light-1);
+    --chi-input-shadow-color-focus: var(--chi-color-$(val)-opacity-6);
+    --chi-input-icon-color-hover: var(--chi-color-$(val));
+  }
 }
 
 .chi-number-input--disabled {
@@ -124,6 +134,13 @@
 .chi-number-input__minus {
   bottom: 0;
   border-top-width: 1px;
+}
+
+.chi-number-input__plus:hover,
+.chi-number-input__plus--holding,
+.chi-number-input__minus:hover,
+.chi-number-input__minus--holding {
+  color: var(--chi-input-icon-color-hover);
 }
 
 .chi-number-input--disabled .chi-number-input__plus,
