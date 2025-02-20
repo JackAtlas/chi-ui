@@ -1,0 +1,82 @@
+.chi-tooltip__trigger {
+  display: inline-flex;
+}
+
+.chi-tooltip__popper {
+  --chi-tooltip-bg-color: var(--chi-bg-color-base);
+  --chi-tooltip-bg-color-dark: var(--chi-fill-color-reverse);
+  --chi-tooltip-shadow-color: var(--chi-shadow-color-base);
+  --chi-tooltip-shadow-color-dark: var(--chi-bg-color-reverse);
+  --chi-tooltip-shadow: var(--chi-shadow-shape) var(--chi-tooltip-shadow-color);
+  --chi-tooltip-shadow-dark: var(--chi-tooltip-shadow);
+
+  --chi-tooltip-min-width: 60px;
+  --chi-tooltip-min-height: 30px;
+  --chi-tooltip-v-padding: 8px;
+  --chi-tooltip-h-padding: 14px;
+  --chi-tooltip-content-color: var(--chi-content-color-base);
+  --chi-tooltip-content-color-dark: var(--chi-bg-color-base);
+  --chi-tooltip-radius: var(--chi-radius-base);
+  --chi-tooltip-arrow-size: 7px;
+  --chi-tooltip-arrow-v-offset: 16px;
+  --chi-tooltip-arrow-h-offset: 28px;
+}
+
+.chi-tooltip__tip {
+  position: relative;
+  min-width: var(--chi-tooltip-min-width);
+  min-height: var(--chi-tooltip-min-height);
+  padding: var(--chi-tooltip-v-padding) var(--chi-tooltip-h-padding);
+  background-color: var(--chi-tooltip-bg-color);
+  border-radius: var(--chi-tooltip-radius);
+  box-shadow: var(--chi-tooltip-shadow);
+  color: var(--chi-tooltip-content-color);
+}
+
+.chi-tooltip__popper--light > .chi-tooltip__tip {
+  background-color: var(--chi-tooltip-bg-color);
+  color: var(--chi-tooltip-content-color);
+}
+
+.chi-tooltip__popper--dark > .chi-tooltip__tip {
+  background-color: var(--chi-tooltip-bg-color-dark);
+  box-shadow: var(--chi-tooltip-shadow-dark);
+  color: var(--chi-tooltip-content-color-dark);
+}
+
+.chi-tooltip__arrow,
+.chi-tooltip__arrow::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+}
+
+.chi-tooltip__arrow::after {
+  content: '';
+}
+
+.chi-tooltip__popper[data-popper-placement^='top'] > .chi-tooltip__arrow {
+  border-width: var(--chi-tooltip-arrow-size) var(--chi-tooltip-arrow-size) 0;
+
+  &::after {
+    border-width: var(--chi-tooltip-arrow-size) var(--chi-tooltip-arrow-size) 0;
+    transform: translate(-50%, -115%);
+  }
+}
+
+.chi-tooltip__popper--light[data-popper-placement^='top'] > .chi-tooltip__arrow {
+  border-top-color: var(--chi-tooltip-shadow-color);
+
+  &::after {
+    border-top-color: var(--chi-tooltip-bg-color);
+  }
+}
+
+.chi-tooltip__popper--dark[data-popper-placement^='top'] > .chi-tooltip__arrow {
+  border-top-color: var(--chi-tooltip-shadow-color-dark);
+
+  &::after {
+    border-top-color: var(--chi-tooltip-bg-color-dark);
+  }
+}

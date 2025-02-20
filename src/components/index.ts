@@ -14,6 +14,7 @@ import { Input } from './Input'
 import { NumberInput } from './NumberInput'
 
 import { Badge } from './Badge'
+import { Tooltip } from './Tooltip'
 
 import { Masker } from './Masker'
 import { IconCloud } from './IconCloud'
@@ -49,6 +50,7 @@ const components = [
 
   // 数据
   Badge,
+  Tooltip,
 
   // 其他
   Masker,
