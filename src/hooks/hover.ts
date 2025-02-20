@@ -1,10 +1,17 @@
-import { ref, type Ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref, type Ref } from 'vue'
 
 export function useHover(wrapper: Ref<HTMLElement | null | undefined> = ref(null)) {
   const isHover = ref(false)
 
-  wrapper.value?.addEventListener('mouseenter', enterWrapper)
-  wrapper.value?.addEventListener('mouseleave', leaveWrapper)
+  onMounted(() => {
+    wrapper.value?.addEventListener('mouseenter', enterWrapper)
+    wrapper.value?.addEventListener('mouseleave', leaveWrapper)
+  })
+
+  onBeforeUnmount(() => {
+    wrapper.value?.removeEventListener('mouseenter', enterWrapper)
+    wrapper.value?.removeEventListener('mouseleave', leaveWrapper)
+  })
 
   function enterWrapper() {
     isHover.value = true
