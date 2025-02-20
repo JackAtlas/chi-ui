@@ -3,6 +3,7 @@ export type NumberInputEmptyType = 'NaN' | 'undefined' | 'null'
 
 export interface NumberInputProps {
   disabled?: boolean
+  clearable?: boolean
   controlType?: NumberInputControlType
   emptyType?: NumberInputEmptyType
   formatter?: (number: number) => number
@@ -20,5 +21,6 @@ export interface NumberInputProps {
 export interface NumberInputEmits {
   (e: 'update:value', value: number | null): void
   (e: 'blur', event: FocusEvent): void
+  (e: 'clear'): void
   (e: 'focus', event: FocusEvent): void
 }

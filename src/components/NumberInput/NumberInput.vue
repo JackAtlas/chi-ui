@@ -12,6 +12,17 @@
       @focus="handleFocus"
       @input="handleInput"
     />
+    <Transition name="chi-fade" appear>
+      <button
+        class="chi-number-input__icon chi-number-input__clear"
+        tabindex="-1"
+        type="button"
+        v-if="showClear"
+        @click.stop="handleClear"
+      >
+        <chi-icon label="clear" name="circle-x"></chi-icon>
+      </button>
+    </Transition>
     <template v-if="props.controlType !== 'none'">
       <div
         class="chi-number-input__plus"
@@ -120,6 +131,11 @@ const formattedValue = computed(() => {
   return !inputting.value && typeof props.formatter === 'function'
     ? props.formatter(preciseNumber.value as number)
     : preciseNumber.value.toString()
+})
+
+const hasValue = computed(() => !!(currentValue.value || currentValue.value === 0))
+const showClear = computed(() => {
+  return !props.disabled && props.clearable && isHover.value && hasValue.value
 })
 
 watch(
@@ -315,5 +331,13 @@ function emitChangeEvent(type: InputEventType, sync = props.sync) {
   } else {
     // console.log('input')
   }
+}
+
+function handleClear() {
+  if (props.disabled) return
+
+  setValue(NaN, 'change', false)
+  emits('clear')
+  focus()
 }
 </script>
