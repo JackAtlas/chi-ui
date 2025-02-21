@@ -38,11 +38,14 @@ import { reactive, ref, watch } from 'vue'
 import { arrow, flip, useFloating } from '@floating-ui/vue'
 import type { TooltipEmits, TooltipProps } from './types'
 import useClickOutside from '../../hooks/useClickOutside'
+import { debounce } from '../../utils/performance'
 
 defineOptions({
   name: 'chi-tooltip',
 })
 const props = withDefaults(defineProps<TooltipProps>(), {
+  closeDelay: 0,
+  openDelay: 0,
   placement: 'top',
   trigger: 'hover',
 })
@@ -68,11 +71,6 @@ const {
 let outerEvents: Record<string, () => void> = reactive({})
 let events: Record<string, () => void> = reactive({})
 
-const togglePopper = () => {
-  visible.value = !visible.value
-  emits('visible-change', visible.value)
-}
-
 const openPopper = () => {
   visible.value = true
   emits('visible-change', true)
@@ -83,10 +81,30 @@ const closePopper = () => {
   emits('visible-change', false)
 }
 
+const openPopperDebounced = debounce(openPopper, props.openDelay)
+const closePopperDebounced = debounce(closePopper, props.closeDelay)
+
+const openPopperFinal = () => {
+  closePopperDebounced.cancel()
+  openPopperDebounced()
+}
+const closePopperFinal = () => {
+  openPopperDebounced.cancel()
+  closePopperDebounced()
+}
+
+const togglePopper = () => {
+  if (visible.value) {
+    closePopperFinal()
+  } else {
+    openPopperFinal()
+  }
+}
+
 const attachEvents = () => {
   if (props.trigger === 'hover') {
-    events['mouseenter'] = openPopper
-    outerEvents['mouseleave'] = closePopper
+    events['mouseenter'] = openPopperFinal
+    outerEvents['mouseleave'] = closePopperFinal
   } else if (props.trigger === 'click') {
     events['click'] = togglePopper
   }
@@ -94,7 +112,7 @@ const attachEvents = () => {
 
 useClickOutside(tooltipRef, () => {
   if (props.trigger === 'click' && visible.value) {
-    closePopper()
+    closePopperFinal()
   }
 })
 
@@ -112,7 +130,10 @@ watch(
 )
 
 defineExpose({
+  tooltipRef,
   popperRef,
   triggerRef,
+  show: openPopperFinal,
+  hide: closePopperFinal,
 })
 </script>

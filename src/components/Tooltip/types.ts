@@ -1,6 +1,8 @@
 import type { Placement } from '@floating-ui/vue'
 
 export interface TooltipProps {
+  closeDelay?: number
+  openDelay?: number
   placement?: Placement
   reverse?: boolean
   trigger?: 'hover' | 'click'
