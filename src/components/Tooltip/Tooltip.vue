@@ -22,6 +22,7 @@
         <div
           class="chi-tooltip__arrow"
           ref="arrowRef"
+          v-if="!noArrow"
           :style="{
             position: 'absolute',
             left: middlewareData.arrow?.x != null ? `${middlewareData.arrow.x}px` : '',
