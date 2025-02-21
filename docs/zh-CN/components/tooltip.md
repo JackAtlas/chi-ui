@@ -15,6 +15,12 @@ description: 用于需要在特定元素周围弹出一下拓展信息。
 
 <preview path="../demo/Tooltip/Basic-Tooltip.vue" title="基础用法" description="最简单的用法。"></preview>
 
+### 触发方式
+
+设置 `trigger` 属性的值可以改变提示的触发方式。
+
+<preview path="../demo/Tooltip/Tooltip-Trigger.vue" title="触发方式" description="设置 `trigger` 属性的值可以改变提示的触发方式。"></preview>
+
 ### 出现位置
 
 通过 `placement` 属性可以设置气泡出现的位置。
