@@ -37,6 +37,8 @@
 import { reactive, ref, watch } from 'vue'
 import { arrow, flip, useFloating } from '@floating-ui/vue'
 import type { TooltipEmits, TooltipProps } from './types'
+import useClickOutside from '../../hooks/useClickOutside'
+
 defineOptions({
   name: 'chi-tooltip',
 })
@@ -47,6 +49,7 @@ const props = withDefaults(defineProps<TooltipProps>(), {
 
 const emits = defineEmits<TooltipEmits>()
 
+const tooltipRef = ref<HTMLElement>()
 const triggerRef = ref<HTMLElement>()
 const popperRef = ref<HTMLElement>()
 const arrowRef = ref<HTMLElement>()
@@ -88,6 +91,12 @@ const attachEvents = () => {
     events['click'] = togglePopper
   }
 }
+
+useClickOutside(tooltipRef, () => {
+  if (props.trigger === 'click' && visible.value) {
+    closePopper()
+  }
+})
 
 attachEvents()
 
