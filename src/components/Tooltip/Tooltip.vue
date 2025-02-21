@@ -1,9 +1,9 @@
 <template>
-  <div class="chi-tooltip__trigger" ref="tooltipRef" @click="togglePopper">
-    <slot />
-  </div>
-  <Transition name="chi-fade">
-    <Teleport to="body">
+  <div class="chi-tooltip" ref="tooltipRef" v-on="outerEvents">
+    <div class="chi-tooltip__trigger" ref="triggerRef" v-on="events">
+      <slot />
+    </div>
+    <Transition name="chi-fade">
       <div
         class="chi-tooltip__popper"
         ref="popperRef"
@@ -29,13 +29,13 @@
           }"
         ></div>
       </div>
-    </Teleport>
-  </Transition>
+    </Transition>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { arrow, flip, offset, useFloating } from '@floating-ui/vue'
+import { reactive, ref, watch } from 'vue'
+import { arrow, flip, useFloating } from '@floating-ui/vue'
 import type { TooltipEmits, TooltipProps } from './types'
 defineOptions({
   name: 'chi-tooltip',
@@ -47,28 +47,63 @@ const props = withDefaults(defineProps<TooltipProps>(), {
 
 const emits = defineEmits<TooltipEmits>()
 
-const tooltipRef = ref<HTMLElement>()
+const triggerRef = ref<HTMLElement>()
 const popperRef = ref<HTMLElement>()
 const arrowRef = ref<HTMLElement>()
 const visible = ref<boolean>(false)
 
-const middleware = ref([arrow({ element: arrowRef }), flip(), offset(10)])
+const middleware = ref([flip(), arrow({ element: arrowRef })])
 const {
   floatingStyles,
   middlewareData,
   placement: finalPlacement,
-} = useFloating(tooltipRef, popperRef, {
+} = useFloating(triggerRef, popperRef, {
   middleware,
   placement: props.placement,
 })
+
+let outerEvents: Record<string, () => void> = reactive({})
+let events: Record<string, () => void> = reactive({})
 
 const togglePopper = () => {
   visible.value = !visible.value
   emits('visible-change', visible.value)
 }
 
+const openPopper = () => {
+  visible.value = true
+  emits('visible-change', true)
+}
+
+const closePopper = () => {
+  visible.value = false
+  emits('visible-change', false)
+}
+
+const attachEvents = () => {
+  if (props.trigger === 'hover') {
+    events['mouseenter'] = openPopper
+    outerEvents['mouseleave'] = closePopper
+  } else if (props.trigger === 'click') {
+    events['click'] = togglePopper
+  }
+}
+
+attachEvents()
+
+watch(
+  () => props.trigger,
+  (newTrigger, oldTrigger) => {
+    if (newTrigger !== oldTrigger) {
+      events = {}
+      outerEvents = {}
+      attachEvents()
+    }
+  },
+)
+
 defineExpose({
   popperRef,
-  tooltipRef,
+  triggerRef,
 })
 </script>
