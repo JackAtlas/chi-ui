@@ -38,3 +38,9 @@ description: 用于需要在特定元素周围弹出一下拓展信息。
 添加 `no-arrow` 属性可以禁用箭头。
 
 <preview path="../demo/Tooltip/Tooltip-No-Arrow.vue" title="无箭头" description="添加 `no-arrow` 属性可以禁用箭头。"></preview>
+
+### 反色主题
+
+添加 `reverse` 属性可以启用反色主题。
+
+<preview path="../demo/Tooltip/Tooltip-Reverse.vue" title="反色主题" description="添加 `reverse` 属性可以启用反色主题。"></preview>
