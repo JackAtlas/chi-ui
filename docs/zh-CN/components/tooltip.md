@@ -32,3 +32,9 @@ description: 用于需要在特定元素周围弹出一下拓展信息。
 通过 `placement` 属性可以设置气泡出现的位置。
 
 <preview path="../demo/Tooltip/Tooltip-Placement.vue" title="出现位置" description="通过 `placement` 属性可以设置气泡出现的位置。"></preview>
+
+### 无箭头
+
+添加 `no-arrow` 属性可以禁用箭头。
+
+<preview path="../demo/Tooltip/Tooltip-No-Arrow.vue" title="无箭头" description="添加 `no-arrow` 属性可以禁用箭头。"></preview>
