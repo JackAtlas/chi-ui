@@ -110,7 +110,7 @@ export class MessageManager {
     this._getInstance()?.clear()
   }
 
-  destory() {
+  destroy() {
     if (this._mountedEl) this._wrapper?.removeChild(this._mountedEl)
     this._innerApp?.unmount()
     if (this._container) render(null, this._container)
@@ -155,7 +155,7 @@ export class MessageManager {
 
   private _open(type: null | MessageType, content: FuzzyOptions, _duration?: number) {
     const options = typeof content === 'string' ? { content, duration: _duration } : content
-    const key = getKey()
+    const key = options.key ?? getKey()
     const message = this._getInstance()!
 
     let timer: ReturnType<typeof setTimeout>
@@ -167,6 +167,7 @@ export class MessageManager {
       if (typeof userCloseFn === 'function') return userCloseFn
     }
     const item: MessageOptions = {
+      ...this.defaults,
       ...options,
       key,
       type: type ?? options.type,

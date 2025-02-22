@@ -4,12 +4,11 @@ export type Key = string | number
 export type MessageType = 'primary' | 'info' | 'success' | 'warning' | 'error'
 export type MessagePlacement = 'top' | 'bottom'
 
-export interface MessageOptions {
-  content?: string
+export interface MessageOptions extends Record<string, any> {
   closable?: boolean
+  content?: string
   duration?: number
   key?: Key
-  onClose?: () => unknown
   type?: MessageType | null
 }
 
