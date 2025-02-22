@@ -105,6 +105,7 @@
   --chi-transition-transform: transform var(--chi-transition-base);
 
   --chi-z-index-masker: 1500;
+  --chi-z-index-popup: 2000;
 }
 
 :root.dark {

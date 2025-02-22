@@ -1,6 +1,7 @@
 @import url('./vars.css');
 
 @import url('./animation.css');
+@import url('./components/popup.css');
 
 @import url('./components/button.css');
 @import url('./components/icon.css');
@@ -17,5 +18,7 @@
 
 @import url('./components/badge.css');
 @import url('./components/tooltip.css');
+
+@import url('./components/message.css');
 
 @import url('./components/masker.css');

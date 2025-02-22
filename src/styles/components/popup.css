@@ -1,0 +1,18 @@
+.chi-popup {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  font-size: var(--chi-font-size-base);
+}
+
+.chi-popup__item {
+  position: fixed;
+  z-index: var(--chi-z-index-popup);
+  display: flex;
+  transition: all var(--chi-transition-base);
+}
+
+.chi-popup__item-inner {
+  position: relative;
+}
