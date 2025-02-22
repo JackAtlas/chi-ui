@@ -1,0 +1,74 @@
+.chi-message {
+  --chi-message-bg-color: var(--chi-bg-color-base);
+  --chi-message-border-color: var(--chi-border-color-light-2);
+  --chi-message-radius: var(--chi-radius-base);
+  --chi-message-shadow-color: var(--chi-shadow-color-base);
+  --chi-message-shadow: var(--chi-shadow-shape) var(--chi-message-shadow-color);
+  --chi-message-color: inherit;
+
+  --chi-message-v-padding: 8px;
+  --chi-message-h-padding: 10px;
+  --chi-message-mask-bg-color: transparent;
+  --chi-message-icon-color: var(--chi-message-color);
+  --chi-message-close-color: var(--chi-content-color-placeholder);
+  --chi-message-close-color-hover: var(--chi-content-color-base);
+
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.chi-message,
+.chi-message *,
+.chi-message *::before,
+.chi-message *::after {
+  box-sizing: border-box;
+}
+
+.chi-message__list {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  display: flex;
+  transition: all var(--chi-transition-base);
+  transform: translateX(-50%);
+}
+
+.chi-message__item {
+  display: flex;
+  padding: var(--chi-message-v-padding) var(--chi-message-h-padding);
+  background-color: var(--chi-message-bg-color);
+  border: var(--chi-border-shape) var(--chi-message-border-color);
+  border-radius: var(--chi-message-radius);
+  box-shadow: var(--chi-message-shadow);
+  color: var(--chi-message-color);
+}
+
+.chi-message__item--info {
+  --chi-message-icon-color: var(--chi-color-info-base);
+}
+
+.chi-message__wrapper {
+  display: flex;
+}
+
+.chi-message__icon {
+  display: flex;
+  align-items: center;
+  margin-inline-end: 8px;
+  color: var(--chi-message-icon-color);
+}
+
+.chi-message__close {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-inline-start: 14px;
+  background-color: transparent;
+  border: 0;
+  color: var(--chi-message-close-color);
+  outline: 0;
+  cursor: pointer;
+  transition: var(--chi-transition-color);
+}
