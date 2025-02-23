@@ -48,6 +48,7 @@ export default defineConfig({
         text: '数据',
         items: [
           { text: 'Badge | 徽标', link: 'zh-CN/components/badge' },
+          { text: 'Collapse | 折叠面板', link: 'zh-CN/components/collapse' },
           { text: 'Tooltip | 提示', link: 'zh-CN/components/tooltip' },
         ],
       },
