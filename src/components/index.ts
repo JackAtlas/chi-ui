@@ -14,6 +14,7 @@ import { Input } from './Input'
 import { NumberInput } from './NumberInput'
 
 import { Badge } from './Badge'
+import { Collapse, CollapsePanel } from './Collapse'
 import { Tooltip } from './Tooltip'
 
 import { Message } from './Message'
@@ -52,6 +53,8 @@ const components = [
 
   // 数据
   Badge,
+  Collapse,
+  CollapsePanel,
   Tooltip,
 
   // 反应
