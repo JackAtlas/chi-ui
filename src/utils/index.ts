@@ -18,3 +18,4 @@ export function isNull(value: unknown): value is null | undefined {
 
 export * from './destroy-object'
 export * from './number'
+export * from './performance'
