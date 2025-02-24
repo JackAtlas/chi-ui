@@ -12,6 +12,7 @@ import { Space } from './Space'
 
 import { Input } from './Input'
 import { NumberInput } from './NumberInput'
+import { Select } from './Select'
 
 import { Badge } from './Badge'
 import { Collapse, CollapsePanel } from './Collapse'
@@ -50,6 +51,7 @@ const components = [
   // 表单
   Input,
   NumberInput,
+  Select,
 
   // 数据
   Badge,
