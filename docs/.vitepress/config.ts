@@ -42,6 +42,7 @@ export default defineConfig({
         items: [
           { text: 'Input | 输入框', link: 'zh-CN/components/input' },
           { text: 'NumberInput | 数字输入框', link: 'zh-CN/components/numberinput' },
+          { text: 'Select | 选择器', link: 'zh-CN/components/select' },
         ],
       },
       {
