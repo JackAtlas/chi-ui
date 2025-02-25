@@ -31,6 +31,7 @@ const classname = computed(() => {
   const { code, disabled, italic, keyboard, mark, reversed, strong, thin, type, underline } = props
   const classname: Record<string, boolean> = {
     'chi-text': true,
+    'chi-text-vars': true,
     'chi-text--code': code,
     'chi-text--delete': props.delete,
     'chi-text--disabled': disabled,

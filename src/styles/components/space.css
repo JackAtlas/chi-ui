@@ -1,7 +1,9 @@
-.chi-space {
+.chi-space-vars {
   --chi-space-v-gap: 8px;
   --chi-space-h-gap: 12px;
+}
 
+.chi-space {
   display: flex;
   flex-wrap: wrap;
   gap: var(--chi-space-v-gap) var(--chi-space-h-gap);

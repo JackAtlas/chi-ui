@@ -1,5 +1,5 @@
 <template>
-  <div class="chi-space" :class="className" :style="style">
+  <div class="chi-space chi-space-vars" :class="className" :style="style">
     <template v-if="typeof $slots.default === 'function' && $slots.default()">
       <template v-for="defaultContent in $slots.default()" :key="defaultContent.name">
         <template v-if="Array.isArray(defaultContent.children)">

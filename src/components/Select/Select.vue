@@ -1,5 +1,5 @@
 <template>
-  <div class="chi-select" ref="selectRef" role="group">
+  <div class="chi-select chi-input-vars chi-select-vars" ref="selectRef" role="group">
     <div
       class="chi-select__selector chi-select__selector-has-suffix"
       tabindex="0"

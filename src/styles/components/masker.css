@@ -5,11 +5,13 @@
   box-sizing: border-box;
 }
 
-.chi-masker {
+.chi-masker-vars {
   --chi-masker-z-index: var(--chi-z-index-masker);
   --chi-masker-bg-color: var(--chi-color-black);
   --chi-masker-opacity: 45%;
+}
 
+.chi-masker {
   position: fixed;
   top: 0;
   right: 0;

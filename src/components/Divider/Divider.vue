@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { ClassType, DividerProps } from './types'
+import type { DividerProps } from './types'
 
 defineOptions({
   name: 'chi-divider',
@@ -43,8 +43,9 @@ const style = computed(() => {
 
 const className = computed(() => {
   const { dashed, primary, textPosition, vertical } = props
-  const className: ClassType = {
+  const className: Record<string, boolean> = {
     'chi-divider': true,
+    'chi-divider-vars': true,
     'chi-divider--dashed': dashed,
   }
   if (vertical) {

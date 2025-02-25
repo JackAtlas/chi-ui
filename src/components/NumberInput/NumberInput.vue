@@ -114,6 +114,8 @@ const inputClassname = computed(() => {
   const { disabled, size, state } = props
   const classname: Record<string, boolean> = {
     'chi-number-input': true,
+    'chi-input-vars': true,
+    'chi-number-input-vars': true,
     'chi-number-input--disabled': disabled,
     'chi-number-input--focused': inputting.value,
     'chi-number-input--out-of-range': outOfRange.value,

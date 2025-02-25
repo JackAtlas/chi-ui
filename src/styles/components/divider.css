@@ -1,4 +1,4 @@
-.chi-divider {
+.chi-divider-vars {
   --chi-divider-border-color: var(--chi-border-color-light-2);
   --chi-divider-border: var(--chi-border-shape) var(--chi-divider-border-color);
   --chi-divider-v-margin: 24px;
@@ -8,7 +8,9 @@
   --chi-divider-text-v-padding: 0;
   --chi-divider-text-h-padding: 14px;
   --chi-divider-text-size-primary: var(--chi-font-size-primary);
+}
 
+.chi-divider {
   display: flex;
   padding: 0;
   font-family: var(--chi-font-family-base);

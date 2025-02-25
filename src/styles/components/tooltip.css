@@ -2,11 +2,7 @@
   display: inline-flex;
 }
 
-.chi-tooltip__trigger {
-  display: inline-flex;
-}
-
-.chi-tooltip__popper {
+.chi-tooltip-vars {
   --chi-tooltip-bg-color: var(--chi-bg-color-base);
   --chi-tooltip-bg-color-dark: var(--chi-fill-color-reverse);
   --chi-tooltip-shadow-color: var(--chi-shadow-color-base);
@@ -24,6 +20,10 @@
   --chi-tooltip-arrow-size: 7px;
   --chi-tooltip-arrow-v-offset: 16px;
   --chi-tooltip-arrow-h-offset: 28px;
+}
+
+.chi-tooltip__trigger {
+  display: inline-flex;
 }
 
 .chi-tooltip__tip {

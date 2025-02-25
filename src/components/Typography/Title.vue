@@ -41,6 +41,7 @@ const classname = computed(() => {
   const { aligned, marker, markerType, thin, top, type } = props
   const classname: Record<string, boolean> = {
     'chi-title': true,
+    'chi-title-vars': true,
     'chi-title--aligned': aligned,
     'chi-title--marker': marker,
     'chi-title--thin': thin,

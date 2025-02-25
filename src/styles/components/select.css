@@ -1,44 +1,4 @@
-.chi-select {
-  --chi-input-bg-color: var(--chi-fill-color-base);
-  --chi-input-bg-color-disabled: var(--chi-fill-color-humble);
-
-  --chi-input-border-color: var(--chi-border-color-base);
-  --chi-input-border-color-hover: var(--chi-color-primary-light-1);
-  --chi-input-border-color-focus: var(--chi-input-border-color-hover);
-
-  --chi-input-shadow-color-focus: var(--chi-color-primary-opacity-6);
-
-  --chi-input-placeholder-color: var(--chi-content-color-placeholder);
-
-  --chi-input-control-color: var(--chi-content-color-base);
-  --chi-input-control-color-disabled: var(--chi-content-color-disabled);
-
-  --chi-input-icon-color: var(--chi-content-color-secondary);
-  --chi-input-icon-color-hover: var(--chi-input-control-color-disabled);
-
-  --chi-input-before-bg-color: var(--chi-fill-color-background);
-  --chi-input-after-bg-color: var(--chi-fill-color-background);
-
-  --chi-input-line-height: var(--chi-line-height-base);
-
-  --chi-input-border: var(--chi-border-shape) var(--chi-input-border-color);
-  --chi-input-radius: var(--chi-radius-base);
-
-  --chi-input-count-color: var(--chi-content-color-secondary);
-  --chi-input-count-color-disabled: var(--chi-input-control-color-disabled);
-
-  --chi-input-count-font-size: var(--chi-font-size-secondary);
-
-  --chi-input-count-line-height: var(--chi-line-height-secondary);
-
-  --chi-input-height: 32px;
-  --chi-input-v-padding: 4px;
-  --chi-input-h-padding: 8px;
-  --chi-input-padding: var(--chi-input-v-padding) var(--chi-input-h-padding);
-
-  --chi-input-prefix-width: 32px;
-  --chi-input-suffix-width: 32px;
-
+.chi-select-vars {
   --chi-select-list-bg-color: var(--chi-bg-color-base);
   --chi-select-list-border-color: var(--chi-border-color-light-2);
   --chi-select-list-border: var(--chi-border-shape) var(--chi-select-list-border-color);
@@ -48,7 +8,9 @@
   --chi-select-empty-color: var(--chi-content-color-placeholder);
   --chi-select-filter-height: 32px;
   --chi-select-filter-divider: var(--chi-border-shape) var(--chi-border-color-light-2);
+}
 
+.chi-select {
   display: inline-flex;
   width: 100%;
   font-family: var(--chi-font-family-base);

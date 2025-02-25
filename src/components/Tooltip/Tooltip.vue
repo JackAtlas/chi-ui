@@ -1,5 +1,5 @@
 <template>
-  <div class="chi-tooltip" ref="tooltipRef" v-on="outerEvents">
+  <div class="chi-tooltip chi-tooltip-vars" ref="tooltipRef" v-on="outerEvents">
     <div class="chi-tooltip__trigger" ref="triggerRef" v-on="events">
       <slot />
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <Popup class="chi-message" ref="popup" :placement="placementCenter">
+  <Popup class="chi-message chi-message-vars" ref="popup" :placement="placementCenter">
     <template #item="{ item }: { item: MessageOptions }">
       <div class="chi-message__item" role="alert">
         <div class="chi-message__wrapper">

@@ -17,6 +17,7 @@ const classname = computed(() => {
   const { type } = props
   const classname: Record<string, boolean> = {
     'chi-blockquote': true,
+    'chi-blockquote-vars': true,
   }
   if (type) classname[`chi-blockquote-${type}`] = true
 

@@ -5,31 +5,11 @@
   box-sizing: border-box;
 }
 
-.chi-number-input {
-  --chi-input-bg-color: var(--chi-fill-color-base);
-  --chi-input-bg-color-disabled: var(--chi-fill-color-humble);
-
-  --chi-input-border-color: var(--chi-border-color-base);
-  --chi-input-border-color-hover: var(--chi-color-primary-light-1);
-  --chi-input-border-color-focus: var(--chi-input-border-color-hover);
-
-  --chi-input-shadow-color-focus: var(--chi-color-primary-opacity-6);
-
-  --chi-input-control-color: var(--chi-content-color-base);
-  --chi-input-control-color-disabled: var(--chi-content-color-disabled);
-
-  --chi-input-icon-color: var(--chi-content-color-secondary);
-  --chi-input-icon-color-hover: var(--chi-color-primary);
-
-  --chi-input-height: 32px;
-  --chi-input-v-padding: 4px;
-  --chi-input-h-padding: 8px;
-  --chi-input-line-height: var(--chi-line-height-base);
-  --chi-input-border: var(--chi-border-shape) var(--chi-input-border-color);
-  --chi-input-radius: var(--chi-radius-base);
-
+.chi-number-input-vars {
   --chi-number-input-control-color-out: var(--chi-color-error);
+}
 
+.chi-number-input {
   position: relative;
   display: inline-flex;
   align-items: center;

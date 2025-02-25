@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-.chi-badge {
+.chi-badge-vars {
   --chi-badge-bg-color: var(--chi-color-error);
   --chi-badge-border-color: var(--chi-color-error-opacity-8);
   --chi-badge-text-color: var(--chi-color-white);
@@ -18,7 +18,9 @@
   --chi-badge-line-height: var(--chi-line-height-secondary);
 
   --chi-badge-dot-size: 7px;
+}
 
+.chi-badge {
   position: relative;
   display: inline-flex;
   font-family: var(--chi-font-family-base);

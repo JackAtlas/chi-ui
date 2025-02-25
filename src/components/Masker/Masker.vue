@@ -1,7 +1,7 @@
 <template>
   <Teleport :to="toNode" v-if="transfer">
     <Transition name="chi-fade">
-      <div class="chi-masker" v-if="innerActive" @click="handleClose">
+      <div class="chi-masker chi-masker-vars" v-if="innerActive" @click="handleClose">
         <div class="chi-masker__mask">
           <slot name="mask" />
           <div class="chi-masker__mask-inner" v-if="!$slots.mask"></div>
@@ -14,7 +14,7 @@
   </Teleport>
   <template v-else>
     <Transition name="chi-fade">
-      <div class="chi-masker" v-if="innerActive" @click="handleClose">
+      <div class="chi-masker chi-masker-vars" v-if="innerActive" @click="handleClose">
         <div class="chi-masker__mask">
           <slot name="mask" />
           <div class="chi-masker__mask-inner" v-if="!$slots.mask"></div>

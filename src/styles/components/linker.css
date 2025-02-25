@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-a.chi-linker {
+.chi-linker-vars {
   --chi-linker-text-color: inherit;
   --chi-linker-text-color-hover: var(--chi-color-primary-light-1);
   --chi-linker-text-color-active: var(--chi-color-primary-dark-1);
@@ -13,7 +13,9 @@ a.chi-linker {
 
   --chi-linker-series-span: 8px;
   --chi-linker-underline-height: 1px;
+}
 
+a.chi-linker {
   display: inline-flex;
   align-items: center;
   position: relative;

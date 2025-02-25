@@ -1,4 +1,4 @@
-.chi-message {
+.chi-message-vars {
   --chi-message-bg-color: var(--chi-bg-color-base);
   --chi-message-border-color: var(--chi-border-color-light-2);
   --chi-message-radius: var(--chi-radius-base);
@@ -12,7 +12,9 @@
   --chi-message-icon-color: var(--chi-message-color);
   --chi-message-close-color: var(--chi-content-color-placeholder);
   --chi-message-close-color-hover: var(--chi-content-color-base);
+}
 
+.chi-message {
   display: flex;
   flex-direction: column;
   align-items: center;

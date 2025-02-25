@@ -1,4 +1,4 @@
-.chi-title {
+.chi-title-vars {
   --chi-title-font-size-level-1: 36px;
   --chi-title-font-size-level-2: 30px;
   --chi-title-font-size-level-3: 24px;
@@ -11,7 +11,9 @@
   --chi-title-marker-width: 4px;
   --chi-title-marker-color: var(--chi-content-color-placeholder);
   --chi-title-marker-offset: 16px;
+}
 
+.chi-title {
   margin-top: 1em;
   margin-bottom: 0.5em;
   font-family: var(--chi-font-family-base);
@@ -122,7 +124,7 @@ h6.chi-title {
   box-sizing: border-box;
 }
 
-.chi-text {
+.chi-text-vars {
   --chi-text-font-family-mono: var(--chi-font-family-mono);
   --chi-text-font-weight-strong: 600;
   --chi-text-font-weight-thin: 300;
@@ -136,7 +138,9 @@ h6.chi-title {
   --chi-text-keyboard-bg-color: var(--chi-fill-color-background);
   --chi-text-keyboard-border-color: var(--chi-border-color-light-1);
   --chi-text-keyboard-radius: var(--chi-radius-base);
+}
 
+.chi-text {
   font-family: var(--chi-font-family-base);
   font-size: var(--chi-font-size-base);
   font-variant-numeric: tabular-nums;
@@ -208,12 +212,14 @@ h6.chi-title {
   box-sizing: border-box;
 }
 
-.chi-blockquote {
+.chi-blockquote-vars {
   --chi-blockquote-color: var(--chi-content-color-base);
   --chi-blockquote-padding-inline-start: 10px;
   --chi-blockquote-marker-width: 4px;
   --chi-blockquote-marker-color: var(--chi-border-color-base);
+}
 
+.chi-blockquote {
   margin: 1em 0;
   padding-inline-start: var(--chi-blockquote-padding-inline-start);
   font-family: var(--chi-font-family-base);

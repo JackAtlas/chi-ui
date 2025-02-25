@@ -1,5 +1,5 @@
 <template>
-  <div class="chi-input-wrapper" ref="wrapperNode">
+  <div class="chi-input-wrapper chi-input-vars" ref="wrapperNode">
     <div class="chi-input__before-action" v-if="$slots['before-action']">
       <slot name="before-action" />
     </div>

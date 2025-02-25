@@ -1,6 +1,6 @@
 <template>
   <div
-    class="chi-badge"
+    class="chi-badge chi-badge-vars"
     :class="{ ['chi-badge--is-dot']: isDot, ['chi-badge--not-wrapper']: !$slots.default }"
     @click="handleClick"
   >

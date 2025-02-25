@@ -1,6 +1,6 @@
 <template>
   <a
-    class="chi-linker"
+    class="chi-linker chi-linker-vars"
     :class="{
       [`chi-linker--${type}`]: type,
       [`chi-linker--disabled`]: disabled,

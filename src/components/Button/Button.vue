@@ -1,7 +1,7 @@
 <template>
   <button
     ref="_ref"
-    class="chi-button"
+    class="chi-button chi-button-vars"
     role="button"
     :class="{
       [`chi-button--block`]: block,

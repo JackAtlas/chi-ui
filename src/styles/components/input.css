@@ -1,18 +1,4 @@
-.chi-input-wrapper,
-.chi-input-wrapper *,
-.chi-input-wrapper *::before,
-.chi-input-wrapper *::after {
-  box-sizing: border-box;
-}
-
-.chi-input,
-.chi-input *,
-.chi-input *::before,
-.chi-input *::after {
-  box-sizing: border-box;
-}
-
-.chi-input-wrapper {
+.chi-input-vars {
   --chi-input-bg-color: var(--chi-fill-color-base);
   --chi-input-border-color: var(--chi-border-color-base);
 
@@ -42,7 +28,23 @@
   --chi-input-line-height: var(--chi-line-height-base);
   --chi-input-border: var(--chi-border-shape) var(--chi-input-border-color);
   --chi-input-radius: var(--chi-radius-base);
+}
 
+.chi-input-wrapper,
+.chi-input-wrapper *,
+.chi-input-wrapper *::before,
+.chi-input-wrapper *::after {
+  box-sizing: border-box;
+}
+
+.chi-input,
+.chi-input *,
+.chi-input *::before,
+.chi-input *::after {
+  box-sizing: border-box;
+}
+
+.chi-input-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
