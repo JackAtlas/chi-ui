@@ -6,8 +6,7 @@
 
 <script setup lang="ts">
 import { computed, inject } from 'vue'
-import type { CellFlex } from '../Grid/types'
-import type { CellProps } from './types'
+import type { CellFlex, CellProps } from './types'
 
 defineOptions({
   name: 'chi-cell',

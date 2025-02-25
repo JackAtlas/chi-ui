@@ -12,6 +12,22 @@ export interface CellFlexAJ {
   justify?: FlexJustifyType
 }
 
+export type UseFlex = boolean | CellFlexAJ | null | undefined
+
+export interface CellProps {
+  bottom?: number | string
+  height?: number
+  left?: number | string
+  right?: number | string
+  top?: number | string
+  useFlex?: boolean | UseFlex
+  width?: number
+}
+export interface CellFlexAJ {
+  align?: FlexAlignType
+  justify?: FlexJustifyType
+}
+
 export type CellFlex = boolean | CellFlexAJ | undefined
 
 export interface GridProps {

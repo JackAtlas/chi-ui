@@ -1,5 +1,6 @@
+import Cell from './Cell.vue'
 import Grid from './Grid.vue'
 
-export { Grid }
+export { Cell, Grid }
 
-export type { GridProps } from './types'
+export * from './types'
