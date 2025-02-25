@@ -3,7 +3,7 @@
     <div
       class="chi-select__selector chi-select__selector-has-suffix"
       tabindex="0"
-      @click="toggleOptions"
+      @click="toggleVisible"
     >
       <div class="chi-select__control" ref="controlRef">
         <span class="chi-select__placeholder">{{ placeholder }}</span>
@@ -17,7 +17,7 @@
         <div
           class="chi-select__list"
           ref="optionsRef"
-          v-if="visible"
+          v-if="currentVisible"
           :data-options-placement="finalPlacement"
           :style="floatingStyles"
         >
@@ -43,42 +43,65 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { flip, useFloating } from '@floating-ui/vue'
+import { ref, watch } from 'vue'
+import { flip, offset, useFloating } from '@floating-ui/vue'
 import Icon from '../Icon/Icon.vue'
 import type { SelectEmits, SelectProps } from './types'
 defineOptions({
   name: 'chi-select',
 })
-withDefaults(defineProps<SelectProps>(), {
+const props = withDefaults(defineProps<SelectProps>(), {
   placeholder: '请选择',
 })
-defineEmits<SelectEmits>()
+const emits = defineEmits<SelectEmits>()
 
 const selectRef = ref<HTMLElement>()
 const controlRef = ref<HTMLElement>()
 const optionsRef = ref<HTMLElement>()
-const visible = ref(false)
+const currentVisible = ref(props.visible)
 
-const middleware = ref([flip()])
+const middleware = ref([
+  flip(),
+  offset(({ rects }) => ({
+    crossAxis: -rects.reference.width / 2 + rects.floating.width / 2,
+  })),
+])
 const { floatingStyles, placement: finalPlacement } = useFloating(selectRef, optionsRef, {
   middleware,
   placement: 'bottom',
 })
 
-function toggleOptions() {
-  if (visible.value) {
-    hideOptions()
-  } else {
-    showOptions()
+function fitOptionsWidth() {
+  requestAnimationFrame(() => {
+    if (selectRef.value && optionsRef.value) {
+      optionsRef.value.style.minWidth = `${selectRef.value.offsetWidth}px`
+    }
+  })
+}
+
+watch(currentVisible, (value: boolean) => {
+  if (value) {
+    fitOptionsWidth()
   }
+})
+
+defineExpose({
+  currentVisible,
+  wrapper: selectRef,
+  popper: optionsRef,
+})
+
+function setVisible(visible: boolean) {
+  if (currentVisible.value === visible) return
+
+  currentVisible.value = visible
+
+  emits('update:visible', visible)
 }
 
-function showOptions() {
-  visible.value = true
-}
+function toggleVisible() {
+  if (props.disabled) return
 
-function hideOptions() {
-  visible.value = false
+  setVisible(!currentVisible.value)
 }
 </script>
