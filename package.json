@@ -1,6 +1,6 @@
 {
   "name": "@chi/chi-ui",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "main": "dist/chi-ui.umd.cjs",
   "module": "dist/chi-ui.js",
