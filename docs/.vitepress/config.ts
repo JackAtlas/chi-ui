@@ -53,10 +53,13 @@ export default defineConfig({
           { text: 'Tooltip | 提示', link: 'zh-CN/components/tooltip' },
         ],
       },
-      // {
-      //   text: '反应',
-      //   items: [{ text: 'Message | 消息提示', link: 'zh-CN/components/message' }],
-      // },
+      {
+        text: '反应',
+        items: [
+          { text: 'Alert | 警告提示', link: 'zh-CN/components/alert' },
+          // { text: 'Message | 消息提示', link: 'zh-CN/components/message' }
+        ],
+      },
       {
         text: '其他',
         items: [
