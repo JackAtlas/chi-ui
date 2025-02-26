@@ -1,8 +1,12 @@
 {
-  "name": "chi-ui",
+  "name": "@chi/chi-ui",
   "private": true,
   "version": "0.0.0",
+  "main": "dist/chi-ui.umd.cjs",
+  "module": "dist/chi-ui.js",
   "type": "module",
+  "description": "A Component Library for Vue 3",
+  "author": "jackatlas",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
