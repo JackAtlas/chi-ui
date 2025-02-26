@@ -17,6 +17,7 @@ import { Badge } from './Badge'
 import { Collapse, CollapsePanel } from './Collapse'
 import { Tooltip } from './Tooltip'
 
+import { Alert } from './Alert'
 import { Message } from './Message'
 
 import { Masker } from './Masker'
@@ -59,6 +60,7 @@ const components = [
   Tooltip,
 
   // 反应
+  Alert,
   Message,
 
   // 其他
