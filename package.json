@@ -1,5 +1,5 @@
 {
-  "name": "@chi/chi-ui",
+  "name": "@jackatlas/chi-ui",
   "private": false,
   "version": "0.0.0",
   "main": "dist/chi-ui.umd.cjs",

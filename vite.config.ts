@@ -15,7 +15,7 @@ export default defineConfig({
     },
     lib: {
       entry: './src/components/index.ts',
-      name: '@chi/Chi-ui',
+      name: '@jackatlas/chi-ui',
     },
   },
 })
