@@ -16,4 +16,4 @@ import Text from './Text.vue'
 
 export { Title, H1, H2, H3, H4, H5, H6, Ol, Ul, P, Strong, Blockquote, Text }
 
-export type { HTitleProps, ListProps, TitleLevel, TitleProps, TypographyType } from './types'
+export type { HTitleProps, TitleLevel, TitleProps, TypographyType } from './types'
