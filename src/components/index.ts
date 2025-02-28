@@ -81,3 +81,22 @@ function createInstall(components: any[] = []) {
 }
 
 export const install = createInstall(components)
+
+export * from './Alert'
+export * from './Badge'
+export * from './Button'
+export * from './Collapse'
+export * from './Divider'
+export * from './Grid'
+export * from './Icon'
+export * from './IconCloud'
+export * from './Input'
+export * from './Linker'
+export * from './Masker'
+export * from './Message'
+export * from './NumberInput'
+export * from './Popup'
+export * from './Select'
+export * from './Space'
+export * from './Tooltip'
+export * from './Typography'
