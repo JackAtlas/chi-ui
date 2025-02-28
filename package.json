@@ -1,7 +1,7 @@
 {
   "name": "@jackatlas/chi-ui",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/chi-ui.umd.cjs",
   "module": "dist/chi-ui.js",
   "type": "module",
