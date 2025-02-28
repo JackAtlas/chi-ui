@@ -14,15 +14,6 @@ importers:
       lucide-vue-next:
         specifier: ^0.476.0
         version: 0.476.0(vue@3.5.13(typescript@5.7.3))
-      postcss-color-mix:
-        specifier: ^1.1.0
-        version: 1.1.0
-      postcss-each:
-        specifier: ^1.1.0
-        version: 1.1.0(postcss@8.5.3)
-      postcss-for:
-        specifier: ^2.1.1
-        version: 2.1.1
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.3)
@@ -72,6 +63,15 @@ importers:
       happy-dom:
         specifier: ^17.1.8
         version: 17.1.8
+      postcss-color-mix:
+        specifier: ^1.1.0
+        version: 1.1.0
+      postcss-each:
+        specifier: ^1.1.0
+        version: 1.1.0(postcss@8.5.3)
+      postcss-for:
+        specifier: ^2.1.1
+        version: 2.1.1
       prettier:
         specifier: ^3.5.2
         version: 3.5.2
