@@ -12,7 +12,7 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "build-only": "vite build",
+    "build-only": "vite build && gulp",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
@@ -21,8 +21,7 @@
     "docs:preview": "vitepress preview docs --port 5174"
   },
   "files": [
-    "dist",
-    "src/styles"
+    "dist"
   ],
   "dependencies": {
     "@floating-ui/vue": "^1.1.6",
@@ -45,6 +44,8 @@
     "eslint": "^9.19.0",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.14.0",
+    "gulp": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
     "happy-dom": "^17.0.0",
     "prettier": "^3.4.2",
     "typescript": "~5.6.2",
