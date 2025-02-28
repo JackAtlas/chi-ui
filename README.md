@@ -2,6 +2,16 @@
 
 <p align="center">Highly Customizebility, full TypeScript</p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/@jackatlas/chi-ui" target="_blank">
+    <img src="https://img.shields.io/npm/v/%40jackatlas%2Fchi-ui
+    " alt="NPM Version" />
+  </a>
+  <a href="https://github.com/jackatlas/chi-ui/commits/master" target="_blank">
+    <img src="https://img.shields.io/github/commit-activity/w/jackatlas/chi-ui" alt="commits pre week"/>
+  </a>
+</p>
+
 **English** | [中文](./README.zh-CN.md)
 
 This project is currently under development and has no online demo, but you could still access the documentation locally.
