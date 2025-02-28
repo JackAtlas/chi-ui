@@ -7,11 +7,12 @@
       >警告提示的内容</chi-alert
     >
     <hr />
-    <chi-alert icon="dog">警告提示的内容</chi-alert>
-    <chi-alert icon="bug" title="警告标题" type="error">警告提示的内容</chi-alert>
+    <chi-alert :icon="Dog">警告提示的内容</chi-alert>
+    <chi-alert title="警告标题" type="error" :icon="Bug">警告提示的内容</chi-alert>
   </div>
 </template>
 
 <script setup>
+import { Bug, Dog } from 'lucide-vue-next'
 const types = ['primary', 'info', 'success', 'warning', 'error']
 </script>

@@ -11,7 +11,7 @@ Chi UI 使用 Lucide 图标库提供的内部图标。
 
 ### 基本使用
 
-通过 `name` 属性来指定对应的图标。
+可以把图标通过 `icon` 属性传入，也可以放在默认插槽下。
 
 <preview path="../demo/Icon/Basic-Icon.vue" title="基本使用" description="通过 `name` 属性来指定对应的图标。"></preview>
 
@@ -53,6 +53,6 @@ type EffectType = 'spin-in' | 'spin-out'
 | ------ | ------------------ | ------------------ | ------ |
 | color  | `string`           | 设置图标的颜色     | `null` |
 | effect | `EffectType`       | 设置效果动画名称   | `null` |
-| name   | `string`           | 图标的名称         | `''`   |
+| icon   | `LucideIcon`       | Lucide 图标        | `null` |
 | scale  | `number \| string` | 设置图标的缩放比例 | `1`    |
 | size   | `number \| string` | 指定图标的大小     | `null` |

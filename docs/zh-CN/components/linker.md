@@ -44,7 +44,7 @@ type LinkerType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 | 名称      | 类型                       | 说明                          | 默认值      |
 | --------- | -------------------------- | ----------------------------- | ----------- |
 | disabled  | `boolean`                  | 设置是否为禁用状态            | `false`     |
-| icon      | `string`                   | 链接的前置图标名称            | `''`        |
+| icon      | `LucideIcon`               | 链接的前置图标名称            | `null`      |
 | target    | `HTMLAnchorElement.target` | 同 `<a>` 标签的 `target` 属性 | `''`        |
 | to        | `HTMLAnchorElement.href`   | 链接的目标地址                | `''`        |
 | type      | `LinkerType`               | 链接的类型                    | `'default'` |

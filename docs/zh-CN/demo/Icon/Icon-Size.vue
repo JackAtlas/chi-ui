@@ -1,6 +1,10 @@
 <template>
-  <chi-icon name="flag"></chi-icon>
-  <chi-icon name="flag" :scale="1.6"></chi-icon>
-  <chi-icon name="cat"></chi-icon>
-  <chi-icon name="cat" size="32px"></chi-icon>
+  <chi-icon :icon="Flag"></chi-icon>
+  <chi-icon :icon="Flag" :scale="1.6"></chi-icon>
+  <chi-icon :icon="Cat"></chi-icon>
+  <chi-icon :icon="Cat" size="32px"></chi-icon>
 </template>
+
+<script setup>
+import { Cat, Flag } from 'lucide-vue-next'
+</script>

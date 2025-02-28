@@ -1,9 +1,9 @@
 ---
-title: Collapse 折叠面板
+title: Collapse 折叠面板（WIP）
 description:
 ---
 
-# Collapse 折叠面板
+# Collapse 折叠面板（WIP）
 
 ## 代码示例
 

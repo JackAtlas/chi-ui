@@ -5,7 +5,7 @@
     </chi-input>
     <chi-input placeholder="chi-ui">
       <template #after-action>
-        <chi-button icon-before="search" type="primary">搜索</chi-button>
+        <chi-button type="primary" :icon-before="Search">搜索</chi-button>
       </template>
     </chi-input>
     <chi-input placeholder="chi-ui">
@@ -18,3 +18,7 @@
     </chi-input>
   </chi-space>
 </template>
+
+<script setup>
+import { Search } from 'lucide-vue-next'
+</script>

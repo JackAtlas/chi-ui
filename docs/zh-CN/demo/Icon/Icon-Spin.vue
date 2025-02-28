@@ -1,4 +1,8 @@
 <template>
-  <chi-icon name="loader-circle" effect="spin-in"></chi-icon>
-  <chi-icon name="loader-circle" effect="spin-out"></chi-icon>
+  <chi-icon :icon="LoaderCircle" effect="spin-in"></chi-icon>
+  <chi-icon :icon="LoaderCircle" effect="spin-out"></chi-icon>
 </template>
+
+<script setup>
+import { LoaderCircle } from 'lucide-vue-next'
+</script>

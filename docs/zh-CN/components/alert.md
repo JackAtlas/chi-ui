@@ -59,14 +59,14 @@ export type AlertType = 'primary' | 'info' | 'success' | 'warning' | 'error'
 
 ### Alert 属性
 
-| 名称          | 类型                | 说明                                     | 默认值      |
-| ------------- | ------------------- | ---------------------------------------- | ----------- |
-| closable      | `boolean`           | 设置警告提示是否可以被关闭               | `false`     |
-| colorful-text | `boolean`           | 设置字体是否具有和类型一致的颜色         | `false`     |
-| icon          | `boolean \| string` | 设置是否显示图标，可传入图标名称进行指定 | `false`     |
-| no-border     | `boolean`           | 设置是否禁用警告提示的边框               | `false`     |
-| title         | `string`            | 设置警告提示标题，使用同名插槽后失效     | `''`        |
-| type          | `AlertType`         | 警告提示的类型                           | `'primary'` |
+| 名称          | 类型                    | 说明                                 | 默认值      |
+| ------------- | ----------------------- | ------------------------------------ | ----------- |
+| closable      | `boolean`               | 设置警告提示是否可以被关闭           | `false`     |
+| colorful-text | `boolean`               | 设置字体是否具有和类型一致的颜色     | `false`     |
+| icon          | `boolean \| LucideIcon` | 设置是否显示图标，也可传入图标       | `false`     |
+| no-border     | `boolean`               | 设置是否禁用警告提示的边框           | `false`     |
+| title         | `string`                | 设置警告提示标题，使用同名插槽后失效 | `''`        |
+| type          | `AlertType`             | 警告提示的类型                       | `'primary'` |
 
 ### Alert 事件
 

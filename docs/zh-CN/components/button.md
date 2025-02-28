@@ -81,8 +81,8 @@ type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'erro
 | block       | `boolean`        | 是否为块级元素，设置后宽度变为 `100%`  | `false`    |
 | circle      | `boolean`        | 设置是否为圆形按钮                     | `false`    |
 | disabled    | `boolean`        | 设置是否为禁用状态                     | `false`    |
-| icon-after  | `string`         | 按钮后置图标的名称                     | `''`       |
-| icon-before | `string`         | 按钮前置图标的名称                     | `''`       |
+| icon-after  | `LucideIcon`     | 按钮后置图标                           | `null`     |
+| icon-before | `LucideIcon`     | 按钮前置图标                           | `null`     |
 | loading     | `boolean`        | 设置是否为加载状态                     | `false`    |
 | simple      | `boolean`        | 开启后，按钮将变为浅色系的简约风格     | `false`    |
 | size        | `ButtonSize`     | 按钮的大小                             | `'medium'` |
