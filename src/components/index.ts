@@ -68,6 +68,7 @@ const components = [
   IconCloud,
 ]
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function createInstall(components: any[] = []) {
   return function install(app: App) {
     components.forEach((component) => {
