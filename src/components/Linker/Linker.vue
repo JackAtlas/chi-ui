@@ -7,8 +7,9 @@
       [`chi-linker--underline`]: underline,
     }"
   >
-    <slot name="icon" />
-    <chi-icon class="chi-linker__icon" :name="icon" v-if="icon && !$slots.icon"></chi-icon>
+    <slot name="icon">
+      <chi-icon class="chi-linker__icon" :icon="icon"></chi-icon>
+    </slot>
     <slot />
   </a>
 </template>

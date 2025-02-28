@@ -3,15 +3,15 @@
     <div class="chi-input__before-action" v-if="$slots['before-action']">
       <slot name="before-action" />
     </div>
-    <div class="chi-input__before" v-if="before && !$slots.before">{{ before }}</div>
-    <div class="chi-input__before" v-if="$slots.before">
-      <slot name="before" />
+    <div class="chi-input__before" v-if="before || $slots.before">
+      <slot name="before">{{ before }}</slot>
     </div>
     <div :class="className" ref="inputNode">
       <div class="chi-input__prefix-wrapper" v-if="$slots.prefix || prefix">
-        <slot name="prefix" />
         <div class="chi-input__icon chi-input__prefix">
-          <Icon :name="prefix" v-if="prefix && !$slots.prefix" />
+          <slot name="prefix">
+            <Icon :icon="prefix" />
+          </slot>
         </div>
       </div>
       <input
@@ -29,20 +29,21 @@
         @input="handleInput"
       />
       <div class="chi-input__suffix-wrapper" v-if="$slots.suffix || clearable || suffix || loading">
-        <slot name="suffix" />
         <div class="chi-input__icon chi-input__icon--placeholder" v-if="clearable || loading"></div>
         <Button
           circle
           class="chi-input__icon chi-input__clear"
-          icon-before="circle-x"
           v-if="showClear"
+          :icon-before="CircleX"
           @click="clear"
         ></Button>
         <div class="chi-input__icon chi-input__loading" v-if="loading">
-          <Icon effect="spin-in" name="loader-circle" />
+          <Icon effect="spin-in" :icon="LoaderCircle" />
         </div>
-        <div class="chi-input__icon chi-input__suffix">
-          <Icon :name="suffix" v-if="suffix && !$slots.suffix" />
+        <div class="chi-input__icon chi-input__suffix" v-if="suffix || $slots.suffix">
+          <slot name="suffix">
+            <Icon :icon="suffix" />
+          </slot>
         </div>
       </div>
       <div
@@ -50,16 +51,15 @@
         v-if="$props.type === 'password' && !$slots.password"
         @click="togglePlain"
       >
-        <Icon name="eye-off" v-if="plain"></Icon>
-        <Icon name="eye" v-else></Icon>
+        <Icon v-if="plain" :icon="EyeOff"></Icon>
+        <Icon v-else :icon="Eye"></Icon>
       </div>
       <div class="chi-input__icon chi-input__password" v-if="$slots.password" @click="togglePlain">
         <slot name="password" :plain="plain" />
       </div>
     </div>
-    <div class="chi-input__after" v-if="after && !$slots.after">{{ after }}</div>
-    <div class="chi-input__after" v-if="$slots.after">
-      <slot name="after" />
+    <div class="chi-input__after" v-if="after || $slots.after">
+      <slot name="after">{{ after }}</slot>
     </div>
     <div class="chi-input__after-action" v-if="$slots['after-action']">
       <slot name="after-action" />
@@ -69,6 +69,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { CircleX, Eye, EyeOff, LoaderCircle } from 'lucide-vue-next'
 import type { InputEmits, InputProps, ValueType } from './types.ts'
 import Button from '../Button/Button.vue'
 import Icon from '../Icon/Icon.vue'

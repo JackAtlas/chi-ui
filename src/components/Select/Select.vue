@@ -9,7 +9,7 @@
         <span class="chi-select__placeholder">{{ placeholder }}</span>
       </div>
       <div class="chi-select__icon chi-select__suffix">
-        <Icon class="chi-select__arrow" name="chevron-down"></Icon>
+        <Icon class="chi-select__arrow" :icon="ChevronDown"></Icon>
       </div>
     </div>
     <Transition name="chi-fade">
@@ -44,8 +44,9 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
+import { ChevronDown } from 'lucide-vue-next'
 import { flip, offset, useFloating } from '@floating-ui/vue'
-import Icon from '../Icon/Icon.vue'
+import { Icon } from '../Icon'
 import type { SelectEmits, SelectProps } from './types'
 defineOptions({
   name: 'chi-select',

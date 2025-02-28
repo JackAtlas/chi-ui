@@ -1,5 +1,5 @@
 <template>
-  <i class="chi-icon" :class="effectClass" :style="style">
+  <i class="chi-icon" :class="effectClass" :style="style" v-if="icon || $slots.default">
     <g>
       <slot>
         <component :color="color" :is="icon" :stroke-width="strokeWidth" />
@@ -10,15 +10,11 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import * as icons from 'lucide-vue-next'
 import type { IconProps } from './types'
-import { toPascalCase } from '../../utils'
 defineOptions({
   name: 'chi-icon',
 })
 const props = defineProps<IconProps>()
-
-const icon = computed(() => icons[toPascalCase(props.name)])
 
 const effectClass = computed(() => {
   if (props.effect === 'spin-in') return 'chi-icon--spin-in'

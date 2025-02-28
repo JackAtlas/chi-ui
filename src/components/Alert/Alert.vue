@@ -1,7 +1,7 @@
 <template>
   <div :class="classname" v-if="!closed">
     <div class="chi-alert__icon" v-if="icon">
-      <Icon :name="iconName"></Icon>
+      <Icon :icon="alertIcon"></Icon>
     </div>
     <div class="chi-alert__wrapper">
       <div class="chi-alert__title">
@@ -13,7 +13,7 @@
     </div>
     <button class="chi-alert__close" type="button" v-if="closable" @click="handleClose">
       <slot name="close">
-        <Icon name="x"></Icon>
+        <Icon :icon="X"></Icon>
       </slot>
     </button>
   </div>
@@ -21,6 +21,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { Ban, CircleAlert, CircleCheck, CircleX, X } from 'lucide-vue-next'
 import type { AlertEmits, AlertProps } from './types'
 import Icon from '../Icon/Icon.vue'
 
@@ -53,19 +54,20 @@ const classname = computed(() => {
   return classname
 })
 
-const iconName = computed(() => {
-  if (typeof props.icon === 'string') {
-    return props.icon
-  } else {
+const alertIcon = computed(() => {
+  if (typeof props.icon === 'boolean' && props.icon === true) {
     switch (props.type) {
       case 'success':
-        return 'circle-check'
+        return CircleCheck
       case 'error':
-        return 'circle-x'
+        return CircleX
       default:
-        return 'circle-alert'
+        return CircleAlert
     }
+  } else {
+    if (props.icon) return props.icon
   }
+  return Ban
 })
 
 function handleClose() {

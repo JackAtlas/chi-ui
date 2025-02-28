@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-vue-next'
+
 export type ButtonAttrType = 'button' | 'submit' | 'reset'
 export type ButtonSize = 'small' | 'medium' | 'large'
 export type ButtonType = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'error'
@@ -8,8 +10,8 @@ export interface ButtonProps {
   circle?: boolean
   dashed?: boolean
   disabled?: boolean
-  iconAfter?: string
-  iconBefore?: string
+  iconAfter?: LucideIcon
+  iconBefore?: LucideIcon
   loading?: boolean
   simple?: boolean
   size?: ButtonSize

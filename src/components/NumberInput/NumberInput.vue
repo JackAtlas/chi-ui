@@ -20,7 +20,7 @@
         v-if="showClear"
         @click.stop="handleClear"
       >
-        <chi-icon label="clear" name="circle-x"></chi-icon>
+        <Icon label="clear" :icon="CircleX" />
       </button>
     </Transition>
     <template v-if="props.controlType !== 'none'">
@@ -33,7 +33,7 @@
         @pointerdown.prevent="handleHold('plus', $event)"
         @mousedown.prevent
       >
-        <Icon name="chevron-up" />
+        <Icon :icon="ChevronUp" />
       </div>
       <div
         class="chi-number-input__minus"
@@ -43,7 +43,7 @@
         @pointerdown.prevent="handleHold('minus', $event)"
         @mousedown.prevent
       >
-        <Icon name="chevron-down" />
+        <Icon :icon="ChevronDown" />
       </div>
     </template>
   </div>
@@ -51,10 +51,11 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import { ChevronDown, ChevronUp, CircleX } from 'lucide-vue-next'
+import { Icon } from '../Icon'
 import { useHover } from '../../hooks'
 import { boundRange, getGlobalCount, isNull, isValidNumber, toFixed, toNumber } from '../../utils'
 import type { NumberInputEmits, NumberInputProps } from './types'
-import Icon from '../Icon/Icon.vue'
 
 type InputEventType = 'input' | 'change'
 

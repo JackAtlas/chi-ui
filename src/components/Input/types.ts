@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-vue-next'
+
 export type ValueType = string | number
 
 export interface InputProps {
@@ -8,13 +10,13 @@ export interface InputProps {
   disabled?: boolean
   loading?: boolean
   loadingLock?: boolean
-  prefix?: string
+  prefix?: LucideIcon
   placeholder?: string
   showPassword?: boolean
   size?: 'small' | 'medium' | 'large'
   spellcheck?: boolean
   state?: 'success' | 'warning' | 'error'
-  suffix?: string
+  suffix?: LucideIcon
   sync?: boolean
   type?: 'text' | 'password' | 'date' | 'datetime' | 'time'
   value?: ValueType

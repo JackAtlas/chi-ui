@@ -18,17 +18,17 @@
     :disabled="disabled || loading"
     :type="attrType"
   >
-    <slot name="loader" v-if="loading && $slots.loader" />
-    <chi-icon
-      class="chi-button__icon chi-button__icon-loading"
-      effect="spin-in"
-      name="loader"
-      v-if="loading && !$slots.loader"
-    ></chi-icon>
+    <slot name="loader" v-if="loading">
+      <chi-icon
+        class="chi-button__icon chi-button__icon-loading"
+        effect="spin-in"
+        :icon="Loader"
+      ></chi-icon>
+    </slot>
     <slot name="icon-before">
       <chi-icon
         class="chi-button__icon chi-button__icon-before"
-        :name="iconBefore"
+        :icon="iconBefore"
         v-if="iconBefore"
       ></chi-icon>
     </slot>
@@ -38,7 +38,7 @@
     <slot name="icon-after">
       <chi-icon
         class="chi-button__icon chi-button__icon-after"
-        :name="iconAfter"
+        :icon="iconAfter"
         v-if="iconAfter"
       ></chi-icon>
     </slot>
@@ -47,6 +47,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { Loader } from 'lucide-vue-next'
 import type { ButtonProps } from './types.ts'
 defineOptions({
   name: 'chi-button',
