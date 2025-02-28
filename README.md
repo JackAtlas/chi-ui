@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@jackatlas/chi-ui" target="_blank">
-    <img src="https://img.shields.io/npm/v/%40jackatlas%2Fchi-ui
+    <img src="https://img.shields.io/npm/v/@jackatlas/chi-ui.svg
     " alt="NPM Version" />
   </a>
   <a href="https://github.com/jackatlas/chi-ui/commits/master" target="_blank">
