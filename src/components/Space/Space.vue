@@ -1,13 +1,13 @@
 <template>
   <div class="chi-space chi-space-vars" :class="className" :style="style">
     <template v-if="typeof $slots.default === 'function' && $slots.default()">
-      <template v-for="defaultContent in $slots.default()" :key="defaultContent.name">
+      <template v-for="(defaultContent, idx) in $slots.default()" :key="idx">
         <template v-if="Array.isArray(defaultContent.children)">
           <div
             class="chi-space__item"
             role="none"
-            v-for="c in defaultContent.children"
-            :key="c.name"
+            v-for="(c, j) in defaultContent.children"
+            :key="j"
           >
             <component :is="c" />
           </div>
