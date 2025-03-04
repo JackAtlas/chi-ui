@@ -1,7 +1,7 @@
 {
   "name": "@jackatlas/chi-ui",
   "private": false,
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "./dist/chi-ui.umd.cjs",
   "module": "./dist/chi-ui.js",
   "type": "module",
@@ -21,7 +21,8 @@
     "docs:preview": "vitepress preview docs --port 5174"
   },
   "files": [
-    "dist"
+    "dist",
+    "types.d.ts"
   ],
   "exports": {
     ".": {
