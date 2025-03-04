@@ -1,9 +1,0 @@
-<template>
-  <chi-space vertical>
-    <chi-button>按钮</chi-button>
-    <chi-button>按钮</chi-button>
-    <chi-button>按钮</chi-button>
-    <chi-button>按钮</chi-button>
-    <chi-button>按钮</chi-button>
-  </chi-space>
-</template>
