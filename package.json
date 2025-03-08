@@ -1,7 +1,7 @@
 {
   "name": "@jackatlas/chi-ui",
   "private": false,
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "./dist/chi-ui.umd.cjs",
   "module": "./dist/chi-ui.js",
   "type": "module",
@@ -20,6 +20,14 @@
   "files": [
     "dist",
     "types.d.ts"
+  ],
+  "keywords": [
+    "chi",
+    "chi-ui",
+    "vue",
+    "component",
+    "flex",
+    "vite"
   ],
   "exports": {
     ".": {

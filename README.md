@@ -11,15 +11,7 @@
   </a>
 </p>
 
-**English** | [中文](./README.zh-CN.md)
-
-This project is currently under development and has no online demo, but you could still access the documentation locally.
-
-```bash
-pnpm run docs:dev
-```
-
----
+**English** | [中文](https://github.com/JackAtlas/chi-ui/blob/master/README.md)
 
 Chi UI provides a bunch of out-of-box components.
 
@@ -28,3 +20,19 @@ This library is written using **composition API**, and the components are design
 Almost all **default property values** of each component can be easily customized through injected configurations, making it easy to achieve customization.
 
 Meanwile, the componet code pays great attention to reducing the threhold of **source code reading**, and the code layout is as close as possible to the habits of daily business code, avoiding fancy and showy code.
+
+### Installation
+
+It is recommended to use pnpm or yarn to install:
+
+```bash
+# use pnpm
+pnpm add @jackatlas/chi-ui
+
+# use yarn
+yarn add @jackatlas/chi-ui
+```
+
+### Documentation
+
+[Here](https://chi-ui-docs.vercel.app/) is the online document.
