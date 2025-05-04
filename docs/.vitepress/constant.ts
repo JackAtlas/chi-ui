@@ -1,0 +1,5 @@
+export const SITE_NAME = 'Chi-UI'
+export const SITE_DESC = 'Another Vue 3 component library.'
+export const SITE_TITLE = 'Chi-UI - Another Vue 3 component library.'
+export const SITE_DESC_ZH = '又一个 Vue 3 组件库'
+export const SITE_TITLE_ZH = 'Chi-UI - 又一个 Vue 3 组件库'

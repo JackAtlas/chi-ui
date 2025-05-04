@@ -1,0 +1,33 @@
+{
+  "name": "@jackatlas/chi-ui-docs",
+  "version": "1.0.0",
+  "description": "Documentation website of Chi-UI",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "keywords": [
+    "vue",
+    "typescript",
+    "chi-ui"
+  ],
+  "author": "jackatlas",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
+  "devDependencies": {
+    "@jackatlas/chi-ui": "workspace:*",
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.4.0",
+    "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "@vite-pwa/vitepress": "^1.0.0",
+    "lucide-vue-next": "^0.503.0",
+    "vue": "^3.5.13",
+    "vue-i18n": "^11.1.3"
+  }
+}
